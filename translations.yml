@@ -1,0 +1,185 @@
+#
+# This file is part of the internal Zendesk translation system. It is used to generate the
+# translations/*.json files in the Help Center Wysiwyg GitHub repository.
+#
+# If you are building your own wysiwyg, you should remove this file and modify
+# translation/*.json files directly.
+#
+
+---
+title: "Help Center Wysiwyg"
+packages:
+  - help-center-wysiwyg
+
+parts:
+  - translation:
+      key: "help-center-wysiwyg.bold"
+      title: "Rich text editor tooltip for bold"
+      value: "Bold"
+  - translation:
+      key: "help-center-wysiwyg.italic"
+      title: "Rich text editor tooltip for italic"
+      value: "Italic"
+  - translation:
+      key: "help-center-wysiwyg.link"
+      title: "Rich text editor tooltip for link"
+      value: "Insert/Edit link"
+  - translation:
+      key: "help-center-wysiwyg.code"
+      title: "Rich text editor tooltip for code"
+      value: "Insert code"
+      screenshot: "https://drive.google.com/file/d/1pai8NfJJHJMXQUG1aet0NnPFGgW-lvMx"
+  - translation:
+      key: "help-center-wysiwyg.insert-image"
+      title: "Rich text editor tooltip for insert image"
+      value: "Insert image"
+  - translation:
+      key: "help-center-wysiwyg.block-quote"
+      title: "Rich text editor tooltip for quotes"
+      value: "Quote"
+      screenshot: "https://drive.google.com/file/d/1LeUSAQBmIFBpvg0EyjVMG5R096iY5yRU"
+  - translation:
+      key: "help-center-wysiwyg.insert-code-block"
+      title: "Rich text editor tooltip for code block"
+      value: "Code block"
+      screenshot: "https://drive.google.com/file/d/1nQMT8_ynLv6_cHWDp_f-cygq9CfH6fYC"
+  - translation:
+      key: "help-center-wysiwyg.bulleted-list"
+      title: "Rich text editor tooltip for unordered list"
+      value: "Bulleted list"
+  - translation:
+      key: "help-center-wysiwyg.numbered-list"
+      title: "Rich text editor tooltip for ordered list"
+      value: "Numbered list"
+  - translation:
+      key: "help-center-wysiwyg.heading"
+      title: "Rich text editor tooltip for the heading menu"
+      value: "Heading"
+      screenshot: "https://drive.google.com/file/d/1STmpA9UFMbgbBsclrDETINP-ysZYYS5R/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.heading-1"
+      title: "Rich text editor heading 1 menu item"
+      value: "Heading 1"
+      screenshot: "https://drive.google.com/file/d/1ZDjNth_8jXdb5D_VQoQQYcd6ER5_P0GP"
+  - translation:
+      key: "help-center-wysiwyg.heading-2"
+      title: "Rich text editor heading 2 menu item"
+      value: "Heading 2"
+      screenshot: "https://drive.google.com/file/d/1ZDjNth_8jXdb5D_VQoQQYcd6ER5_P0GP"
+  - translation:
+      key: "help-center-wysiwyg.heading-3"
+      title: "Rich text editor heading 3 menu item"
+      value: "Heading 3"
+      screenshot: "https://drive.google.com/file/d/1ZDjNth_8jXdb5D_VQoQQYcd6ER5_P0GP"
+  - translation:
+      key: "help-center-wysiwyg.paragraph"
+      title: "Rich text editor paragraph menu item"
+      value: "Paragraph"
+      screenshot: "https://drive.google.com/file/d/1ZDjNth_8jXdb5D_VQoQQYcd6ER5_P0GP"
+  - translation:
+      key: "help-center-wysiwyg.choose-heading"
+      title: "Label shown in the dropdown menu to choose a heading. Shown in the rich text editor."
+      value: "Choose heading"
+      screenshot: "https://drive.google.com/file/d/184MJE3uxGnS1c8tzYVoOkn7rd7gb7c9n/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.change-image-text-alternative"
+      title: "Tooltip shown when hovering over the button to change the image text alternative. Shown above above images in the rich text editor."
+      value: "Change image text alternative"
+      screenshot: "https://drive.google.com/file/d/1xeNBqO_-e5YW5cdSU17tLJfJiDLc0LZE/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.text-alternative"
+      title: "Label for the input field that sets the image text alternative. Shown in the change text alternative window of the rich text editor."
+      value: "Text alternative"
+      screenshot: "https://drive.google.com/file/d/1YIhJNYMB_e6_NunQzNocldRatB6wlsED/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.save"
+      title: "The common action of saving ones changes. Used on submit buttons."
+      value: "Save"
+  - translation:
+      key: "help-center-wysiwyg.cancel"
+      title: "Cancel"
+      value: "Cancel"
+  - translation:
+      key: "help-center-wysiwyg.in-line"
+      title: "Image style formatting option in the image menu of selected images in the rich text editor."
+      value: "In line"
+      screenshot: "https://drive.google.com/file/d/1rmCXPhqFjGlz1WvkRaQAZScVImkCGqsJ/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.left-aligned-image"
+      title: "Image style formatting option in the image menu of selected images in the rich text editor."
+      value: "Left aligned image"
+      screenshot: "https://drive.google.com/file/d/1HsXGiWlj83yF9Le89Yrfe8Y9fJpJmFgf/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.right-aligned-image"
+      title: "Image style formatting option in the image menu of selected images in the rich text editor."
+      value: "Right aligned image"
+      screenshot: "https://drive.google.com/file/d/127KpL1SzduvQaXwpUgPSV7BLVrh1Ty3-/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.centered-image"
+      title: "Image style formatting option in the image menu of selected images in the rich text editor."
+      value: "Centered image"
+      screenshot: "https://drive.google.com/file/d/1W3fxCvFgo-XbWWVoUo8zMQLc0Hui-v9i/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.side-image"
+      title: "Image style formatting option in the image menu of selected images in the rich text editor."
+      value: "Side image"
+      screenshot: "https://drive.google.com/file/d/1b_o0jkSorP6btqFChnw_kiVb9RvCVt90/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.toggle-caption-on"
+      title: "Tooltip shown when hovering over the button to turn on the image caption. Shown above above images in the rich text editor."
+      value: "Toggle caption on"
+      screenshot: "https://drive.google.com/file/d/1XFX-INhmDVQtLZkUJKs8e44WBl18-_RS/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.toggle-caption-off"
+      title: "Tooltip shown when hovering over the button to turn off the image caption. Shown above above images in the rich text editor."
+      value: "Toggle caption off"
+      screenshot: "https://drive.google.com/file/d/1yIHyZQKeFM7JOMCRjadOKclfJ-oPrTpS/view?usp=sharing"
+  - translation:
+      key: "help-center-wysiwyg.plain-text"
+      title: "Plain text formatting option in the insert code block menu of the rich text editor."
+      value: "Plain text"
+      screenshot: "https://drive.google.com/file/d/14i26Qc1j1i_UBsz4FtIlZr9dGq53l_gN/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.upload-failed"
+      title: "Generic message shown whenever a file upload fails."
+      value: "Upload failed"
+      screenshot: "https://drive.google.com/file/d/1hd52dJEhlhK9kFU4rROYWHSRko6wSw3N/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.link-url"
+      title: "Label shown above the input field that sets the URL. Shown in the link window of the rich text editor."
+      value: "Link URL"
+      screenshot: "https://drive.google.com/file/d/1N8df2xmOqq5-rhA-goz5SaxrNLfgobjE"
+  - translation:
+      key: "help-center-wysiwyg.edit-link"
+      title: "Tooltip shown when hovering over the button to edit a link. Shown in the rich text editor."
+      value: "Edit link"
+      screenshot: "https://drive.google.com/file/d/1BGjKnMbdYSk97XaBJ2vrVLvkVPWjAp9Y/view?usp=sharing"
+  - translation:
+      key: "help-center-wysiwyg.unlink"
+      title: "Tooltip shown when hovering over the button to remove a link. Shown in the rich text editor."
+      value: "Unlink"
+      screenshot: "https://drive.google.com/file/d/1BGjKnMbdYSk97XaBJ2vrVLvkVPWjAp9Y/view?usp=sharing"
+  - translation:
+      key: "help-center-wysiwyg.undo"
+      title: "The common action of undoing ones changes. Used on buttons."
+      value: "Undo"
+      screenshot: "https://drive.google.com/file/d/14Gc4X4tsZ13rz0zRkifhxaxt--mRswGE/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.redo"
+      title: "The common action of redoing ones changes. Used on buttons."
+      value: "Redo"
+      screenshot: "https://drive.google.com/file/d/1gtHOgHAPQ46i1xeLR0sn52JSklR_11eV/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.enter-image-caption"
+      title: "Placeholder text shown in the input field for setting the image caption. Shown in the rich text editor."
+      value: "Enter image caption"
+      screenshot: "https://drive.google.com/file/d/1oTdzxHGqcw_0AMMZHtZ5Nkdupac9HuQA/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.show-more-items"
+      title: "Tooltip shown when hovering over the three-dot menu shown whenever the toolbar items overflow the width of the toolbar. Shown in the rich text editor."
+      value: "Show more items"
+      screenshot: "https://drive.google.com/file/d/1i-VAtCJjbsl4gbG7Jjx5G6WAqdlsqMuX/view?usp=share_link"
+  - translation:
+      key: "help-center-wysiwyg.editor-toolbar"
+      title: "[A11Y] Label used to describe the rich text editor toolbar"
+      value: "Editor toolbar"
