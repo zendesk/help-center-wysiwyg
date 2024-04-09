@@ -183,3 +183,12 @@ parts:
       key: "help-center-wysiwyg.editor-toolbar"
       title: "[A11Y] Label used to describe the rich text editor toolbar"
       value: "Editor toolbar"
+  - translation:
+      key: "help-center-wysiwyg.image_upload_generic_error"
+      title: "Error displayed when the image upload failed because of either size or type"
+      value: "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB."
+  - translation:
+      key: "help-center-wysiwyg.mentionable_user_limit_exceeded"
+      title: "The text of a message that appears if a user attempts to mention more than a certain number of other users in a post or comment. More info on mentions can be found here: https://en.wikipedia.org/wiki/Mention_(blogging)"
+      screenshot: "https://drive.google.com/open?id=1iQFXPJXSUN4mQRZWGaaZL_f9UfmTSuIw"
+      value: "You have reached the limit of mentionable users"
