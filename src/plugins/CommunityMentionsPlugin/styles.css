@@ -1,0 +1,14 @@
+.ck .ck-list__item .hc-mentions__avatar {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  margin-inline-end: 8px;
+  background-color: #eee;
+}
+
+.ck .ck-list__item .hc-mentions__item {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
