@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Help Center Wysiwyg</title>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      const target = document.getElementById('app');
+
+      const editor = await HelpCenterWysiwyg.createEditor(target, {
+        editorType: "supportRequests",
+        hasAtMentions: true,
+        userRole: "admin",
+        brandId: 123,
+        baseLocale: "en-us"
+      });
+
+      const notifications = editor.plugins.get("Notification");
+
+      notifications.on(
+        "show:warning:mention:limit", (evt, data) => {
+        evt.stop();
+        console.log(evt, data);
+      });
+
+      notifications.on(
+        "show:success:mention:limit", (evt, data) => {
+        evt.stop();
+        console.log(evt, data);
+      });
+
+      notifications.on(
+        "show", (evt, data) => {
+        evt.stop();
+        console.log(evt, data);
+      });
+
+      editor.focus();
+    </script>
+  </body>
+</html>
