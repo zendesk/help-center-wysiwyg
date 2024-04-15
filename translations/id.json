@@ -17,6 +17,7 @@
     "help-center-wysiwyg.heading-1": "Judul 1",
     "help-center-wysiwyg.heading-2": "Judul 2",
     "help-center-wysiwyg.heading-3": "Judul 3",
+    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "Dalam garis",
     "help-center-wysiwyg.insert-code-block": "Blokir kode",
     "help-center-wysiwyg.insert-image": "Masukkan gambar",
@@ -24,6 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Gambar rata kiri",
     "help-center-wysiwyg.link": "Masukkan/Edit tautan",
     "help-center-wysiwyg.link-url": "URL tautan",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
     "help-center-wysiwyg.numbered-list": "Daftar bernomor",
     "help-center-wysiwyg.paragraph": "Paragraf",
     "help-center-wysiwyg.plain-text": "Teks polos",
@@ -39,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Hapus tautan",
     "help-center-wysiwyg.upload-failed": "Gagal unggah"
   },
-  "updated_at": "2024-03-26T15:34:53Z"
+  "updated_at": "2024-04-12T11:23:40Z"
 }

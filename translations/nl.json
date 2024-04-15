@@ -17,6 +17,7 @@
     "help-center-wysiwyg.heading-1": "Kop 1",
     "help-center-wysiwyg.heading-2": "Kop 2",
     "help-center-wysiwyg.heading-3": "Kop 3",
+    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "In regel",
     "help-center-wysiwyg.insert-code-block": "Codeblok",
     "help-center-wysiwyg.insert-image": "Afbeelding invoegen",
@@ -24,6 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Links uitgelijnde afbeelding",
     "help-center-wysiwyg.link": "Link invoegen/bewerken",
     "help-center-wysiwyg.link-url": "Webadres van link",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
     "help-center-wysiwyg.numbered-list": "Genummerde lijst",
     "help-center-wysiwyg.paragraph": "Alinea",
     "help-center-wysiwyg.plain-text": "Niet-opgemaakte tekst",
@@ -39,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Loskoppelen",
     "help-center-wysiwyg.upload-failed": "Uploaden mislukt"
   },
-  "updated_at": "2024-03-26T15:37:49Z"
+  "updated_at": "2024-04-12T11:20:34Z"
 }

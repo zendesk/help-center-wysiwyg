@@ -17,6 +17,7 @@
     "help-center-wysiwyg.heading-1": "標題 1",
     "help-center-wysiwyg.heading-2": "標題 2",
     "help-center-wysiwyg.heading-3": "標題 3",
+    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "內嵌",
     "help-center-wysiwyg.insert-code-block": "程式碼區塊",
     "help-center-wysiwyg.insert-image": "插入影像",
@@ -24,6 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "影像靠左對齊",
     "help-center-wysiwyg.link": "插入/編輯連結",
     "help-center-wysiwyg.link-url": "連結 URL",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
     "help-center-wysiwyg.numbered-list": "編號清單",
     "help-center-wysiwyg.paragraph": "段落",
     "help-center-wysiwyg.plain-text": "純文字",
@@ -39,5 +41,5 @@
     "help-center-wysiwyg.unlink": "取消連結",
     "help-center-wysiwyg.upload-failed": "上傳失敗"
   },
-  "updated_at": "2024-03-26T15:45:54Z"
+  "updated_at": "2024-04-12T11:19:41Z"
 }

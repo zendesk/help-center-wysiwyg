@@ -17,6 +17,7 @@
     "help-center-wysiwyg.heading-1": "Heading 1",
     "help-center-wysiwyg.heading-2": "Heading 2",
     "help-center-wysiwyg.heading-3": "Heading 3",
+    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "In line",
     "help-center-wysiwyg.insert-code-block": "Code block",
     "help-center-wysiwyg.insert-image": "Insert image",
@@ -24,6 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Left aligned image",
     "help-center-wysiwyg.link": "Insert/Edit link",
     "help-center-wysiwyg.link-url": "Link URL",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
     "help-center-wysiwyg.numbered-list": "Numbered list",
     "help-center-wysiwyg.paragraph": "Paragraph",
     "help-center-wysiwyg.plain-text": "Plain text",
@@ -39,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Unlink",
     "help-center-wysiwyg.upload-failed": "Upload failed"
   },
-  "updated_at": "2024-03-21T20:43:37Z"
+  "updated_at": "2024-04-11T19:29:31Z"
 }

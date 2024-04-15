@@ -17,6 +17,7 @@
     "help-center-wysiwyg.heading-1": "Заглавие 1",
     "help-center-wysiwyg.heading-2": "Заглавие 2",
     "help-center-wysiwyg.heading-3": "Заглавие 3",
+    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "Подравнено",
     "help-center-wysiwyg.insert-code-block": "Блок код",
     "help-center-wysiwyg.insert-image": "Вмъкване на изображение",
@@ -24,6 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Ляво подравнено изображение",
     "help-center-wysiwyg.link": "Вмъкване/Редактиране на връзка",
     "help-center-wysiwyg.link-url": "URL на връзка",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
     "help-center-wysiwyg.numbered-list": "Номериран списък",
     "help-center-wysiwyg.paragraph": "Параграф",
     "help-center-wysiwyg.plain-text": "Неформатиран текст",
@@ -39,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Прекратяване на връзката",
     "help-center-wysiwyg.upload-failed": "Неуспешно качване"
   },
-  "updated_at": "2024-03-26T15:25:59Z"
+  "updated_at": "2024-04-12T11:18:50Z"
 }

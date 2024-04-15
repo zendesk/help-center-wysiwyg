@@ -17,6 +17,7 @@
     "help-center-wysiwyg.heading-1": "Overskrift 1",
     "help-center-wysiwyg.heading-2": "Overskrift 2",
     "help-center-wysiwyg.heading-3": "Overskrift 3",
+    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "På linje",
     "help-center-wysiwyg.insert-code-block": "Kodeblok",
     "help-center-wysiwyg.insert-image": "Indsæt billede",
@@ -24,6 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Venstrejusteret billede",
     "help-center-wysiwyg.link": "Indsæt/rediger link",
     "help-center-wysiwyg.link-url": "Linkets URL-adresse",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
     "help-center-wysiwyg.numbered-list": "Nummereret liste",
     "help-center-wysiwyg.paragraph": "Afsnit",
     "help-center-wysiwyg.plain-text": "Almindelig tekst",
@@ -39,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Fjern link",
     "help-center-wysiwyg.upload-failed": "Upload mislykkedes"
   },
-  "updated_at": "2024-03-26T15:27:31Z"
+  "updated_at": "2024-04-12T11:20:23Z"
 }

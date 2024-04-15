@@ -17,6 +17,7 @@
     "help-center-wysiwyg.heading-1": "Rubrik 1",
     "help-center-wysiwyg.heading-2": "Rubrik 2",
     "help-center-wysiwyg.heading-3": "Rubrik 3",
+    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "I linje",
     "help-center-wysiwyg.insert-code-block": "Kodtext",
     "help-center-wysiwyg.insert-image": "Infoga bild",
@@ -24,6 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Vänsterjusterad bild",
     "help-center-wysiwyg.link": "Infoga/redigera länk",
     "help-center-wysiwyg.link-url": "Länka webbadress",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
     "help-center-wysiwyg.numbered-list": "Numrerad lista",
     "help-center-wysiwyg.paragraph": "Stycke",
     "help-center-wysiwyg.plain-text": "Oformaterad text",
@@ -39,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Ta bort länk",
     "help-center-wysiwyg.upload-failed": "Det gick inte att ladda upp"
   },
-  "updated_at": "2024-03-26T15:42:16Z"
+  "updated_at": "2024-04-12T11:28:36Z"
 }
