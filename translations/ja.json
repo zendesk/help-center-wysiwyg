@@ -17,6 +17,7 @@
     "help-center-wysiwyg.heading-1": "見出し1",
     "help-center-wysiwyg.heading-2": "見出し2",
     "help-center-wysiwyg.heading-3": "見出し3",
+    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "左揃え",
     "help-center-wysiwyg.insert-code-block": "コードブロック",
     "help-center-wysiwyg.insert-image": "画像の挿入",
@@ -24,6 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "画像を左寄せ",
     "help-center-wysiwyg.link": "リンクの挿入/編集",
     "help-center-wysiwyg.link-url": "リンクURL",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
     "help-center-wysiwyg.numbered-list": "番号付きリスト",
     "help-center-wysiwyg.paragraph": "パラグラフ",
     "help-center-wysiwyg.plain-text": "プレーンテキスト",
@@ -39,5 +41,5 @@
     "help-center-wysiwyg.unlink": "リンクを解除",
     "help-center-wysiwyg.upload-failed": "アップロードできませんでした"
   },
-  "updated_at": "2024-03-26T15:46:41Z"
+  "updated_at": "2024-04-12T15:15:52Z"
 }

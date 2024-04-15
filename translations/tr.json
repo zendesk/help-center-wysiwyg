@@ -17,6 +17,7 @@
     "help-center-wysiwyg.heading-1": "Başlık 1",
     "help-center-wysiwyg.heading-2": "Başlık 2",
     "help-center-wysiwyg.heading-3": "Başlık 3",
+    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "In line",
     "help-center-wysiwyg.insert-code-block": "Kod bloğu",
     "help-center-wysiwyg.insert-image": "Görsel ekle",
@@ -24,6 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Sola hizalanmış görsel",
     "help-center-wysiwyg.link": "Bağlantı ekle/düzenle",
     "help-center-wysiwyg.link-url": "Bağlantı URL'si",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
     "help-center-wysiwyg.numbered-list": "Numaralı liste",
     "help-center-wysiwyg.paragraph": "Paragraf",
     "help-center-wysiwyg.plain-text": "Düz metin",
@@ -39,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Bağlantıyı kaldır",
     "help-center-wysiwyg.upload-failed": "Karşıya yükleme başarısız oldu"
   },
-  "updated_at": "2024-03-26T15:43:44Z"
+  "updated_at": "2024-04-12T11:29:08Z"
 }

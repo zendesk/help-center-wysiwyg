@@ -17,6 +17,7 @@
     "help-center-wysiwyg.heading-1": "Nagłówek 1",
     "help-center-wysiwyg.heading-2": "Nagłówek 2",
     "help-center-wysiwyg.heading-3": "Nagłówek 3",
+    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "Liniowy",
     "help-center-wysiwyg.insert-code-block": "Blok kodu",
     "help-center-wysiwyg.insert-image": "Wstaw obraz",
@@ -24,6 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Obraz wyrównany do lewej",
     "help-center-wysiwyg.link": "Wstaw/edytuj łącze",
     "help-center-wysiwyg.link-url": "Adres URL łącza",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
     "help-center-wysiwyg.numbered-list": "Lista numerowana",
     "help-center-wysiwyg.paragraph": "Akapit",
     "help-center-wysiwyg.plain-text": "Zwykły tekst",
@@ -39,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Odłącz",
     "help-center-wysiwyg.upload-failed": "Nie udało się przesłać"
   },
-  "updated_at": "2024-03-26T15:39:17Z"
+  "updated_at": "2024-04-12T11:25:04Z"
 }

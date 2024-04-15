@@ -17,6 +17,7 @@
     "help-center-wysiwyg.heading-1": "כותרת 1",
     "help-center-wysiwyg.heading-2": "כותרת 2",
     "help-center-wysiwyg.heading-3": "כותרת 3",
+    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "בשורה",
     "help-center-wysiwyg.insert-code-block": "בלוק קוד",
     "help-center-wysiwyg.insert-image": "הוסף תמונה",
@@ -24,6 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "תמונה מיושרת לשמאל",
     "help-center-wysiwyg.link": "הוסף/ערוך קישור",
     "help-center-wysiwyg.link-url": "כתובת ה-URL של הקישור",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
     "help-center-wysiwyg.numbered-list": "רשימה ממוספרת",
     "help-center-wysiwyg.paragraph": "פסקה",
     "help-center-wysiwyg.plain-text": "טקסט פשוט",
@@ -39,5 +41,5 @@
     "help-center-wysiwyg.unlink": "בטל קישור",
     "help-center-wysiwyg.upload-failed": "ההעלאה נכשלה"
   },
-  "updated_at": "2024-03-26T15:32:43Z"
+  "updated_at": "2024-04-12T11:22:49Z"
 }

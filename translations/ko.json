@@ -17,6 +17,7 @@
     "help-center-wysiwyg.heading-1": "머리글 1",
     "help-center-wysiwyg.heading-2": "머리글 2",
     "help-center-wysiwyg.heading-3": "머리글 3",
+    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "인라인",
     "help-center-wysiwyg.insert-code-block": "코드 블록",
     "help-center-wysiwyg.insert-image": "이미지 삽입",
@@ -24,6 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "왼쪽 정렬 이미지",
     "help-center-wysiwyg.link": "링크 삽입/편집",
     "help-center-wysiwyg.link-url": "링크 URL",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
     "help-center-wysiwyg.numbered-list": "번호 매기기 목록",
     "help-center-wysiwyg.paragraph": "단락",
     "help-center-wysiwyg.plain-text": "일반 텍스트",
@@ -39,5 +41,5 @@
     "help-center-wysiwyg.unlink": "연결 해제",
     "help-center-wysiwyg.upload-failed": "업로드 실패"
   },
-  "updated_at": "2024-03-26T15:37:05Z"
+  "updated_at": "2024-04-12T15:15:52Z"
 }
