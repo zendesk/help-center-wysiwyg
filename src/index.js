@@ -106,7 +106,12 @@ Editor.defaultConfig = {
 
 /**
  * Get the configuration for the editor based on the editor type.
- * @param {string} editorType - The type of the editor (comments, communityPosts, or supportRequests).
+ * @param {Object} baseConfig - Base configuration
+ * @param {string} baseConfig.editorType - The type of the editor (comments, communityPosts, or supportRequests).
+ * @param {boolean} baseConfig.hasAtMentions - At-mentions enabled or not
+ * @param {string} baseConfig.userRole - The user role
+ * @param {number} baseConfig.brandId - The brand id
+ * @param {string} baseConfig.baseLocale - The base locale
  * @returns {EditorConfig} The configuration for the editor. See https://ckeditor.com/docs/ckeditor5/latest/api/module_core_editor_editorconfig-EditorConfig.html
  * @throws {Error} If no configuration exists for the specified editor type.
  */
