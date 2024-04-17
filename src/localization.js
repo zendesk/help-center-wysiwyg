@@ -55,6 +55,14 @@ export const localize = async (baseLocale) => {
   add(baseLocale, getTranslations(ckeditorTranslationsKeyMap));
 };
 
-export function translate(key) {
-  return translationStore[key];
+export function translate(key, args) {
+  let translation = translationStore[key];
+
+  if (typeof translation !== "undefined" && typeof args === "object") {
+    for (const [key, value] of Object.entries(args)) {
+      translation = translation.replaceAll(`{{${key}}}`, value);
+    }
+  }
+
+  return translation;
 }
