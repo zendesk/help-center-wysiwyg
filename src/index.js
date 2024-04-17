@@ -116,7 +116,6 @@ Editor.defaultConfig = {
  * @throws {Error} If no configuration exists for the specified editor type.
  */
 export const getEditorConfig = ({
-  licenseKey,
   editorType,
   hasAtMentions,
   userRole,
@@ -126,7 +125,12 @@ export const getEditorConfig = ({
   const isUserUnauthenticated = userRole === "anonymous";
 
   const baseConfig = {
-    licenseKey,
+    /* eslint-disable no-undef */
+    licenseKey:
+      process.env.NODE_ENV === "production"
+        ? process.env.CKEDITOR_LICENSE_KEY_PRODUCTION
+        : process.env.CKEDITOR_LICENSE_KEY_DEVELOPMENT,
+    /* eslint-enable no-undef */
     language: baseLocale,
   };
 

@@ -48,6 +48,14 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      "process.env.CKEDITOR_LICENSE_KEY_PRODUCTION": JSON.stringify(
+        process.env.CKEDITOR_LICENSE_KEY_PRODUCTION,
+      ),
+      "process.env.CKEDITOR_LICENSE_KEY_DEVELOPMENT": JSON.stringify(
+        process.env.CKEDITOR_LICENSE_KEY_DEVELOPMENT,
+      ),
+    }),
     new webpack.NormalModuleReplacementPlugin(
       /bold\.svg/,
       "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/bold-stroke.svg",
