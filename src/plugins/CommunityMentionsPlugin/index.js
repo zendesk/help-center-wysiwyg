@@ -6,7 +6,7 @@ import { Notification } from "@ckeditor/ckeditor5-ui";
 
 import "./styles.css";
 
-const MAX_MENTIONS_COUNT = 2; // TODO: fix to 15
+const MAX_MENTIONS_COUNT = 15;
 
 const sendQuery = async (query) => {
   const response = await fetch(
