@@ -6,11 +6,15 @@
     <script src="main.js"></script>
   </head>
   <body>
-    <div id="app"></div>
+    <form>
+      <label for="editor">Editor</label>
+      <textarea id="editor" name="editor"></textarea>
+    </form>
     <script type="module">
-      const target = document.getElementById('app');
+      const target = document.getElementById('editor');
+      const { createEditor } = HelpCenterWysiwyg;
 
-      const editor = await HelpCenterWysiwyg.createEditor(target, {
+      const editor = await createEditor(target, {
         editorType: "supportRequests",
         hasAtMentions: true,
         userRole: "admin",
@@ -21,21 +25,21 @@
       const notifications = editor.plugins.get("Notification");
 
       notifications.on(
-        "show:warning:mention:limit", (evt, data) => {
-        evt.stop();
-        console.log(evt, data);
+        "show:warning:mention:limit", (event, data) => {
+        event.stop();
+        console.log(event, data);
       });
 
       notifications.on(
-        "show:success:mention:limit", (evt, data) => {
-        evt.stop();
-        console.log(evt, data);
+        "show:success:mention:limit", (event, data) => {
+        event.stop();
+        console.log(event, data);
       });
 
       notifications.on(
-        "show", (evt, data) => {
-        evt.stop();
-        console.log(evt, data);
+        "show", (event, data) => {
+        event.stop();
+        console.log(event, data);
       });
 
       editor.focus();
