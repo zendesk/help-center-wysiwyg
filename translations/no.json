@@ -17,7 +17,7 @@
     "help-center-wysiwyg.heading-1": "Topptekst 1",
     "help-center-wysiwyg.heading-2": "Topptekst 2",
     "help-center-wysiwyg.heading-3": "Topptekst 3",
-    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
+    "help-center-wysiwyg.image_upload_generic_error": "Du kan bare laste opp bilder (JPEG, GIF eller PNG). Bildeopplastinger er begrenset til {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "I linje",
     "help-center-wysiwyg.insert-code-block": "Kodeblokk",
     "help-center-wysiwyg.insert-image": "Sett inn bilde",
@@ -25,7 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Venstrejustert bilde",
     "help-center-wysiwyg.link": "Sett inn/rediger lenke",
     "help-center-wysiwyg.link-url": "Lenkens URL",
-    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "Du har nådd grensen på brukere som kan omtales",
     "help-center-wysiwyg.numbered-list": "Nummerert liste",
     "help-center-wysiwyg.paragraph": "Avsnitt",
     "help-center-wysiwyg.plain-text": "Ren tekst",
@@ -41,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Fjern lenke",
     "help-center-wysiwyg.upload-failed": "Kunne ikke laste opp"
   },
-  "updated_at": "2024-04-12T11:24:49Z"
+  "updated_at": "2024-04-15T18:09:20Z"
 }

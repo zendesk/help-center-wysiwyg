@@ -17,7 +17,7 @@
     "help-center-wysiwyg.heading-1": "Nadpis 1",
     "help-center-wysiwyg.heading-2": "Nadpis 2",
     "help-center-wysiwyg.heading-3": "Nadpis 3",
-    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
+    "help-center-wysiwyg.image_upload_generic_error": "Můžete uploadovat pouze obrázky (JPEG, GIF nebo PNG). Uploadované obrázky jsou omezeny na {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "V řadě",
     "help-center-wysiwyg.insert-code-block": "Blok kódu",
     "help-center-wysiwyg.insert-image": "Vložit obrázek",
@@ -25,7 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Obrázek zarovnaný doleva",
     "help-center-wysiwyg.link": "Vložit/upravit odkaz",
     "help-center-wysiwyg.link-url": "URL odkazu",
-    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "Dosáhli jste limitu počtu zmínění uživatelů.",
     "help-center-wysiwyg.numbered-list": "Číslovaný seznam",
     "help-center-wysiwyg.paragraph": "Odstavec",
     "help-center-wysiwyg.plain-text": "Prostý text",
@@ -41,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Odpojit",
     "help-center-wysiwyg.upload-failed": "Chyba uploadu"
   },
-  "updated_at": "2024-04-12T11:20:01Z"
+  "updated_at": "2024-04-15T18:04:14Z"
 }

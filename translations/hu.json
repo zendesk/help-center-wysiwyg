@@ -17,7 +17,7 @@
     "help-center-wysiwyg.heading-1": "1. címsor",
     "help-center-wysiwyg.heading-2": "2. címsor",
     "help-center-wysiwyg.heading-3": "3. címsor",
-    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
+    "help-center-wysiwyg.image_upload_generic_error": "Csak képeket tölthet fel (jpeg, gif vagy png). A feltöltött képek mérete legfeljebb {{max_size}} MB lehet.",
     "help-center-wysiwyg.in-line": "Beágyazott",
     "help-center-wysiwyg.insert-code-block": "Kódblokk",
     "help-center-wysiwyg.insert-image": "Kép beszúrása",
@@ -25,7 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Balra igazított kép",
     "help-center-wysiwyg.link": "Hivatkozás beszúrása/szerkesztése",
     "help-center-wysiwyg.link-url": "Hivatkozás URL-címe",
-    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "Elérte a megemlíthető felhasználók maximális számát",
     "help-center-wysiwyg.numbered-list": "Számozott lista",
     "help-center-wysiwyg.paragraph": "Bekezdés",
     "help-center-wysiwyg.plain-text": "Sima szöveg",
@@ -41,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Hivatkozás eltávolítása",
     "help-center-wysiwyg.upload-failed": "A feltöltés nem sikerült"
   },
-  "updated_at": "2024-04-12T11:23:24Z"
+  "updated_at": "2024-04-15T18:07:25Z"
 }

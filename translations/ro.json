@@ -17,7 +17,7 @@
     "help-center-wysiwyg.heading-1": "Titlu 1",
     "help-center-wysiwyg.heading-2": "Titlu 2",
     "help-center-wysiwyg.heading-3": "Titlu 3",
-    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
+    "help-center-wysiwyg.image_upload_generic_error": "Puteți să încărcați numai imagini (jpeg, gif sau png). Dimensiunea imaginilor încărcate este limitată la {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "În linie",
     "help-center-wysiwyg.insert-code-block": "Bloc de cod",
     "help-center-wysiwyg.insert-image": "Introducere imagine",
@@ -25,7 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Imagine aliniată la stânga",
     "help-center-wysiwyg.link": "Introducere/editare link",
     "help-center-wysiwyg.link-url": "Adresă URL link",
-    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "Ați atins deja limita de utilizatori care pot fi menționați",
     "help-center-wysiwyg.numbered-list": "Listă numerotată",
     "help-center-wysiwyg.paragraph": "Paragraf",
     "help-center-wysiwyg.plain-text": "Text simplu",
@@ -41,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Anulare legătură",
     "help-center-wysiwyg.upload-failed": "Încărcarea a eșuat"
   },
-  "updated_at": "2024-04-12T11:26:08Z"
+  "updated_at": "2024-04-15T18:10:16Z"
 }

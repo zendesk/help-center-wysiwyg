@@ -17,7 +17,7 @@
     "help-center-wysiwyg.heading-1": "Επικεφαλίδα 1",
     "help-center-wysiwyg.heading-2": "Επικεφαλίδα 2",
     "help-center-wysiwyg.heading-3": "Επικεφαλίδα 3",
-    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
+    "help-center-wysiwyg.image_upload_generic_error": "Μπορείτε να αποστείλετε μόνο εικόνες (jpeg, gif ή png). Οι αποστολές εικόνων περιορίζονται στα {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "Σε γραμμή",
     "help-center-wysiwyg.insert-code-block": "Μπλοκ κώδικα",
     "help-center-wysiwyg.insert-image": "Εισαγωγή εικόνας",
@@ -25,7 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Στοίχιση εικόνας αριστερά",
     "help-center-wysiwyg.link": "Εισαγωγή/Επεξεργασία συνδέσμου",
     "help-center-wysiwyg.link-url": "Σύνδεσμος URL",
-    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "Έχετε συμπληρώσει το όριο χρηστών που μπορείτε να αναφέρετε",
     "help-center-wysiwyg.numbered-list": "Αριθμημένη λίστα",
     "help-center-wysiwyg.paragraph": "Παράγραφος",
     "help-center-wysiwyg.plain-text": "Απλό κείμενο",
@@ -41,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Κατάργηση σύνδεσης",
     "help-center-wysiwyg.upload-failed": "Η αποστολή απέτυχε"
   },
-  "updated_at": "2024-04-12T11:21:32Z"
+  "updated_at": "2024-04-15T18:05:11Z"
 }

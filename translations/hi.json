@@ -17,7 +17,7 @@
     "help-center-wysiwyg.heading-1": "शीर्षक 1",
     "help-center-wysiwyg.heading-2": "शीर्षक 2",
     "help-center-wysiwyg.heading-3": "शीर्षक 3",
-    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
+    "help-center-wysiwyg.image_upload_generic_error": "आप केवल छवि (jpeg, gif या png) अपलोड कर सकते हैं। छवि अपलोड {{max_size}} MB तक सीमित हैं।",
     "help-center-wysiwyg.in-line": "लाइन में",
     "help-center-wysiwyg.insert-code-block": "कोड ब्लॉक",
     "help-center-wysiwyg.insert-image": "छवि सम्मिलित करें",
@@ -25,7 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "बाईं ओर संरेखित छवि",
     "help-center-wysiwyg.link": "लिंक सम्मिलित/संपादित करें",
     "help-center-wysiwyg.link-url": "URL लिंक करें",
-    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "आप उपयोगकर्ताओं के नामों का उल्लेख करने की सीमा पार कर चुके हैं",
     "help-center-wysiwyg.numbered-list": "क्रमांकित सूची",
     "help-center-wysiwyg.paragraph": "परिच्छेद",
     "help-center-wysiwyg.plain-text": "सादा पाठ",
@@ -41,5 +41,5 @@
     "help-center-wysiwyg.unlink": "लिंक निकालें",
     "help-center-wysiwyg.upload-failed": "अपलोड की प्रक्रिया पूरी नहीं हो सकी"
   },
-  "updated_at": "2024-04-12T11:23:13Z"
+  "updated_at": "2024-04-15T18:07:05Z"
 }
