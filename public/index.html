@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Help Center Wysiwyg</title>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <form>
+      <label for="editor">Editor</label>
+      <textarea id="editor" name="editor"></textarea>
+    </form>
+    <script type="module">
+      const target = document.getElementById('editor');
+      const { createEditor } = HelpCenterWysiwyg;
+
+      const editor = await createEditor(target, {
+        editorType: "supportRequests",
+        hasAtMentions: true,
+        userRole: "admin",
+        brandId: 123,
+        baseLocale: "en-us"
+      });
+
+      const notifications = editor.plugins.get("Notification");
+
+      notifications.on(
+        "show:warning:mention:limit", (event, data) => {
+        event.stop();
+        console.log(event, data);
+      });
+
+      notifications.on(
+        "show:success:mention:limit", (event, data) => {
+        event.stop();
+        console.log(event, data);
+      });
+
+      notifications.on(
+        "show", (event, data) => {
+        event.stop();
+        console.log(event, data);
+      });
+
+      editor.focus();
+    </script>
+  </body>
+</html>

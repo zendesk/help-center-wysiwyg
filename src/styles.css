@@ -1,0 +1,89 @@
+@import "@zendeskgarden/css-variables";
+
+:root {
+  /* colors */
+  --ck-color-text: var(--zd-color-grey-800);
+
+  --ck-color-button-on-background: hsl(0, 0%, 90%);
+  --ck-color-button-on-color: hsl(207, 71%, 42%);
+
+  --ck-color-base-border: var(--zd-color-grey-300);
+  --ck-color-focus-border: var(--zd-color-grey-800);
+
+  --ck-color-list-button-on-background: var(--ck-color-button-on-background);
+  --ck-color-list-button-on-text: var(--ck-color-button-on-color);
+  --ck-color-list-button-hover-background: hsl(0, 0%, 90%);
+  --ck-color-list-button-on-background-focus: var(
+    --ck-color-button-on-background
+  );
+
+  /* at-mentions */
+  --ck-color-mention-background: rgba(31, 115, 183, 0.1);
+  --ck-color-mention-text: rgb(9, 57, 96);
+
+  /* effects */
+  --ck-border-radius: 4px;
+  --ck-drop-shadow: 0 20px 30px 0 rgb(23 73 77 / 15%);
+
+  --ck-z-modal: 2147483649;
+
+  --ck-icon-size: 1.2em;
+}
+
+.ck.ck-button {
+  cursor: pointer;
+}
+
+.ck.ck-button:focus-visible,
+.ck.ck-toolbar:focus-visible,
+.ck.ck-content.ck-editor__editable.ck-focused,
+.ck.ck-content.ck-editor__editable.ck-editor__editable_inline.ck-focused {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px var(--zd-color-grey-800);
+  outline: 2px solid transparent;
+  outline-offset: 1px;
+}
+
+.ck.ck-content.ck-editor__editable {
+  min-height: 210px;
+}
+
+.ck.ck-content a {
+  text-decoration: underline;
+}
+
+.ck.ck-content p,
+.ck.ck-content ul,
+.ck.ck-content ol {
+  color: #000 !important;
+}
+
+.ck .ck-content {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.ck .ck-content p {
+  font-size: 15px;
+  margin: 15px 0;
+}
+
+.ck .ck-content ul {
+  list-style-type: disc;
+  padding-inline-start: 40px;
+}
+
+.ck .ck-content pre {
+  background-color: #f7f7f7 !important;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 10px 15px;
+  overflow: auto;
+  white-space: pre;
+}
+/*
+  Prevent issue where some Zendesk Garden icons are completely filled with currentColor,
+  making the icon itself invisible.
+*/
+.ck.ck-icon.ck-icon_inherit-color :not([fill]) {
+  fill: inherit;
+}

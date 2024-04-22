@@ -1,0 +1,7 @@
+.hc-ckeditor--mark-external-images
+  .ck.ck-content
+  :not(.ck-appear) /* prevents images being marked during upload */
+  img:not([src^="/hc/user_images/"]) {
+  border: 4px dashed black;
+  opacity: 0.5;
+}
