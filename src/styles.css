@@ -38,7 +38,9 @@
 .ck.ck-toolbar:focus-visible,
 .ck.ck-content.ck-editor__editable.ck-focused,
 .ck.ck-content.ck-editor__editable.ck-editor__editable_inline.ck-focused {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 3px var(--zd-color-grey-800);
+  box-shadow:
+    0 0 0 1px #fff,
+    0 0 0 3px var(--zd-color-grey-800);
   outline: 2px solid transparent;
   outline-offset: 1px;
 }
@@ -86,4 +88,23 @@
 */
 .ck.ck-icon.ck-icon_inherit-color :not([fill]) {
   fill: inherit;
+}
+
+/* 
+  Change the border color to red when the editor is in an error state.
+*/
+textarea[aria-invalid="true"] + .ck.ck-editor .ck-sticky-panel__content,
+textarea[aria-invalid="true"]
+  + .ck.ck-editor
+  .ck-editor__editable:not(.ck-focused) {
+  border-color: var(--zd-color-red-600) !important;
+}
+
+textarea[aria-invalid="true"] + .ck.ck-editor .ck-editor__editable.ck-focused {
+  outline: transparent solid 2px;
+  outline-offset: 1px;
+  box-shadow:
+    rgb(255, 255, 255) 0px 0px 0px 1px,
+    var(--zd-color-red-600) 0px 0px 0px 3px;
+  border-color: var(--zd-color-red-600);
 }
