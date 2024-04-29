@@ -17,7 +17,7 @@
     "help-center-wysiwyg.heading-1": "Otsikko 1",
     "help-center-wysiwyg.heading-2": "Otsikko 2",
     "help-center-wysiwyg.heading-3": "Otsikko 3",
-    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
+    "help-center-wysiwyg.image_upload_generic_error": "Voit lähettää vain kuvia (jpeg, gif tai png). Lähetettävien kuvatiedostojen koko voi olla enintään {{max_size}} Mt.",
     "help-center-wysiwyg.in-line": "Viivalla",
     "help-center-wysiwyg.insert-code-block": "Koodilohko",
     "help-center-wysiwyg.insert-image": "Lisää kuva",
@@ -25,7 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Vasemmalle tasattu kuva",
     "help-center-wysiwyg.link": "Lisää/muokkaa linkkiä",
     "help-center-wysiwyg.link-url": "Linkitä URL",
-    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "Olet saavuttanut mainittavissa olevien käyttäjien enimmäisrajan",
     "help-center-wysiwyg.numbered-list": "Numeroitu luettelo",
     "help-center-wysiwyg.paragraph": "Kappale",
     "help-center-wysiwyg.plain-text": "Vain teksti",
@@ -41,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Poista yhteys",
     "help-center-wysiwyg.upload-failed": "Lataus epäonnistui"
   },
-  "updated_at": "2024-04-12T11:20:57Z"
+  "updated_at": "2024-04-15T18:06:08Z"
 }

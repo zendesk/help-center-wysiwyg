@@ -17,7 +17,7 @@
     "help-center-wysiwyg.heading-1": "Cabeçalho 1",
     "help-center-wysiwyg.heading-2": "Cabeçalho 2",
     "help-center-wysiwyg.heading-3": "Cabeçalho 3",
-    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
+    "help-center-wysiwyg.image_upload_generic_error": "Você pode carregar apenas imagens (jpeg, gif ou png). Os carregamentos de imagens são limitados a {{max_size}} MB.",
     "help-center-wysiwyg.in-line": "Na linha",
     "help-center-wysiwyg.insert-code-block": "Bloco de código",
     "help-center-wysiwyg.insert-image": "Inserir imagem",
@@ -25,7 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "Imagem alinhada à esquerda",
     "help-center-wysiwyg.link": "Inserir/editar link",
     "help-center-wysiwyg.link-url": "URL do link",
-    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "Você atingiu o limite de menção de usuários",
     "help-center-wysiwyg.numbered-list": "Lista numerada",
     "help-center-wysiwyg.paragraph": "Parágrafo",
     "help-center-wysiwyg.plain-text": "Texto sem formatação",
@@ -41,5 +41,5 @@
     "help-center-wysiwyg.unlink": "Desvincular",
     "help-center-wysiwyg.upload-failed": "Erro ao carregar"
   },
-  "updated_at": "2024-04-12T15:15:53Z"
+  "updated_at": "2024-04-15T18:09:58Z"
 }

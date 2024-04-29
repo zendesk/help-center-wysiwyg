@@ -17,7 +17,7 @@
     "help-center-wysiwyg.heading-1": "ส่วนหัว 1",
     "help-center-wysiwyg.heading-2": "ส่วนหัว 2",
     "help-center-wysiwyg.heading-3": "ส่วนหัว 3",
-    "help-center-wysiwyg.image_upload_generic_error": "You can only upload images (jpeg, gif or png). Image uploads are limited to {{max_size}} MB.",
+    "help-center-wysiwyg.image_upload_generic_error": "คุณอัปโหลดได้เฉพาะรูปภาพ (jpeg, gif หรือ png) จำกัดการอัปโหลดรูปภาพที่ {{max_size}} MB",
     "help-center-wysiwyg.in-line": "อินไลน์",
     "help-center-wysiwyg.insert-code-block": "บล็อกรหัส",
     "help-center-wysiwyg.insert-image": "แทรกรูปภาพ",
@@ -25,7 +25,7 @@
     "help-center-wysiwyg.left-aligned-image": "รูปภาพชิดซ้าย",
     "help-center-wysiwyg.link": "แทรก/แก้ไขลิงก์",
     "help-center-wysiwyg.link-url": "ลิงก์ URL",
-    "help-center-wysiwyg.mentionable_user_limit_exceeded": "You have reached the limit of mentionable users",
+    "help-center-wysiwyg.mentionable_user_limit_exceeded": "ถึงขีดจำกัดของจำนวนผู้ใช้ที่กล่าวถึงแล้ว",
     "help-center-wysiwyg.numbered-list": "รายการลำดับเลข",
     "help-center-wysiwyg.paragraph": "ย่อหน้า",
     "help-center-wysiwyg.plain-text": "ข้อความธรรมดา",
@@ -41,5 +41,5 @@
     "help-center-wysiwyg.unlink": "ยกเลิกการเชื่อมโยง",
     "help-center-wysiwyg.upload-failed": "อัปโหลดไม่สำเร็จ"
   },
-  "updated_at": "2024-04-12T11:28:57Z"
+  "updated_at": "2024-04-15T18:11:14Z"
 }
