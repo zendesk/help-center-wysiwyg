@@ -1,6 +1,7 @@
 /* eslint-env node */
 const webpack = require("webpack");
 const { styles } = require("@ckeditor/ckeditor5-dev-utils");
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.js",
@@ -101,4 +102,17 @@ module.exports = {
       "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/edit-redo-stroke.svg",
     ),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+        terserOptions: {
+          format: {
+            comments: false,
+          },
+        },
+      }),
+    ],
+  },
 };
