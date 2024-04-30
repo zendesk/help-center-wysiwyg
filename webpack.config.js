@@ -1,6 +1,7 @@
 /* eslint-env node */
 const webpack = require("webpack");
 const { styles } = require("@ckeditor/ckeditor5-dev-utils");
+const CopyPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
@@ -56,6 +57,9 @@ module.exports = {
       "process.env.CKEDITOR_LICENSE_KEY_DEVELOPMENT": JSON.stringify(
         process.env.CKEDITOR_LICENSE_KEY_DEVELOPMENT,
       ),
+    }),
+    new CopyPlugin({
+      patterns: [{ from: "LICENSE.md" }],
     }),
     new webpack.NormalModuleReplacementPlugin(
       /bold\.svg/,
