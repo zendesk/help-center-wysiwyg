@@ -1,6 +1,8 @@
 /* eslint-env node */
 const webpack = require("webpack");
 const { styles } = require("@ckeditor/ckeditor5-dev-utils");
+const CopyPlugin = require("copy-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.js",
@@ -56,6 +58,9 @@ module.exports = {
         process.env.CKEDITOR_LICENSE_KEY_DEVELOPMENT,
       ),
     }),
+    new CopyPlugin({
+      patterns: [{ from: "LICENSE.md" }],
+    }),
     new webpack.NormalModuleReplacementPlugin(
       /bold\.svg/,
       "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/bold-stroke.svg",
@@ -101,4 +106,17 @@ module.exports = {
       "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/edit-redo-stroke.svg",
     ),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+        terserOptions: {
+          format: {
+            comments: false,
+          },
+        },
+      }),
+    ],
+  },
 };
