@@ -2,7 +2,7 @@
 const webpack = require("webpack");
 const { styles } = require("@ckeditor/ckeditor5-dev-utils");
 const CopyPlugin = require("copy-webpack-plugin");
-const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
