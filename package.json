@@ -46,5 +46,10 @@
     "webpack-dev-server": "5.0.2"
   },
   "packageManager": "yarn@4.1.1",
-  "files": ["dist"]
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ]
 }
