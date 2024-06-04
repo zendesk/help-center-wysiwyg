@@ -2,15 +2,7 @@
   Image upload plugin for CKEditor that uploads images via the
   Asset Upload Service (AUS)
 */
-import { Notification } from "@ckeditor/ckeditor5-ui";
 import { translate as t } from "../localization";
-
-export class AUSImageUploadError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "AUSImageUploadError";
-  }
-}
 
 class AUSImageUploadAdapter {
   constructor(loader, editor) {
@@ -30,7 +22,6 @@ class AUSImageUploadAdapter {
 
   async _upload(file) {
     const brandId = this.editor.config.get("imageUpload.brandId");
-    const notification = this.editor.plugins.get(Notification);
 
     const {
       user: { authenticity_token },
@@ -50,11 +41,11 @@ class AUSImageUploadAdapter {
     ).then((r) => r.json());
 
     if (uploadErrors) {
-      notification.showWarning("AUSImageUploadError", {
-        title: t("help-center-wysiwyg.image_upload_generic_error", {
+      throw new Error(
+        t("help-center-wysiwyg.image_upload_generic_error", {
           max_size: 2,
         }),
-      });
+      );
     }
 
     await fetch(upload.url, {
@@ -77,11 +68,11 @@ class AUSImageUploadAdapter {
     }).then((r) => r.json());
 
     if (errors) {
-      notification.showWarning("Upload errors", {
-        title: t("help-center-wysiwyg.image_upload_generic_error", {
+      throw new Error(
+        t("help-center-wysiwyg.image_upload_generic_error", {
           max_size: 2,
         }),
-      });
+      );
     }
     return { default: imageURL };
   }
