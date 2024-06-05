@@ -1,6 +1,6 @@
 {
   "name": "@zendesk/help-center-wysiwyg",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Wysiwyg editor used in Zendesk Help Center",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "dist/main.js",
