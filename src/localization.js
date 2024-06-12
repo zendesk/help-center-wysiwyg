@@ -6,6 +6,7 @@ export const ckeditorTranslationsKeyMap = {
   Link: "help-center-wysiwyg.link",
   Code: "help-center-wysiwyg.code",
   "Insert image": "help-center-wysiwyg.insert-image",
+  "Upload image from computer": "help-center-wysiwyg.insert-image",
   "Block quote": "help-center-wysiwyg.block-quote",
   "Insert code block": "help-center-wysiwyg.insert-code-block",
   "Bulleted List": "help-center-wysiwyg.bulleted-list",
