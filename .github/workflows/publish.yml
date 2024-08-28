@@ -1,0 +1,17 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-workflow:
+    uses: zendesk/gw/.github/workflows/npm-publication.yml@main
+    with:
+      node_version: "18"
+      command: "release"
+      commit: true
+    secrets:
+      NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+      NPM_TOTP_DEVICE: ${{secrets.NPM_TOTP_DEVICE}}
