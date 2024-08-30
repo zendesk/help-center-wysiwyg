@@ -8,7 +8,7 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  release:
+  release: # action to create changesets
     name: Create Changeset PR
     runs-on: ubuntu-latest
     steps:
@@ -18,10 +18,10 @@ jobs:
       - name: Setup Node.js 20
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version-file: ".nvmrc"
 
       - name: Install Dependencies
-        run: yarn
+        run: yarn --frozen-lockfile
 
       - name: Create Release Pull Request
         uses: changesets/action@v1
@@ -29,3 +29,13 @@ jobs:
           version: yarn changeset version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  call-workflow: # reusable workflow to invoke npm-publish
+    uses: zendesk/gw/.github/workflows/npm-publication.yml@main
+    with:
+      node_version: "18"
+      command: "release"
+      commit: true
+    secrets:
+      NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+      NPM_TOTP_DEVICE: ${{secrets.NPM_TOTP_DEVICE}}

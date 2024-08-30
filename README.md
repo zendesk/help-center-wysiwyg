@@ -1,4 +1,5 @@
 # help-center-wysiwyg
+
 Wysiwyg editor used in Zendesk Help Center
 
 > [!IMPORTANT]
@@ -18,14 +19,14 @@ The easiest way to initialize the editor is using `createEditor`:
 #### createEditor
 
 ```js
-import { createEditor } from "@zendesk/help-center-wysiwyg"
+import { createEditor } from "@zendesk/help-center-wysiwyg";
 
 const editor = await createEditor(target, {
   editorType: "supportRequests", // "comments" | "communityPosts" | "supportRequests"
   hasAtMentions: true,
   userRole: "admin",
   brandId: 123,
-  baseLocale: "en-us"
+  baseLocale: "en-us",
 });
 ```
 
@@ -46,7 +47,7 @@ render(
       hasAtMentions: true,
       userRole: "admin",
       brandId: 123,
-      baseLocale: "en-us"
+      baseLocale: "en-us",
     })}
   />,
   target
@@ -60,14 +61,15 @@ _Not available when the `editorType` is `"supportRequests"`._
 Handling notifications can be done by directly accessing the `Notification` plugin:
 
 ```js
-  const notifications = editor.plugins.get("Notification");
+const notifications = editor.plugins.get("Notification");
 
-  notifications.on("show", (event, data) => {
-    const message = data.message instanceof Error ? data.message.message : data.message;
-    const { type, title } = data;
-    // Log to the console or use your own notification dispatcher:
-    console.log({ type, title, message });
-  });
+notifications.on("show", (event, data) => {
+  const message =
+    data.message instanceof Error ? data.message.message : data.message;
+  const { type, title } = data;
+  // Log to the console or use your own notification dispatcher:
+  console.log({ type, title, message });
+});
 ```
 
 ## Development
@@ -83,3 +85,7 @@ You should then be able to access it in your browser:
 ```
 open http://localhost:8080/
 ```
+
+## Making changes
+
+When you're done with your changes, we use [changesets](https://github.com/changesets/changesets) to manage release notes. Please run `changeset` to autogenerate notes to be appended to your pull request.
