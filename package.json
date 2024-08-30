@@ -1,7 +1,6 @@
 {
   "name": "@zendesk/help-center-wysiwyg",
-  "private": false,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Wysiwyg editor used in Zendesk Help Center",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "dist/main.js",
@@ -48,7 +47,7 @@
     "webpack-cli": "5.1.4",
     "webpack-dev-server": "5.0.2"
   },
-  "packageManager": "yarn@4.1.1",
+  "packageManager": "yarn@4.4.1",
   "publishConfig": {
     "access": "public"
   },
