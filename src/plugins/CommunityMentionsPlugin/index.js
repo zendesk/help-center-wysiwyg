@@ -10,12 +10,13 @@ const MAX_MENTIONS_COUNT = 15;
 
 const sendQuery = async (query) => {
   const response = await fetch(
-    `/hc/api/internal/communities/mentions.json?query=${query}`,
+    `/hc/api/internal/communities/mentions.json?query=${query}`
   );
   return response.ok ? response.json() : Promise.reject(response);
 };
 
 const getMentionsCount = () => {
+  // add a random comment to test changesets
   const data = _editor.getData();
   const doc = new DOMParser().parseFromString(data, "text/html");
   return doc.body.querySelectorAll("x-zendesk-user").length;
@@ -65,7 +66,7 @@ function CommunityMentionsPlugin(editor) {
         {
           priority: 20, // Make mention attribute to be wrapped by other attribute elements.
           id: modelAttributeValue.uid, // Prevent merging mentions together.
-        },
+        }
       );
     },
     converterPriority: "high",
@@ -79,7 +80,7 @@ function CommunityMentionsPlugin(editor) {
     debounce(() => {
       const count = getMentionsCount();
       mention.set("count", count);
-    }, 600),
+    }, 600)
   );
 
   mention.on("change:count", (evt, propertyName, newValue, oldValue) => {
@@ -125,7 +126,7 @@ CommunityMentionsPlugin.config = {
         itemElement.classList.add("hc-mentions__item");
         itemElement.setAttribute(
           "data-test-id",
-          `at-mentions-suggestion-${item.userId}`,
+          `at-mentions-suggestion-${item.userId}`
         );
 
         const nameElement = document.createElement("span");
