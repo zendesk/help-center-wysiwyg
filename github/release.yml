@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - melreal/experiment-changesets
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release: # action to create changesets
+    name: Create Changeset PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Create Release Pull Request
+        uses: changesets/action@v1
+        with:
+          version: yarn changeset version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
