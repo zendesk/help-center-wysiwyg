@@ -30,7 +30,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  call-workflow: # reusable workflow to invoke npm-publish
+  npm-publish: # action to publish npm package
     uses: zendesk/gw/.github/workflows/npm-publication.yml@main
     with:
       node_version: "18"
