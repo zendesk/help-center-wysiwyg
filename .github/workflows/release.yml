@@ -25,17 +25,13 @@ jobs:
 
       - name: Create Release Pull Request
         uses: changesets/action@v1
-        with:
-          version: yarn changeset version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  npm-publish: # action to publish npm package
-    uses: zendesk/gw/.github/workflows/npm-publication.yml@main
-    with:
-      node_version: "18"
-      command: "release"
-      commit: true
-    secrets:
-      NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-      NPM_TOTP_DEVICE: ${{secrets.NPM_TOTP_DEVICE}}
+      - name: Publish to npm
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        uses: zendesk/gw/.github/workflows/npm-publication.yml@main
+        with:
+          node_version: "18"
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_TOTP_DEVICE: ${{secrets.NPM_TOTP_DEVICE}}
