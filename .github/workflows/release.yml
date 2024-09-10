@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - melreal/automate-deployments
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
