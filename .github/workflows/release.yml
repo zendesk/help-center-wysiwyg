@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release: # action to create changesets
+    name: Create Changeset PR
+    runs-on: ubuntu-latest
+    outputs:
+      changeset: ${{ steps.changeset.outputs.hasChangesets }}
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Create Release Pull Request
+        uses: changesets/action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  npm-publish:
+    uses: zendesk/gw/.github/workflows/npm-publication.yml@main
+    needs: release
+    if: ${{ needs.release.outputs.changeset == 'false' }}
+    with:
+      node_version: "20"
+    secrets:
+      NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+      NPM_TOTP_DEVICE: ${{secrets.NPM_TOTP_DEVICE}}

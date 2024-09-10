@@ -1,13 +1,14 @@
 {
   "name": "@zendesk/help-center-wysiwyg",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Wysiwyg editor used in Zendesk Help Center",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "dist/main.js",
   "scripts": {
     "start": "webpack serve --mode=development",
     "build": "webpack --mode=production",
-    "lint": "eslint . --max-warnings=0"
+    "lint": "eslint . --max-warnings=0",
+    "changeset": "changeset"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-basic-styles": "41.3.0",
@@ -30,6 +31,7 @@
     "lodash.debounce": "4.0.8"
   },
   "devDependencies": {
+    "@changesets/cli": "2.27.7",
     "@ckeditor/ckeditor5-dev-utils": "37.0.1",
     "copy-webpack-plugin": "12.0.2",
     "css-loader": "6.10.0",
@@ -45,7 +47,7 @@
     "webpack-cli": "5.1.4",
     "webpack-dev-server": "5.0.2"
   },
-  "packageManager": "yarn@4.1.1",
+  "packageManager": "yarn@4.4.1",
   "publishConfig": {
     "access": "public"
   },
