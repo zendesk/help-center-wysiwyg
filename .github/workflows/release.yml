@@ -11,6 +11,9 @@ jobs:
   release: # action to create changesets
     name: Create Changeset PR
     runs-on: ubuntu-latest
+    outputs:
+      changeset: ${{ steps.changeset.outputs.hasChangesets }}
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -28,10 +31,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish to npm
-        if: steps.changesets.outputs.hasChangesets == 'false'
-        uses: zendesk/gw/.github/workflows/npm-publication.yml@main
-        with:
-          node_version: "18"
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-          NPM_TOTP_DEVICE: ${{secrets.NPM_TOTP_DEVICE}}
+  npm-publish:
+    uses: zendesk/gw/.github/workflows/npm-publication.yml@main
+    needs: release
+    if: ${{ needs.release.outputs.changeset == 'false' }}
+    with:
+      node_version: "20"
+    secrets:
+      NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+      NPM_TOTP_DEVICE: ${{secrets.NPM_TOTP_DEVICE}}
