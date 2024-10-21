@@ -82,6 +82,11 @@
   overflow: auto;
   white-space: pre;
 }
+
+.ck.ck-balloon-panel {
+  z-index: var(--ck-z-modal);
+}
+
 /*
   Prevent issue where some Zendesk Garden icons are completely filled with currentColor,
   making the icon itself invisible.
