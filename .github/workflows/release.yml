@@ -31,6 +31,8 @@ jobs:
         uses: changesets/action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CKEDITOR_LICENSE_KEY_PRODUCTION: ${{ secrets.CKEDITOR_LICENSE_KEY_PRODUCTION}}
+          CKEDITOR_LICENSE_KEY_DEVELOPMENT: ${{ secrets.CKEDITOR_LICENSE_KEY_DEVELOPMENT}}
 
   npm-publish:
     uses: zendesk/gw/.github/workflows/npm-publication.yml@main
@@ -41,3 +43,5 @@ jobs:
     secrets:
       NPM_TOKEN: ${{secrets.NPM_TOKEN}}
       NPM_TOTP_DEVICE: ${{secrets.NPM_TOTP_DEVICE}}
+      CKEDITOR_LICENSE_KEY_PRODUCTION: ${{ secrets.CKEDITOR_LICENSE_KEY_PRODUCTION}}
+      CKEDITOR_LICENSE_KEY_DEVELOPMENT: ${{ secrets.CKEDITOR_LICENSE_KEY_DEVELOPMENT}}
