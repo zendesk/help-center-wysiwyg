@@ -42,6 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: release
     if: ${{ needs.release.outputs.changeset == 'false' }}
+    environment: npm-publish
 
     steps:
       - uses: actions/checkout@v4
