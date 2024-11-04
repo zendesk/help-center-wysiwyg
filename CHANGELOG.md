@@ -1,5 +1,11 @@
 # @zendesk/help-center-wysiwyg
 
+## 0.0.11
+
+### Patch Changes
+
+- 1c682c8: Add missing `environment` configuration to the npm-publish workflow
+
 ## 0.0.10
 
 ### Patch Changes
