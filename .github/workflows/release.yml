@@ -7,6 +7,10 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+env:
+  CKEDITOR_LICENSE_KEY_PRODUCTION: ${{ secrets.CKEDITOR_LICENSE_KEY_PRODUCTION}}
+  CKEDITOR_LICENSE_KEY_DEVELOPMENT: ${{ secrets.CKEDITOR_LICENSE_KEY_DEVELOPMENT}}
+
 jobs:
   release: # action to create changesets
     name: Create Changeset PR
