@@ -1,5 +1,11 @@
 # @zendesk/help-center-wysiwyg
 
+## 0.0.9
+
+### Patch Changes
+
+- 0eaa04c: Include CKEditor licenses in publishing
+
 ## 0.0.8
 
 ### Patch Changes
