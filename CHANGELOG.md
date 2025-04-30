@@ -1,5 +1,11 @@
 # @zendesk/help-center-wysiwyg
 
+## 0.1.0
+
+### Minor Changes
+
+- 29a4870: Update devDependencies to latest for CVE patching. Enforces semver resolution above 7.5.2 due to issues with breaking changes in ckeditor 5 devutils related dependency.
+
 ## 0.0.11
 
 ### Patch Changes
