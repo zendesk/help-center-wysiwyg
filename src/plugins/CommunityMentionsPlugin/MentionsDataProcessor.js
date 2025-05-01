@@ -21,7 +21,7 @@ class MentionsDataProcessor {
           child._attrs = new Map();
           child._attrs.set(
             "data-user-name",
-            child.getAttribute("data-mention"),
+            child.getAttribute("data-user-name"),
           );
         } else if (child.getChildren) {
           findAndConvertMentionElements(child.getChildren());
