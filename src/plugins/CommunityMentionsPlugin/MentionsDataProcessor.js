@@ -14,15 +14,13 @@ class MentionsDataProcessor {
     const findAndConvertMentionElements = (children) => {
       for (const child of children) {
         if (child.name === "span" && child.hasAttribute("data-mention")) {
+          const userName = child.getAttribute('data-user-name');
           child.name = "x-zendesk-user";
           child.getChild(0)._textData = child.getAttribute("data-user-id");
 
           child._classes = new Set();
           child._attrs = new Map();
-          child._attrs.set(
-            "data-user-name",
-            child.getAttribute("data-mention"),
-          );
+          child._attrs.set("data-user-name", userName);
         } else if (child.getChildren) {
           findAndConvertMentionElements(child.getChildren());
         }
