@@ -1,8 +1,8 @@
 import debounce from "lodash.debounce";
 import { translate as t } from "../../localization";
 import MentionsDataProcessor from "./MentionsDataProcessor";
-import { Mention } from "@ckeditor/ckeditor5-mention";
-import { Notification } from "@ckeditor/ckeditor5-ui";
+import { Mention } from "ckeditor5";
+import { Notification } from "ckeditor5";
 
 import "./styles.css";
 
