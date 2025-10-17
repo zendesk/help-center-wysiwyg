@@ -92,7 +92,8 @@ jobs:
           yarn install --immutable
           yarn build
           totp=$(oathtool --base32 --totp "${NPM_TOTP_DEVICE}")
-          yarn npm publish --otp $totp
+          yarn npm publish --otp $totp --tolerate-republish
+          yarn changeset tag
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
