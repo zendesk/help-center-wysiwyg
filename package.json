@@ -7,7 +7,7 @@
   "scripts": {
     "start": "webpack serve --mode=development",
     "build": "webpack --mode=production",
-    "lint": "eslint . --max-warnings=0",
+    "lint": "eslint src --max-warnings=0",
     "changeset": "changeset"
   },
   "dependencies": {
@@ -31,7 +31,7 @@
     "lodash.debounce": "4.0.8"
   },
   "devDependencies": {
-    "@changesets/cli": "2.29.2",
+    "@changesets/cli": "2.29.7",
     "@ckeditor/ckeditor5-dev-utils": "37.0.1",
     "copy-webpack-plugin": "12.0.2",
     "css-loader": "6.10.0",

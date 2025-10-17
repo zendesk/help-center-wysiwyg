@@ -14,7 +14,7 @@ class MentionsDataProcessor {
     const findAndConvertMentionElements = (children) => {
       for (const child of children) {
         if (child.name === "span" && child.hasAttribute("data-mention")) {
-          const userName = child.getAttribute('data-user-name');
+          const userName = child.getAttribute("data-user-name");
           child.name = "x-zendesk-user";
           child.getChild(0)._textData = child.getAttribute("data-user-id");
 
