@@ -26,7 +26,7 @@ function getAttributesObject(sourceElement, attributeNames) {
   plugin brings them back. The label is set on the main element, since it is the first one read 
   by screen readers, while other attributes are set on the editable element.
 */
-/** @type {import("@ckeditor/ckeditor5-core").PluginConstructor} */
+/** @type {import("ckeditor5").PluginConstructor} */
 export default function AriaAttributesPlugin(editor) {
   /** @type HTMLTextAreaElement | undefined */
   const sourceElement = editor.sourceElement;

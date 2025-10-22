@@ -1,41 +1,44 @@
 // Native plugins
-import { ClassicEditor } from "@ckeditor/ckeditor5-editor-classic";
-import { BlockQuote } from "@ckeditor/ckeditor5-block-quote";
-import { Bold } from "@ckeditor/ckeditor5-basic-styles";
-import { Code } from "@ckeditor/ckeditor5-basic-styles";
-import { CodeBlock } from "@ckeditor/ckeditor5-code-block";
-import { Essentials } from "@ckeditor/ckeditor5-essentials";
-import { Heading } from "@ckeditor/ckeditor5-heading";
-import { Image } from "@ckeditor/ckeditor5-image";
-import { ImageCaption } from "@ckeditor/ckeditor5-image";
-import { ImageResize } from "@ckeditor/ckeditor5-image";
-import { ImageToolbar } from "@ckeditor/ckeditor5-image";
-import { ImageUpload } from "@ckeditor/ckeditor5-image";
-import { ImageStyle } from "@ckeditor/ckeditor5-image";
-import { Italic } from "@ckeditor/ckeditor5-basic-styles";
-import { Link } from "@ckeditor/ckeditor5-link";
-import { List } from "@ckeditor/ckeditor5-list";
-import { Paragraph } from "@ckeditor/ckeditor5-paragraph";
-import { PasteFromOffice } from "@ckeditor/ckeditor5-paste-from-office";
-import { TextTransformation } from "@ckeditor/ckeditor5-typing";
-import { Mention } from "@ckeditor/ckeditor5-mention";
-import { Notification } from "@ckeditor/ckeditor5-ui";
+import {
+  BlockQuote,
+  Bold,
+  ClassicEditor,
+  Code,
+  CodeBlock,
+  Essentials,
+  Heading,
+  Image,
+  ImageCaption,
+  ImageResize,
+  ImageStyle,
+  ImageToolbar,
+  ImageUpload,
+  Italic,
+  Link,
+  List,
+  Mention,
+  Notification,
+  Paragraph,
+  PasteFromOffice,
+  TextTransformation,
+} from "ckeditor5";
 
 // Custom plugins
-import CommunityMentionsPlugin from "./plugins/CommunityMentionsPlugin";
-import AUSImageUploadPlugin from "./plugins/AUSImageUploadPlugin";
-import XHRImageUploadPlugin from "./plugins/XHRImageUploadPlugin";
+import AriaAttributesPlugin from "./plugins/AriaAttributesPlugin";
 import AttachInlineImagesPlugin from "./plugins/AttachInlineImagesPlugin";
-import MarkExternalImagesPlugin from "./plugins/MarkExternalImagesPlugin";
+import AUSImageUploadPlugin from "./plugins/AUSImageUploadPlugin";
+import CommunityMentionsPlugin from "./plugins/CommunityMentionsPlugin";
 import FormSubmissionPlugin from "./plugins/FormSubmissionPlugin";
 import HiddenFormFields from "./plugins/HiddenFormFieldsPlugin";
+import MarkExternalImagesPlugin from "./plugins/MarkExternalImagesPlugin";
+import SyncTextareaPlugin from "./plugins/SyncTextareaPlugin";
 import TestIdPlugin from "./plugins/TestIdPlugin";
 import ToolbarPlugin from "./plugins/ToolbarPlugin";
-import AriaAttributesPlugin from "./plugins/AriaAttributesPlugin";
-import SyncTextareaPlugin from "./plugins/SyncTextareaPlugin";
+import XHRImageUploadPlugin from "./plugins/XHRImageUploadPlugin";
 
 import { localize } from "./localization";
 
+import "ckeditor5/ckeditor5.css";
 import "./styles.css"; // Should be imported last to take precedence over other editor styles imported above
 
 class Editor extends ClassicEditor {}
@@ -129,7 +132,7 @@ export const getEditorConfig = ({
     licenseKey:
       process.env.NODE_ENV === "production"
         ? process.env.CKEDITOR_LICENSE_KEY_PRODUCTION
-        : process.env.CKEDITOR_LICENSE_KEY_DEVELOPMENT,
+        : process.env.CKEDITOR_LICENSE_KEY_DEVELOPMENT || "GPL",
     /* eslint-enable no-undef */
     language: baseLocale,
   };
