@@ -40,7 +40,7 @@
 .ck.ck-content.ck-editor__editable.ck-editor__editable_inline.ck-focused {
   box-shadow:
     0 0 0 1px #fff,
-    0 0 0 3px var(--zd-color-grey-800);
+    0 0 0 3px #2f3941;
   outline: 2px solid transparent;
   outline-offset: 1px;
 }
@@ -102,7 +102,7 @@ textarea[aria-invalid="true"] + .ck.ck-editor .ck-sticky-panel__content,
 textarea[aria-invalid="true"]
   + .ck.ck-editor
   .ck-editor__editable:not(.ck-focused) {
-  border-color: var(--zd-color-red-600) !important;
+  border-color: #cc3340 !important;
 }
 
 textarea[aria-invalid="true"] + .ck.ck-editor .ck-editor__editable.ck-focused {
@@ -110,6 +110,125 @@ textarea[aria-invalid="true"] + .ck.ck-editor .ck-editor__editable.ck-focused {
   outline-offset: 1px;
   box-shadow:
     rgb(255, 255, 255) 0px 0px 0px 1px,
-    var(--zd-color-red-600) 0px 0px 0px 3px;
-  border-color: var(--zd-color-red-600);
+    #cc3340 0px 0px 0px 3px;
+  border-color: #cc3340;
+}
+
+/* 
+
+Style toggle buttons to resemble Garden Toggle Button component styles, 
+but only if they aren't inside of a menu
+
+*/
+
+.ck.ck-button:active,
+.ck.ck-button:focus,
+a.ck.ck-button:active,
+a.ck.ck-button:focus {
+  box-shadow: none;
+}
+
+.ck.ck-button:focus-visible,
+a.ck.ck-button:focus-visible {
+  outline: transparent solid 2px;
+  outline-offset: 1px;
+  box-shadow:
+    #fff 0 0 0 1px,
+    #1f73b7 0 0 0 3px;
+}
+
+.ck.ck-button:not([role="menuitemradio"]) {
+  transition:
+    border-color 0.25s ease-in-out,
+    box-shadow 0.1s ease-in-out,
+    background-color 0.25s ease-in-out,
+    color 0.25s ease-in-out,
+    outline-color 0.1s ease-in-out,
+    z-index 0.25s ease-in-out;
+}
+
+.ck.ck-button.ck-off:not([role="menuitemradio"]):not(.ck-disabled):hover,
+.ck.ck-splitbutton.ck-splitbutton_open
+  > .ck-button:not(.ck-on):not(.ck-disabled):not(:hover),
+.ck.ck-splitbutton:hover
+  > .ck-button:not(.ck-on):not(.ck-disabled):not(:hover) {
+  background: color-mix(in oklab, #1f73b7 8%, #fff);
+  color: #13456d;
+}
+
+.ck.ck-button.ck-off:not([role="menuitemradio"]):not(.ck-disabled):hover {
+  border-color: #13456d;
+}
+
+.ck.ck-splitbutton.ck-splitbutton_open
+  > .ck-splitbutton__action:not(.ck-on):not(.ck-disabled):not(:hover),
+.ck.ck-splitbutton:hover
+  > .ck-splitbutton__action:not(.ck-on):not(.ck-disabled):not(:hover) {
+  border-color: #13456d;
+}
+
+.ck.ck-splitbutton.ck-splitbutton_open
+  > .ck-splitbutton__arrow:not(.ck-on):not(.ck-disabled):not(:hover),
+.ck.ck-splitbutton:hover
+  > .ck-splitbutton__arrow:not(.ck-on):not(.ck-disabled):not(:hover) {
+  border-color: #13456d;
+}
+
+.ck.ck-button.ck-on:not([role="menuitemradio"]):not(.ck-disabled),
+.ck.ck-button.ck-on:not([role="menuitemradio"]):not(.ck-disabled):active,
+.ck.ck-button.ck-on:not([role="menuitemradio"]):not(.ck-disabled):hover {
+  background: color-mix(in oklab, #1f73b7 16%, #fff);
+  border-color: #0f3655;
+  color: #0f3655;
+}
+
+.ck.ck-button.ck-on.ck-disabled {
+  background: color-mix(in oklab, #5c6970 8%, #fff);
+  border-color: transparent;
+  color: #848f99;
+}
+
+.ck.ck-splitbutton > .ck-splitbutton__action,
+.ck.ck-splitbutton > .ck-splitbutton__arrow {
+  transition:
+    border-color 0.1s ease-in-out,
+    background-color 0.1s ease-in-out,
+    box-shadow 0.1s ease-in-out,
+    color 0.1s ease-in-out,
+    margin-left 0.1s ease-in-out,
+    outline-color 0.1s ease-in-out,
+    z-index 0.25s ease-in-out;
+}
+
+.ck.ck-splitbutton > .ck-splitbutton__arrow {
+  position: relative;
+}
+
+[dir="ltr"] .ck.ck-splitbutton > .ck-splitbutton__arrow {
+  left: -1px;
+}
+
+[dir="rtl"] .ck.ck-splitbutton > .ck-splitbutton__arrow {
+  right: -1px;
+}
+
+.ck.ck-splitbutton > .ck-splitbutton__arrow:not(:focus) {
+  border-color: transparent;
+  border-width: 1px;
+}
+
+.ck-rounded-corners .ck.ck-button.ck-splitbutton__action {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.ck-rounded-corners .ck.ck-button.ck-splitbutton__arrow {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+
+.ck.ck-splitbutton.ck-splitbutton_open
+  > .ck-splitbutton__arrow:not(.ck-disabled):after,
+.ck.ck-splitbutton:hover > .ck-splitbutton__arrow:not(.ck-disabled):after {
+  display: none;
 }

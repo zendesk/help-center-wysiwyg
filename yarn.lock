@@ -1635,7 +1635,7 @@ __metadata:
     "@ckeditor/ckeditor5-paste-from-office": "npm:41.3.0"
     "@ckeditor/ckeditor5-theme-lark": "npm:41.3.0"
     "@ckeditor/ckeditor5-typing": "npm:41.3.0"
-    "@zendeskgarden/css-variables": "npm:6.4.6"
+    "@zendeskgarden/css-variables": "npm:7.0.0"
     "@zendeskgarden/svg-icons": "npm:7.0.0"
     copy-webpack-plugin: "npm:12.0.2"
     css-loader: "npm:6.10.0"
@@ -1654,10 +1654,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zendeskgarden/css-variables@npm:6.4.6":
-  version: 6.4.6
-  resolution: "@zendeskgarden/css-variables@npm:6.4.6"
-  checksum: 10c0/cb5ab84e1d4a102661fe12523d7c6aa611af6b80015402273fac7696c57d74870c5e7ee50c975d8dbf97469902d089590358ddb0042dc826d395c399c9dc46d8
+"@zendeskgarden/css-variables@npm:7.0.0":
+  version: 7.0.0
+  resolution: "@zendeskgarden/css-variables@npm:7.0.0"
+  checksum: 10c0/6e11a6dd58a4aee9c9ab855b43551cde2c229bfef0d55ce62b34ebb0ae31b46895cd9ca58f1b9d6295a0ee4662d7a429584d9cf3714c07106bfd03ccddb7708f
   languageName: node
   linkType: hard
 
