@@ -1,20 +1,79 @@
 @import "@zendeskgarden/css-variables";
 
 :root {
-  /* colors */
-  --ck-color-text: var(--zd-color-grey-800);
+  /* garden color tints */
+  --zd-color-grey-700-8-white-92: color-mix(
+    in oklab,
+    var(--zd-color-grey-700) 8%,
+    #fff
+  );
+  --zd-color-grey-700-16-white-84: color-mix(
+    in oklab,
+    var(--zd-color-grey-700) 16%,
+    #fff
+  );
 
-  --ck-color-button-on-background: hsl(0, 0%, 90%);
-  --ck-color-button-on-color: hsl(207, 71%, 42%);
+  /* foundational colors */
+  --ck-color-text: var(--zd-color-grey-900);
+  --ck-color-base-border: #d8dcde;
+  --ck-color-focus-border: var(--zd-color-grey-700);
 
-  --ck-color-base-border: var(--zd-color-grey-300);
-  --ck-color-focus-border: var(--zd-color-grey-800);
+  /* focus style/color overrides (in favor of custom :focus-visible styles) */
+  --ck-focus-outer-shadow: none;
+  --ck-focus-disabled-outer-shadow: none;
 
-  --ck-color-list-button-on-background: var(--ck-color-button-on-background);
+  /* default button colors */
+  --ck-color-button-default-hover-background: var(
+    --zd-color-grey-700-8-white-92
+  );
+  --ck-color-button-default-active-background: var(
+    --ck-color-button-default-hover-background
+  );
+  --ck-color-button-default-color: var(--zd-color-grey-700);
+
+  /* toggle button colors - interactive state, off */
+  --ck-color-button-off-hover-color: var(--zd-color-grey-800);
+  --ck-color-button-off-hover-border: var(--ck-color-button-off-hover-color);
+
+  /* toggle button colors - interactive state, on */
+  --ck-color-button-on-background: var(--zd-color-grey-700-16-white-84);
+  --ck-color-button-on-color: var(--zd-color-grey-900);
+  --ck-color-button-on-border: var(--ck-color-button-on-color);
+  --ck-color-button-on-hover-background: var(--ck-color-button-on-background);
+  --ck-color-button-on-hover-border: var(--ck-color-button-on-color);
+  --ck-color-button-on-active-background: var(--ck-color-button-on-background);
+
+  /* toggle button colors - disabled state */
+  --ck-color-button-on-disabled-background: var(--zd-color-grey-700-8-white-92);
+  --ck-color-button-on-disabled-border: transparent;
+  --ck-color-button-on-disabled-color: var(--zd-color-grey-600);
+  --ck-color-button-on-disabled-hover-background: var(
+    --ck-color-button-on-disabled-background
+  );
+  --ck-color-button-on-disabled-active-background: var(
+    --ck-color-button-on-disabled-background
+  );
+
+  /* split button colors */
+  --ck-color-split-button-hover-background: var(
+    --ck-color-button-default-hover-background
+  );
+  --ck-color-split-button-hover-border: var(--ck-color-button-on-color);
+
+  /* list button colors */
+  --ck-color-list-button-on-background: var(
+    --ck-color-button-default-background
+  );
   --ck-color-list-button-on-text: var(--ck-color-button-on-color);
-  --ck-color-list-button-hover-background: hsl(0, 0%, 90%);
+  --ck-color-list-button-hover-background: linear-gradient(
+    90deg,
+    var(--ck-color-focus-border) 0%,
+    var(--ck-color-focus-border) 3px,
+    var(--ck-color-button-default-hover-background) 3px,
+    var(--ck-color-button-default-hover-background) 100%
+  );
   --ck-color-list-button-on-background-focus: var(
-    --ck-color-button-on-background
+    --ck-color-list-button-hover-background
   );
 
   /* at-mentions */
@@ -22,7 +81,7 @@
   --ck-color-mention-text: rgb(9, 57, 96);
 
   /* effects */
-  --ck-border-radius: 4px;
+  --ck-border-radius: var(--zd-spacing-xxs);
   --ck-drop-shadow: 0 20px 30px 0 rgb(23 73 77 / 15%);
 
   --ck-z-modal: 2147483649;
@@ -34,13 +93,18 @@
   cursor: pointer;
 }
 
+.ck.ck-button:focus,
+a.ck.ck-button:focus {
+  border-color: transparent;
+}
+
 .ck.ck-button:focus-visible,
 .ck.ck-toolbar:focus-visible,
 .ck.ck-content.ck-editor__editable.ck-focused,
 .ck.ck-content.ck-editor__editable.ck-editor__editable_inline.ck-focused {
   box-shadow:
     0 0 0 1px #fff,
-    0 0 0 3px var(--zd-color-grey-800);
+    0 0 0 3px #2f3941;
   outline: 2px solid transparent;
   outline-offset: 1px;
 }
@@ -102,7 +166,7 @@ textarea[aria-invalid="true"] + .ck.ck-editor .ck-sticky-panel__content,
 textarea[aria-invalid="true"]
   + .ck.ck-editor
   .ck-editor__editable:not(.ck-focused) {
-  border-color: var(--zd-color-red-600) !important;
+  border-color: #cc3340 !important;
 }
 
 textarea[aria-invalid="true"] + .ck.ck-editor .ck-editor__editable.ck-focused {
@@ -110,6 +174,162 @@ textarea[aria-invalid="true"] + .ck.ck-editor .ck-editor__editable.ck-focused {
   outline-offset: 1px;
   box-shadow:
     rgb(255, 255, 255) 0px 0px 0px 1px,
-    var(--zd-color-red-600) 0px 0px 0px 3px;
-  border-color: var(--zd-color-red-600);
+    #cc3340 0px 0px 0px 3px;
+  border-color: #cc3340;
+}
+
+/*
+  Default buttons
+ */
+
+/* Give the default buttons the same CSS transitions as the Garden Button —but only if they're standalone */
+.ck.ck-button:not([role="menuitemradio"]),
+a.ck.ck-button:not([role="menuitemradio"]) {
+  transition:
+    background-color 0.25s ease-in-out,
+    border-color 0.25s ease-in-out,
+    box-shadow 0.1s ease-in-out,
+    color 0.25s ease-in-out,
+    outline-color 0.1s ease-in-out;
+}
+
+/* Give the default buttons the same default color shade as the GardenButton —but only if they're standalone */
+.ck.ck-button:not(.ck-on):not([role="menuitemradio"]),
+a.ck.ck-button:not(.ck-on):not([role="menuitemradio"]) {
+  color: var(--ck-color-button-default-color);
+}
+
+/*
+ * Disabled button overrides
+ */
+
+/* Revert disabled button's cursor to regular ol' mouse cursor */
+.ck.ck-button.ck-disabled,
+a.ck.ck-button.ck-disabled {
+  cursor: default;
+}
+
+/*
+ * Toggle button overrides
+ */
+
+/* Allow the "on/off" button's border color to change in hover state, when off */
+.ck.ck-button.ck-off:not([role="menuitemradio"]):not(.ck-disabled):hover,
+a.ck.ck-button.ck-off:not([role="menuitemradio"]):not(.ck-disabled):hover {
+  border-color: var(--ck-color-button-off-hover-border);
+  color: var(--ck-color-button-off-hover-color);
+}
+
+/* Allow the "on/off" button's border color to change in default state, when on */
+.ck.ck-button.ck-on:not([role="menuitemradio"]),
+a.ck.ck-button.ck-on:not([role="menuitemradio"]) {
+  border-color: var(--ck-color-button-on-border);
+}
+
+/* Allow the "on/off" button's border color to change in disabled state, when on */
+.ck.ck-button.ck-on.ck-disabled:not([role="menuitemradio"]),
+a.ck.ck-button.ck-on.ck-disabled:not([role="menuitemradio"]),
+.ck.ck-button.ck-on.ck-disabled:not([role="menuitemradio"]):disabled,
+a.ck.ck-button.ck-on.ck-disabled:not([role="menuitemradio"]):disabled {
+  border-color: var(--ck-color-button-on-disabled-border);
+}
+
+/*
+ * Split button overrides
+ */
+
+/* Give the split buttons the same CSS transitions as the Garden Button */
+.ck.ck-splitbutton {
+  transition:
+    background-color 0.25s ease-in-out,
+    border-color 0.25s ease-in-out,
+    box-shadow 0.1s ease-in-out,
+    color 0.25s ease-in-out,
+    outline-color 0.1s ease-in-out;
+}
+
+/* Make sure split button segments maintain default background color until segment itself is hovered, like Garden Split Button */
+.ck.ck-splitbutton.ck-splitbutton_open
+  > .ck-button:not(.ck-on):not(.ck-disabled):not(:hover),
+.ck.ck-splitbutton:hover
+  > .ck-button:not(.ck-on):not(.ck-disabled):not(:hover) {
+  background-color: var(--ck-color-button-default-background);
+}
+
+/* Change the split buttons' border color on hover */
+.ck.ck-splitbutton.ck-splitbutton_open
+  > .ck-splitbutton__action:not(.ck-on):not(.ck-disabled):not(:hover),
+.ck.ck-splitbutton:hover
+  > .ck-splitbutton__action:not(.ck-on):not(.ck-disabled):not(:hover),
+.ck.ck-splitbutton.ck-splitbutton_open
+  > .ck-splitbutton__arrow:not(.ck-on):not(.ck-disabled):not(:hover),
+.ck.ck-splitbutton:hover
+  > .ck-splitbutton__arrow:not(.ck-on):not(.ck-disabled):not(:hover) {
+  border-color: var(--ck-color-button-on-hover-border);
+}
+
+/* Hide extra line separating segments */
+.ck.ck-splitbutton.ck-splitbutton_open
+  > .ck-splitbutton__arrow:not(.ck-disabled):after,
+.ck.ck-splitbutton:hover > .ck-splitbutton__arrow:not(.ck-disabled):after {
+  display: none;
+}
+
+/* Allow the arrow button to be scooched */
+.ck.ck-splitbutton > .ck-splitbutton__arrow {
+  position: relative;
+}
+
+/* Scooch arrow button to the left, in LTR languages */
+[dir="ltr"] .ck.ck-splitbutton > .ck-splitbutton__arrow {
+  left: -1px;
+}
+
+/* Scooch arrow button to the right, in RTL languages */
+[dir="rtl"] .ck.ck-splitbutton > .ck-splitbutton__arrow {
+  right: -1px;
+}
+
+/* Make sure arrow button always has 1px border */
+.ck.ck-splitbutton > .ck-splitbutton__arrow:not(:focus) {
+  border-width: 1px;
+}
+
+/* Ensure action button borders are always flat, on the ending edge (right side, in RTL languages) */
+.ck-rounded-corners .ck.ck-button.ck-splitbutton__action {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+/* Ensure arrow button borders are always flat, on the starting edge (left side, in LTR languages) */
+.ck-rounded-corners .ck.ck-button.ck-splitbutton__arrow {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+
+/* Ensure arrow button has visible border, when action button is pressed */
+.ck-rounded-corners
+  .ck.ck-button.ck-splitbutton__action[aria-pressed="true"]
+  ~ .ck.ck-button.ck-splitbutton__arrow {
+  border-color: var(--ck-color-button-on-hover-border);
+}
+
+/*
+ * List button overrides
+ */
+
+/* Remove default button border from buttons that live inside of menu list items */
+.ck.ck-list__item > .ck-button {
+  border: none;
+}
+
+/* Change it so list items behave like Garden Menu list items, on focus visible */
+.ck.ck-list__item > .ck.ck-button:focus-visible {
+  background: var(--ck-color-list-button-hover-background);
+  box-shadow: none;
+}
+
+/* Change it so list items behave like Garden Menu list items, in the active state */
+.ck.ck-list__item > .ck.ck-button:not(.ck-disabled):active {
+  background: var(--ck-color-list-button-hover-background);
 }
