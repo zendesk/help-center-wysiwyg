@@ -43,10 +43,12 @@ export default function AriaAttributesPlugin(editor) {
       attributes: mainViewAttributes,
     });
 
-    // Sets aria-describedby, aria-invalid to the editable element
+    // Sets aria-describedby, aria-invalid, aria-label, aria-labelledby to the editable element
     const editableViewAttributes = getAttributesObject(sourceElement, [
       "aria-describedby",
       "aria-invalid",
+      "aria-label",
+      "aria-labelledby",
     ]);
 
     // Sets aria-required to the editable element if required is set on the textarea
