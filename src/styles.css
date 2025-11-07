@@ -15,7 +15,7 @@
 
   /* foundational colors */
   --ck-color-text: var(--zd-color-grey-900);
-  --ck-color-base-border: #d8dcde;
+  --ck-color-base-border: var(--zd-color-grey-600);
   --ck-color-focus-border: var(--zd-color-grey-700);
 
   /* focus style/color overrides (in favor of custom :focus-visible styles) */
@@ -96,6 +96,11 @@
 .ck.ck-button:focus,
 a.ck.ck-button:focus {
   border-color: transparent;
+}
+
+/* Toolbar separators can keep on being very light because they're "non-essential" graphics, according to WCAG */
+.ck.ck-toolbar .ck.ck-toolbar__separator {
+  background: var(--zd-color-grey-300);
 }
 
 .ck.ck-button:focus-visible,
