@@ -7,8 +7,9 @@
   </head>
   <body>
     <form>
-      <label for="editor">Editor</label>
-      <textarea id="editor" name="editor"></textarea>
+      <label id="editor-label">Field label</label><br />
+      <small id="editor-hint">Field hint</small>
+      <textarea id="editor" name="editor" aria-labelledby="editor-label" aria-describedby="editor-hint"></textarea>
     </form>
     <script type="module">
       const target = document.getElementById('editor');
