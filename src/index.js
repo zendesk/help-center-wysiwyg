@@ -216,7 +216,25 @@ export const getEditorConfig = ({
 
 export const createEditor = async (target, options) => {
   await localize(options.baseLocale);
-  const editor = await Editor.create(target, getEditorConfig(options));
+
+  // Extract field label from aria-labelledby if present
+  let fieldLabel = "";
+  if (
+    target instanceof HTMLTextAreaElement &&
+    target.hasAttribute("aria-labelledby")
+  ) {
+    const labelId = target.getAttribute("aria-labelledby");
+    fieldLabel = document.getElementById(labelId)?.textContent || "";
+  }
+
+  const config = getEditorConfig(options);
+
+  // Add fieldLabel to config if extracted, removing any asterisks used to denote required fields
+  if (fieldLabel) {
+    config.label = fieldLabel.replace("*", "");
+  }
+
+  const editor = await Editor.create(target, config);
   // Uncomment to enable the CKEditor inspector:
   // import("@ckeditor/ckeditor5-inspector").then(
   //   ({ default: CKEditorInspector }) => {

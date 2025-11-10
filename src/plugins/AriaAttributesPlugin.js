@@ -1,3 +1,5 @@
+import { translate as t } from "../localization";
+
 /**
  * Return an object containing attribute keys and respective values taken from the source element
  * @param {HTMLTextAreaElement} sourceElement The source textarea element
@@ -23,25 +25,42 @@ function getAttributesObject(sourceElement, attributeNames) {
   an error linked to it.
 
   All of this information is lost when the textarea is replaced by the editor, and this
-  plugin brings them back. The label is set on the main element, since it is the first one read 
-  by screen readers, while other attributes are set on the editable element.
+  plugin brings them back.
+  - The main editor view label is set to "Rich Text Editor {label}", adding a secondary 
+    aria-labelledby with the source element's aria-labelledby, and keeping the default
+    aria-labelledby provided by CKEditor
+  - The toolbar label is set to "{label} text formatting"
+  - The label of the editable area is set via the CKEditor label config option.
 */
 /** @type {import("ckeditor5").PluginConstructor} */
 export default function AriaAttributesPlugin(editor) {
   /** @type HTMLTextAreaElement | undefined */
   const sourceElement = editor.sourceElement;
   const mainView = editor.ui.view;
-  const editableView = editor.ui.view.editable;
+  const toolbarView = mainView.toolbar;
+  const editableView = mainView.editable;
+  const fieldLabel = editor.config.get("label");
+
+  if (fieldLabel) {
+    const toolbarLabel = t("help-center-wysiwyg.toolbar_label", {
+      label: fieldLabel,
+    });
+
+    // Wait for the editor to be ready and then replace the aria-label on the toolbar
+    editor.ui.on("ready", () => {
+      const toolbarElement = toolbarView.element;
+      if (toolbarElement) {
+        toolbarElement.setAttribute("aria-label", toolbarLabel);
+      }
+    });
+  }
 
   if (sourceElement) {
-    // Sets aria-labelledby to the main editor element
     const mainViewAttributes = getAttributesObject(sourceElement, [
       "aria-labelledby",
     ]);
 
-    mainView.extendTemplate({
-      attributes: mainViewAttributes,
-    });
+    mainView.extendTemplate({ attributes: mainViewAttributes });
 
     // Sets aria-describedby, aria-invalid to the editable element
     const editableViewAttributes = getAttributesObject(sourceElement, [
