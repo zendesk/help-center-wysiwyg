@@ -77,8 +77,8 @@
   );
 
   /* at-mentions */
-  --ck-color-mention-background: rgba(31, 115, 183, 0.1);
-  --ck-color-mention-text: rgb(9, 57, 96);
+  --ck-content-color-mention-background: rgba(31, 115, 183, 0.1);
+  --ck-content-color-mention-text: rgb(9, 57, 96);
 
   /* effects */
   --ck-border-radius: var(--zd-spacing-xxs);
