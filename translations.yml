@@ -192,3 +192,7 @@ parts:
       title: "The text of a message that appears if a user attempts to mention more than a certain number of other users in a post or comment. More info on mentions can be found here: https://en.wikipedia.org/wiki/Mention_(blogging)"
       screenshot: "https://drive.google.com/open?id=1iQFXPJXSUN4mQRZWGaaZL_f9UfmTSuIw"
       value: "You have reached the limit of mentionable users"
+  - translation:
+      key: "help-center-wysiwyg.toolbar_label"
+      title: "[A11Y] Label used to describe the rich text editor toolbar. {{label}} is replaced with the field label."
+      value: "{{label}} text formatting"

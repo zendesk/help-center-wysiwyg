@@ -39,7 +39,8 @@
     "help-center-wysiwyg.toggle-caption-on": "Toggle caption on",
     "help-center-wysiwyg.undo": "Undo",
     "help-center-wysiwyg.unlink": "Unlink",
-    "help-center-wysiwyg.upload-failed": "Upload failed"
+    "help-center-wysiwyg.upload-failed": "Upload failed",
+    "help-center-wysiwyg.toolbar_label": "{{label}} text formatting"
   },
   "updated_at": "2024-04-11T19:29:31Z"
 }
