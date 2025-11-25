@@ -1,5 +1,12 @@
 # @zendesk/help-center-wysiwyg
 
+## 0.2.0
+
+### Minor Changes
+
+- b49c441: Updated button colors to be WCAG 2.2 conformant
+- 833f2a1: Changed --ck-color-base-border to a color that meets color contrast minimum requirement in WCAG 2.2 (3:1)
+
 ## 0.1.1
 
 ### Patch Changes
