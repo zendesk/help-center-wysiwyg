@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Alternatif teks",
     "help-center-wysiwyg.toggle-caption-off": "Nonaktifkan keterangan",
     "help-center-wysiwyg.toggle-caption-on": "Aktifkan keterangan",
+    "help-center-wysiwyg.toolbar_label": "{{label}} pemformatan teks",
     "help-center-wysiwyg.undo": "Urungkan",
     "help-center-wysiwyg.unlink": "Hapus tautan",
     "help-center-wysiwyg.upload-failed": "Gagal unggah"
   },
-  "updated_at": "2024-04-15T18:07:44Z"
+  "updated_at": "2025-11-25T08:31:20Z"
 }

@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Alternativa textu",
     "help-center-wysiwyg.toggle-caption-off": "Vypnout titulky",
     "help-center-wysiwyg.toggle-caption-on": "Zapnout titulky",
+    "help-center-wysiwyg.toolbar_label": "Formátování textu {{label}}",
     "help-center-wysiwyg.undo": "Zpět",
     "help-center-wysiwyg.unlink": "Odpojit",
     "help-center-wysiwyg.upload-failed": "Chyba uploadu"
   },
-  "updated_at": "2024-04-15T18:04:14Z"
+  "updated_at": "2025-11-25T09:25:14Z"
 }

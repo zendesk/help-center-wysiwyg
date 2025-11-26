@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "חלופה לטקסט",
     "help-center-wysiwyg.toggle-caption-off": "כבה כיתוב",
     "help-center-wysiwyg.toggle-caption-on": "הפעל כיתוב",
+    "help-center-wysiwyg.toolbar_label": "עיצוב טקסט {{label}}",
     "help-center-wysiwyg.undo": "בטל פעולה",
     "help-center-wysiwyg.unlink": "בטל קישור",
     "help-center-wysiwyg.upload-failed": "ההעלאה נכשלה"
   },
-  "updated_at": "2024-04-15T18:06:46Z"
+  "updated_at": "2025-11-25T08:15:57Z"
 }

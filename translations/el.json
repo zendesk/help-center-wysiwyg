@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Εναλλακτικό κείμενο",
     "help-center-wysiwyg.toggle-caption-off": "Απενεργοποίηση λεζάντας",
     "help-center-wysiwyg.toggle-caption-on": "Ενεργοποίηση λεζάντας",
+    "help-center-wysiwyg.toolbar_label": "{{label}} μορφοποίηση κειμένου",
     "help-center-wysiwyg.undo": "Αναίρεση",
     "help-center-wysiwyg.unlink": "Κατάργηση σύνδεσης",
     "help-center-wysiwyg.upload-failed": "Η αποστολή απέτυχε"
   },
-  "updated_at": "2024-04-15T18:05:11Z"
+  "updated_at": "2025-11-25T08:26:11Z"
 }

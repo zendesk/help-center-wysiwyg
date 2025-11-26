@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Testo alternativo",
     "help-center-wysiwyg.toggle-caption-off": "Disattiva didascalia",
     "help-center-wysiwyg.toggle-caption-on": "Attiva didascalia",
+    "help-center-wysiwyg.toolbar_label": "Formattazione testo {{label}}",
     "help-center-wysiwyg.undo": "Annulla",
     "help-center-wysiwyg.unlink": "Annulla link",
     "help-center-wysiwyg.upload-failed": "Caricamento non riuscito"
   },
-  "updated_at": "2024-04-15T18:08:03Z"
+  "updated_at": "2025-11-25T08:32:10Z"
 }

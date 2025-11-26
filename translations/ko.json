@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "대체 텍스트",
     "help-center-wysiwyg.toggle-caption-off": "캡션 끄기",
     "help-center-wysiwyg.toggle-caption-on": "캡션 켜기",
+    "help-center-wysiwyg.toolbar_label": "{{label}} 텍스트 서식",
     "help-center-wysiwyg.undo": "실행 취소",
     "help-center-wysiwyg.unlink": "연결 해제",
     "help-center-wysiwyg.upload-failed": "업로드 실패"
   },
-  "updated_at": "2024-04-15T18:08:41Z"
+  "updated_at": "2025-11-25T08:33:50Z"
 }

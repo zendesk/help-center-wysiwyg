@@ -35,11 +35,12 @@
     "help-center-wysiwyg.show-more-items": "显示更多项目",
     "help-center-wysiwyg.side-image": "侧视图",
     "help-center-wysiwyg.text-alternative": "文本替代",
-    "help-center-wysiwyg.toggle-caption-off": "关闭标题",
-    "help-center-wysiwyg.toggle-caption-on": "打开标题",
+    "help-center-wysiwyg.toggle-caption-off": "关闭说明",
+    "help-center-wysiwyg.toggle-caption-on": "打开说明",
+    "help-center-wysiwyg.toolbar_label": "{{label}} 文本格式",
     "help-center-wysiwyg.undo": "撤消",
     "help-center-wysiwyg.unlink": "取消链接",
     "help-center-wysiwyg.upload-failed": "上传失败"
   },
-  "updated_at": "2024-04-15T18:12:12Z"
+  "updated_at": "2025-11-25T08:43:00Z"
 }

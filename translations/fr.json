@@ -7,7 +7,7 @@
     "help-center-wysiwyg.bulleted-list": "Liste à puces",
     "help-center-wysiwyg.cancel": "Annuler",
     "help-center-wysiwyg.centered-image": "Image centrée",
-    "help-center-wysiwyg.change-image-text-alternative": "Modifier le texte alternatif de l'image",
+    "help-center-wysiwyg.change-image-text-alternative": "Modifier le texte alternatif de l’image",
     "help-center-wysiwyg.choose-heading": "Choisir un titre",
     "help-center-wysiwyg.code": "Insérer du code",
     "help-center-wysiwyg.edit-link": "Modifier le lien",
@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Texte alternatif",
     "help-center-wysiwyg.toggle-caption-off": "Désactiver les légendes",
     "help-center-wysiwyg.toggle-caption-on": "Activer les légendes",
+    "help-center-wysiwyg.toolbar_label": "Formatage de texte {{label}}",
     "help-center-wysiwyg.undo": "Annuler",
     "help-center-wysiwyg.unlink": "Délier",
     "help-center-wysiwyg.upload-failed": "Échec du chargement"
   },
-  "updated_at": "2024-04-15T18:06:28Z"
+  "updated_at": "2025-11-25T08:28:45Z"
 }

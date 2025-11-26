@@ -37,6 +37,7 @@
     "help-center-wysiwyg.text-alternative": "Testo alternativo",
     "help-center-wysiwyg.toggle-caption-off": "Disattiva didascalia",
     "help-center-wysiwyg.toggle-caption-on": "Attiva didascalia",
+    "help-center-wysiwyg.toolbar_label": "Formattazione testo {{label}}",
     "help-center-wysiwyg.undo": "Annulla",
     "help-center-wysiwyg.unlink": "Annulla link",
     "help-center-wysiwyg.upload-failed": "Caricamento non riuscito"

@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Textalternativ",
     "help-center-wysiwyg.toggle-caption-off": "Växla bildtext till av",
     "help-center-wysiwyg.toggle-caption-on": "Växla bildtext till på",
+    "help-center-wysiwyg.toolbar_label": "Textformatering för {{label}}",
     "help-center-wysiwyg.undo": "Ångra",
     "help-center-wysiwyg.unlink": "Ta bort länk",
     "help-center-wysiwyg.upload-failed": "Det gick inte att ladda upp"
   },
-  "updated_at": "2024-04-15T18:10:55Z"
+  "updated_at": "2025-11-25T08:39:39Z"
 }

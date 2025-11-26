@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Vaihtoehtoinen teksti",
     "help-center-wysiwyg.toggle-caption-off": "Piilota otsikko",
     "help-center-wysiwyg.toggle-caption-on": "Näytä otsikko",
+    "help-center-wysiwyg.toolbar_label": "Kentän {{label}} tekstin muotoilu",
     "help-center-wysiwyg.undo": "Kumoa",
     "help-center-wysiwyg.unlink": "Poista yhteys",
     "help-center-wysiwyg.upload-failed": "Lataus epäonnistui"
   },
-  "updated_at": "2024-04-15T18:06:08Z"
+  "updated_at": "2025-11-25T08:27:53Z"
 }

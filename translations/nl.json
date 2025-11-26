@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Tekstalternatief",
     "help-center-wysiwyg.toggle-caption-off": "Bijschrift uitschakelen",
     "help-center-wysiwyg.toggle-caption-on": "Bijschrift inschakelen",
+    "help-center-wysiwyg.toolbar_label": "Tekstopmaak {{label}}",
     "help-center-wysiwyg.undo": "Ongedaan maken",
     "help-center-wysiwyg.unlink": "Loskoppelen",
     "help-center-wysiwyg.upload-failed": "Uploaden mislukt"
   },
-  "updated_at": "2024-04-15T18:09:00Z"
+  "updated_at": "2025-11-25T08:34:40Z"
 }

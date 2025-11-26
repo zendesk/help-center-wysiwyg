@@ -2,7 +2,7 @@
   "locale": "fr-ca",
   "rtl": false,
   "translations": {
-    "help-center-wysiwyg.block-quote": "Devis",
+    "help-center-wysiwyg.block-quote": "Guillemet",
     "help-center-wysiwyg.bold": "Gras",
     "help-center-wysiwyg.bulleted-list": "Liste à puces",
     "help-center-wysiwyg.cancel": "Annuler",
@@ -17,7 +17,7 @@
     "help-center-wysiwyg.heading-1": "Titre 1",
     "help-center-wysiwyg.heading-2": "Titre 2",
     "help-center-wysiwyg.heading-3": "Titre 3",
-    "help-center-wysiwyg.image_upload_generic_error": "Vous pouvez uniquement télécharger des images (jpeg, gif ou png). Les images à télécharger ne peuvent pas dépasser {{max_size}} Mo.",
+    "help-center-wysiwyg.image_upload_generic_error": "Vous pouvez uniquement téléverser des images (jpeg, gif ou png). Les images à téléverser ne peuvent pas dépasser {{max_size}} Mo.",
     "help-center-wysiwyg.in-line": "En ligne",
     "help-center-wysiwyg.insert-code-block": "Bloc de code",
     "help-center-wysiwyg.insert-image": "Insérer une image",
@@ -35,11 +35,12 @@
     "help-center-wysiwyg.show-more-items": "Afficher plus d'éléments",
     "help-center-wysiwyg.side-image": "Image latérale",
     "help-center-wysiwyg.text-alternative": "Texte alternatif",
-    "help-center-wysiwyg.toggle-caption-off": "Désactiver les légendes",
-    "help-center-wysiwyg.toggle-caption-on": "Activer les légendes",
+    "help-center-wysiwyg.toggle-caption-off": "Désactiver les sous-titres",
+    "help-center-wysiwyg.toggle-caption-on": "Activer les sous-titres",
+    "help-center-wysiwyg.toolbar_label": "Formatage de texte {{label}}",
     "help-center-wysiwyg.undo": "Annuler",
     "help-center-wysiwyg.unlink": "Délier",
-    "help-center-wysiwyg.upload-failed": "Échec du chargement"
+    "help-center-wysiwyg.upload-failed": "Échec du téléversement"
   },
-  "updated_at": "2024-04-11T19:27:18Z"
+  "updated_at": "2025-11-20T11:31:44Z"
 }

@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "替代文字",
     "help-center-wysiwyg.toggle-caption-off": "關閉說明文字",
     "help-center-wysiwyg.toggle-caption-on": "開啟說明文字",
+    "help-center-wysiwyg.toolbar_label": "{{label}} 文字格式設定",
     "help-center-wysiwyg.undo": "復原",
     "help-center-wysiwyg.unlink": "取消連結",
     "help-center-wysiwyg.upload-failed": "上傳失敗"
   },
-  "updated_at": "2024-04-15T18:12:31Z"
+  "updated_at": "2025-11-25T08:43:50Z"
 }

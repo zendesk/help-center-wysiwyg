@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "पाठ विकल्प",
     "help-center-wysiwyg.toggle-caption-off": "टॉगल कैप्शन बंद करें",
     "help-center-wysiwyg.toggle-caption-on": "टॉगल कैप्शन चालू करें",
+    "help-center-wysiwyg.toolbar_label": "{{label}} टेक्स्ट फ़ॉर्मेट करना",
     "help-center-wysiwyg.undo": "पूर्ववत् करें",
     "help-center-wysiwyg.unlink": "लिंक निकालें",
     "help-center-wysiwyg.upload-failed": "अपलोड की प्रक्रिया पूरी नहीं हो सकी"
   },
-  "updated_at": "2024-04-15T18:07:05Z"
+  "updated_at": "2025-11-25T08:29:37Z"
 }

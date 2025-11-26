@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Tekst alternatywny",
     "help-center-wysiwyg.toggle-caption-off": "Wyłącz podpisy",
     "help-center-wysiwyg.toggle-caption-on": "Włącz podpisy",
+    "help-center-wysiwyg.toolbar_label": "Formatowanie tekstu {{label}}",
     "help-center-wysiwyg.undo": "Cofnij",
     "help-center-wysiwyg.unlink": "Odłącz",
     "help-center-wysiwyg.upload-failed": "Nie udało się przesłać"
   },
-  "updated_at": "2024-04-15T18:09:38Z"
+  "updated_at": "2025-11-25T08:36:20Z"
 }
