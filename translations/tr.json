@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Metin alternatifi",
     "help-center-wysiwyg.toggle-caption-off": "Altyazıyı aç/kapat",
     "help-center-wysiwyg.toggle-caption-on": "Altyazıyı aç/kapat",
+    "help-center-wysiwyg.toolbar_label": "{{label}} metin biçimlendirme",
     "help-center-wysiwyg.undo": "Geri al",
     "help-center-wysiwyg.unlink": "Bağlantıyı kaldır",
     "help-center-wysiwyg.upload-failed": "Karşıya yükleme başarısız oldu"
   },
-  "updated_at": "2024-04-15T18:11:33Z"
+  "updated_at": "2025-11-25T08:41:19Z"
 }

@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Alternativtext",
     "help-center-wysiwyg.toggle-caption-off": "Untertitel deaktivieren",
     "help-center-wysiwyg.toggle-caption-on": "Untertitel aktivieren",
+    "help-center-wysiwyg.toolbar_label": "{{label}} Textformatierung",
     "help-center-wysiwyg.undo": "Rückgängig",
     "help-center-wysiwyg.unlink": "Trennen",
     "help-center-wysiwyg.upload-failed": "Fehler beim Hochladen"
   },
-  "updated_at": "2024-03-19T17:00:18Z"
+  "updated_at": "2024-05-01T17:00:02Z"
 }

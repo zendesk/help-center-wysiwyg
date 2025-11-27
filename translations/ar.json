@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "النص البديل",
     "help-center-wysiwyg.toggle-caption-off": "إيقاف التسميات التوضيحية",
     "help-center-wysiwyg.toggle-caption-on": "تشغيل التسميات التوضيحية",
+    "help-center-wysiwyg.toolbar_label": "تنسيق النص في {{label}}",
     "help-center-wysiwyg.undo": "تراجع",
     "help-center-wysiwyg.unlink": "إلغاء ربط",
     "help-center-wysiwyg.upload-failed": "فشل التحميل"
   },
-  "updated_at": "2024-04-15T18:03:37Z"
+  "updated_at": "2025-11-25T09:20:04Z"
 }

@@ -21,7 +21,7 @@
     "help-center-wysiwyg.in-line": "Căn ảnh trong dòng",
     "help-center-wysiwyg.insert-code-block": "Khối mã",
     "help-center-wysiwyg.insert-image": "Chèn ảnh",
-    "help-center-wysiwyg.italic": "Nghiêng",
+    "help-center-wysiwyg.italic": "In nghiêng",
     "help-center-wysiwyg.left-aligned-image": "Căn ảnh lề trái",
     "help-center-wysiwyg.link": "Chèn/Chỉnh sửa đường dẫn",
     "help-center-wysiwyg.link-url": "URL liên kết",
@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Văn bản thay thế",
     "help-center-wysiwyg.toggle-caption-off": "Tắt phụ đề",
     "help-center-wysiwyg.toggle-caption-on": "Bật phụ đề",
+    "help-center-wysiwyg.toolbar_label": "Định dạng văn bản {{label}}",
     "help-center-wysiwyg.undo": "Hoàn tác",
     "help-center-wysiwyg.unlink": "Bỏ liên kết",
     "help-center-wysiwyg.upload-failed": "Tải lên không thành công"
   },
-  "updated_at": "2024-04-15T18:11:52Z"
+  "updated_at": "2025-11-25T08:42:09Z"
 }

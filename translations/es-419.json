@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Alternativa de texto",
     "help-center-wysiwyg.toggle-caption-off": "Desactivar leyenda",
     "help-center-wysiwyg.toggle-caption-on": "Activar leyenda",
+    "help-center-wysiwyg.toolbar_label": "Formato de texto {{label}}",
     "help-center-wysiwyg.undo": "Deshacer",
     "help-center-wysiwyg.unlink": "Desvincular",
     "help-center-wysiwyg.upload-failed": "Falló la carga."
   },
-  "updated_at": "2024-03-19T17:26:27Z"
+  "updated_at": "2025-11-20T16:12:05Z"
 }

@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Alternativ tekst",
     "help-center-wysiwyg.toggle-caption-off": "Slå billedtekst fra",
     "help-center-wysiwyg.toggle-caption-on": "Slå billedtekst til",
+    "help-center-wysiwyg.toolbar_label": "{{label}} tekstformatering",
     "help-center-wysiwyg.undo": "Fortryd",
     "help-center-wysiwyg.unlink": "Fjern link",
     "help-center-wysiwyg.upload-failed": "Upload mislykkedes"
   },
-  "updated_at": "2024-04-15T18:04:33Z"
+  "updated_at": "2025-11-25T08:24:30Z"
 }

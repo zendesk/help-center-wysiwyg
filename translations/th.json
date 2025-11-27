@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "ทางเลือกข้อความ",
     "help-center-wysiwyg.toggle-caption-off": "ปิดคำอธิบายภาพ",
     "help-center-wysiwyg.toggle-caption-on": "เปิดคำอธิบายภาพ",
+    "help-center-wysiwyg.toolbar_label": "การจัดรูปแบบข้อความ {{label}}",
     "help-center-wysiwyg.undo": "เลิกทำ",
     "help-center-wysiwyg.unlink": "ยกเลิกการเชื่อมโยง",
     "help-center-wysiwyg.upload-failed": "อัปโหลดไม่สำเร็จ"
   },
-  "updated_at": "2024-04-15T18:11:14Z"
+  "updated_at": "2025-11-25T08:40:29Z"
 }

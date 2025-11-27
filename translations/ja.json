@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "代替テキスト",
     "help-center-wysiwyg.toggle-caption-off": "キャプションをオフに切り替える",
     "help-center-wysiwyg.toggle-caption-on": "キャプションをオンに切り替える",
+    "help-center-wysiwyg.toolbar_label": "{{label}} テキスト形式",
     "help-center-wysiwyg.undo": "元に戻す",
     "help-center-wysiwyg.unlink": "リンクを解除",
     "help-center-wysiwyg.upload-failed": "アップロードできませんでした"
   },
-  "updated_at": "2024-04-15T18:08:22Z"
+  "updated_at": "2025-11-25T08:33:00Z"
 }

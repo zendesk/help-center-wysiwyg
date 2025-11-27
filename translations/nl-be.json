@@ -37,6 +37,7 @@
     "help-center-wysiwyg.text-alternative": "Tekstalternatief",
     "help-center-wysiwyg.toggle-caption-off": "Bijschrift uitschakelen",
     "help-center-wysiwyg.toggle-caption-on": "Bijschrift inschakelen",
+    "help-center-wysiwyg.toolbar_label": "Tekstopmaak {{label}}",
     "help-center-wysiwyg.undo": "Ongedaan maken",
     "help-center-wysiwyg.unlink": "Loskoppelen",
     "help-center-wysiwyg.upload-failed": "Uploaden mislukt"

@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Text alternative",
     "help-center-wysiwyg.toggle-caption-off": "Toggle caption off",
     "help-center-wysiwyg.toggle-caption-on": "Toggle caption on",
+    "help-center-wysiwyg.toolbar_label": "{{label}} text formatting",
     "help-center-wysiwyg.undo": "Undo",
     "help-center-wysiwyg.unlink": "Unlink",
     "help-center-wysiwyg.upload-failed": "Upload failed"
   },
-  "updated_at": "2023-10-25T20:34:57Z"
+  "updated_at": "2025-11-20T15:55:58Z"
 }

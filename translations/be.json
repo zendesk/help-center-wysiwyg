@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Альтернативный текст",
     "help-center-wysiwyg.toggle-caption-off": "Отключить подпись",
     "help-center-wysiwyg.toggle-caption-on": "Включить подпись",
+    "help-center-wysiwyg.toolbar_label": "Форматирование текста {{label}}",
     "help-center-wysiwyg.undo": "Отменить",
     "help-center-wysiwyg.unlink": "Отсоединить",
     "help-center-wysiwyg.upload-failed": "Не удалось выложить"
   },
-  "updated_at": "2024-03-19T17:13:38Z"
+  "updated_at": "2025-09-02T17:02:25Z"
 }

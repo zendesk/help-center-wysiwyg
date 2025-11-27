@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Алтернативен текст",
     "help-center-wysiwyg.toggle-caption-off": "Изключване на надписите",
     "help-center-wysiwyg.toggle-caption-on": "Включване на надписите",
+    "help-center-wysiwyg.toolbar_label": "Форматиране на текста на {{label}}",
     "help-center-wysiwyg.undo": "Отмяна",
     "help-center-wysiwyg.unlink": "Прекратяване на връзката",
     "help-center-wysiwyg.upload-failed": "Неуспешно качване"
   },
-  "updated_at": "2024-04-15T18:03:55Z"
+  "updated_at": "2025-11-25T08:22:49Z"
 }

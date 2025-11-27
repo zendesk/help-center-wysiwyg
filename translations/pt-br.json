@@ -37,9 +37,10 @@
     "help-center-wysiwyg.text-alternative": "Alternativa de texto",
     "help-center-wysiwyg.toggle-caption-off": "Desativar legenda",
     "help-center-wysiwyg.toggle-caption-on": "Ativar legenda",
+    "help-center-wysiwyg.toolbar_label": "Formatação do texto {{label}}",
     "help-center-wysiwyg.undo": "Desfazer",
     "help-center-wysiwyg.unlink": "Desvincular",
     "help-center-wysiwyg.upload-failed": "Erro ao carregar"
   },
-  "updated_at": "2024-04-15T18:09:58Z"
+  "updated_at": "2025-11-25T08:37:10Z"
 }
