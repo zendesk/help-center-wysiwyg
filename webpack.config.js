@@ -1,8 +1,9 @@
 /* eslint-env node */
+const path = require("path");
 const webpack = require("webpack");
-const { styles } = require("@ckeditor/ckeditor5-dev-utils");
 const CopyPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const { styles } = require("@ckeditor/ckeditor5-dev-utils");
 
 module.exports = (env, argv) => ({
   entry: "./src/index.js",
@@ -43,11 +44,20 @@ module.exports = (env, argv) => ({
         ],
       },
       {
-        include: /@ckeditor/,
+        include: /@ckeditor|@zendeskgarden/,
         test: /\.svg$/,
         use: ["raw-loader"],
       },
     ],
+  },
+  resolve: {
+    alias: {
+      "@ckeditor/ckeditor5-icons/dist/index.js": path.resolve(
+        __dirname,
+        "./icon-overrides/src/index.js",
+      ),
+      "@ckeditor/ckeditor5-icons-original": "@ckeditor/ckeditor5-icons",
+    },
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -61,50 +71,6 @@ module.exports = (env, argv) => ({
     new CopyPlugin({
       patterns: [{ from: "LICENSE.md" }],
     }),
-    new webpack.NormalModuleReplacementPlugin(
-      /bold\.svg/,
-      "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/bold-stroke.svg",
-    ),
-    new webpack.NormalModuleReplacementPlugin(
-      /italic\.svg/,
-      "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/italic-stroke.svg",
-    ),
-    new webpack.NormalModuleReplacementPlugin(
-      /code\.svg/,
-      "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/terminal-cli-stroke.svg",
-    ),
-    new webpack.NormalModuleReplacementPlugin(
-      /codeblock\.svg/,
-      "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/terminal-window-stroke.svg",
-    ),
-    new webpack.NormalModuleReplacementPlugin(
-      /link\.svg/,
-      "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/link-stroke.svg",
-    ),
-    new webpack.NormalModuleReplacementPlugin(
-      /bulletedlist\.svg/,
-      "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/list-bullet-stroke.svg",
-    ),
-    new webpack.NormalModuleReplacementPlugin(
-      /numberedlist\.svg/,
-      "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/list-number-stroke.svg",
-    ),
-    new webpack.NormalModuleReplacementPlugin(
-      /upload\.svg/,
-      "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/image-stroke.svg",
-    ),
-    new webpack.NormalModuleReplacementPlugin(
-      /quote\.svg/,
-      "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/quote-stroke.svg",
-    ),
-    new webpack.NormalModuleReplacementPlugin(
-      /undo\.svg/,
-      "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/edit-undo-stroke.svg",
-    ),
-    new webpack.NormalModuleReplacementPlugin(
-      /redo\.svg/,
-      "!raw-loader!/node_modules/@zendeskgarden/svg-icons/src/12/edit-redo-stroke.svg",
-    ),
   ],
   optimization: {
     minimize: true,
