@@ -1,5 +1,19 @@
 # @zendesk/help-center-wysiwyg
 
+## 1.0.0
+
+### Major Changes
+
+- 365301c: This release updates CKEditor to the latest version (v47.2.0)
+
+### Minor Changes
+
+- 2f16251: Improved accessibility. Both the label of the editor toolbar and the main content now include the text from the associated label element, enhancing screen reader support.
+
+### Patch Changes
+
+- 97e6db2: Updated translation files
+
 ## 0.2.0
 
 ### Minor Changes
