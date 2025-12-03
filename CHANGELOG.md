@@ -1,5 +1,11 @@
 # @zendesk/help-center-wysiwyg
 
+## 1.0.1
+
+### Patch Changes
+
+- a7150d8: Fixed license key (no code changes)
+
 ## 1.0.0
 
 ### Major Changes
