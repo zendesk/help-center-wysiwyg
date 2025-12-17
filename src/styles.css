@@ -103,6 +103,15 @@ a.ck.ck-button:focus {
   background: var(--zd-color-grey-300);
 }
 
+.ck.ck-content.ck-editor__editable.ck-editor__editable_inline,
+.ck.ck-content.ck-editor__editable {
+  transition:
+    border-color 0.25s ease-in-out,
+    box-shadow 0.1s ease-in-out,
+    background-color 0.25s ease-in-out,
+    color 0.25s ease-in-out;
+}
+
 .ck.ck-button:focus-visible,
 .ck.ck-toolbar:focus-visible,
 .ck.ck-content.ck-editor__editable.ck-focused,
