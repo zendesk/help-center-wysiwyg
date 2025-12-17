@@ -118,7 +118,7 @@ a.ck.ck-button:focus {
 .ck.ck-content.ck-editor__editable.ck-editor__editable_inline.ck-focused {
   box-shadow:
     0 0 0 1px #fff,
-    0 0 0 3px var(--zd-color-grey-900);
+    0 0 0 3px #2f3941;
   outline: 2px solid transparent;
   outline-offset: 1px;
 }
