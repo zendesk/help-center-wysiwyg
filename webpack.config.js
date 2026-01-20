@@ -3,7 +3,6 @@ const path = require("path");
 const webpack = require("webpack");
 const CopyPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const { styles } = require("@ckeditor/ckeditor5-dev-utils");
 
 module.exports = (env, argv) => ({
   entry: "./src/index.js",
@@ -29,17 +28,6 @@ module.exports = (env, argv) => ({
           },
           {
             loader: "css-loader",
-          },
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: styles.getPostCssConfig({
-                themeImporter: {
-                  themePath: require.resolve("@ckeditor/ckeditor5-theme-lark"),
-                },
-                minify: true,
-              }),
-            },
           },
         ],
       },
