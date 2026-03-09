@@ -15,8 +15,8 @@
     "@ckeditor/ckeditor5-inspector": "5.0.0",
     "@zendeskgarden/css-variables": "7.0.0",
     "@zendeskgarden/svg-icons": "7.0.0",
-    "ckeditor5": "47.2.0",
-    "copy-webpack-plugin": "12.0.2",
+    "ckeditor5": "47.6.0",
+    "copy-webpack-plugin": "14.0.0",
     "css-loader": "6.10.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
@@ -25,10 +25,10 @@
     "prettier": "3.2.5",
     "raw-loader": "4.0.2",
     "style-loader": "3.3.4",
-    "terser-webpack-plugin": "5.3.14",
-    "webpack": "5.99.6",
+    "terser-webpack-plugin": "5.3.17",
+    "webpack": "5.105.4",
     "webpack-cli": "6.0.1",
-    "webpack-dev-server": "5.2.1"
+    "webpack-dev-server": "5.2.3"
   },
   "packageManager": "yarn@4.4.1",
   "publishConfig": {
