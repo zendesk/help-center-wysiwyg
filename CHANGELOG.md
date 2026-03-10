@@ -1,5 +1,18 @@
 # @zendesk/help-center-wysiwyg
 
+## 1.1.0
+
+### Minor Changes
+
+- 512a1c9: Updated CKEditor to v47.6.0
+- ee78e3c: Updated CKEditor license keys
+
+### Patch Changes
+
+- 512a1c9: Resolve dependabot security alerts by updating vulnerable dependencies
+- 4e212b7: Fixed build by removing old style import
+- 2525ae8: Added CSS transition to editable area, to match Garden
+
 ## 1.0.1
 
 ### Patch Changes
