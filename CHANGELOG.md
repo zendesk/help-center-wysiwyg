@@ -1,5 +1,11 @@
 # @zendesk/help-center-wysiwyg
 
+## 1.1.1
+
+### Patch Changes
+
+- c21e8db: Update translations to receive bn strings
+
 ## 1.1.0
 
 ### Minor Changes
