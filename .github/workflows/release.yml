@@ -7,97 +7,42 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+permissions:
+  contents: write # push version bumps and tags
+  pull-requests: write # open the "Version Packages" PR
+  id-token: write # OIDC trusted publishing
+
 env:
   CKEDITOR_LICENSE_KEY_PRODUCTION: ${{ secrets.CKEDITOR_LICENSE_KEY_PRODUCTION}}
   CKEDITOR_LICENSE_KEY_DEVELOPMENT: ${{ secrets.CKEDITOR_LICENSE_KEY_DEVELOPMENT}}
-  NODE_VERSION: "20"
 
 jobs:
-  release: # action to create changesets
-    name: Create Changeset PR
+  release:
+    name: Release
     runs-on: ubuntu-latest
-    outputs:
-      changeset: ${{ steps.changesets.outputs.hasChangesets }}
-
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js 20
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: ".nvmrc"
-
-      - name: Install Dependencies
-        run: yarn --frozen-lockfile
-
-      - name: Create Release Pull Request
-        id: changesets
-        uses: changesets/action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  npm-publish:
-    name: Build + Publish
-    runs-on: ubuntu-latest
-    needs: release
-    if: ${{ needs.release.outputs.changeset == 'false' }}
     environment: npm-publish
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
-          node-version: ${{ env.NODE_VERSION }}
-      # Use yarn2
-      - name: Install Yarn
-        run: npm install -g yarn
-      - name: Set Yarn Version
-        run: yarn set version berry
+          node-version-file: ".nvmrc"
 
-      - id: find-yarn-cache-folder
-        name: Find Yarn's cache folder
-        run: echo "YARN_CACHE_FOLDER=$(yarn config get cacheFolder)" >> $GITHUB_ENV
+      - name: Enable Corepack
+        run: corepack enable
 
-      - name: Cache Yarn's cache folder
-        uses: actions/cache@v3
+      - name: Install Dependencies
+        run: yarn install --immutable
+
+      - name: Build
+        run: yarn build
+
+      - name: Create Release PR or Publish
+        uses: changesets/action@v1
         with:
-          path: ${{ env.YARN_CACHE_FOLDER }}
-          key: yarn-cache-folder-os-${{ runner.os }}-node-${{ env.NODE_VERSION }}-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            yarn-cache-folder-os-${{ runner.os }}-node-${{ env.NODE_VERSION }}-
-            yarn-cache-folder-os-${{ runner.os }}-
-
-      - name: Install oauth
-        run: |
-          sudo apt-get install --fix-broken --yes oathtool
-
-      - name: Setup yarn
-        run: |
-          yarn config set npmPublishAccess public
-          yarn config set npmAlwaysAuth true
-          yarn config set npmRegistryServer https://registry.npmjs.org
-          yarn config set npmAuthToken $NPM_TOKEN
+          publish: yarn changeset publish
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Git config user
-        run: |
-          git config user.name zendesk-ops-ci
-          git config user.email zendesk-ops-ci@users.noreply.github.com
-
-      - name: Build and release
-        run: |
-          yarn install --immutable
-          yarn build
-          totp=$(oathtool --base32 --totp "${NPM_TOTP_DEVICE}")
-          yarn npm publish --otp $totp
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOTP_DEVICE: ${{ secrets.NPM_TOTP_DEVICE }}
-
-      - name: Clear the .yarnrc.yml file
-        if: always()
-        run: rm -f .yarnrc.yml
