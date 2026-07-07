@@ -1,5 +1,11 @@
 # @zendesk/help-center-wysiwyg
 
+## 1.1.2
+
+### Patch Changes
+
+- 35c1016: Updated development dependencies to fix vulnerability issues
+
 ## 1.1.1
 
 ### Patch Changes
