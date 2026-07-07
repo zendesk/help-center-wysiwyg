@@ -3,6 +3,10 @@
   "version": "1.1.2",
   "description": "Wysiwyg editor used in Zendesk Help Center",
   "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zendesk/help-center-wysiwyg"
+  },
   "main": "dist/main.js",
   "scripts": {
     "start": "webpack serve --mode=development",
