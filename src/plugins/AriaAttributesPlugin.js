@@ -62,8 +62,9 @@ export default function AriaAttributesPlugin(editor) {
 
     mainView.extendTemplate({ attributes: mainViewAttributes });
 
-    // Sets aria-describedby, aria-invalid to the editable element
+    // Sets aria-label, aria-describedby, aria-invalid to the editable element
     const editableViewAttributes = getAttributesObject(sourceElement, [
+      "aria-label",
       "aria-describedby",
       "aria-invalid",
     ]);
