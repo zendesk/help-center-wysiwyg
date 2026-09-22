@@ -38,7 +38,7 @@ export const ckeditorTranslationsKeyMap = {
   Redo: "help-center-wysiwyg.redo",
   "Enter image caption": "help-center-wysiwyg.enter-image-caption",
   "Show more items": "help-center-wysiwyg.show-more-items",
-  "Editor toolbar": "help-center-wysiwyg.editor-toolbar",
+  "Editor toolbar": "help-center-wysiwyg.editor-toolbar-label",
 };
 
 const getTranslations = (keyMap) =>
