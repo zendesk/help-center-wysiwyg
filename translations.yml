@@ -183,6 +183,11 @@ parts:
       key: "help-center-wysiwyg.editor-toolbar"
       title: "[A11Y] Label used to describe the rich text editor toolbar"
       value: "Editor toolbar"
+      obsolete: "2026-12-22"
+  - translation:
+      key: "help-center-wysiwyg.editor-toolbar-label"
+      title: "[A11Y] Accessible name for the rich text editor toolbar"
+      value: "Editor"
   - translation:
       key: "help-center-wysiwyg.image_upload_generic_error"
       title: "Error displayed when the image upload failed because of either size or type"
