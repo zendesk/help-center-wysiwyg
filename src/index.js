@@ -147,20 +147,6 @@ export const getEditorConfig = ({
       AriaAttributesPlugin,
     ].filter(Boolean),
     mention: CommunityMentionsPlugin.config,
-    image: {
-      toolbar: [
-        "imageTextAlternative",
-        "|",
-        "imageStyle:inline",
-        "imageStyle:block",
-        "imageStyle:alignLeft",
-        "imageStyle:alignRight",
-        "imageStyle:alignBlockLeft",
-        "imageStyle:alignBlockRight",
-        "|",
-        "toggleImageCaption",
-      ],
-    },
     imageUpload: {
       brandId,
     },
@@ -177,13 +163,30 @@ export const getEditorConfig = ({
           ],
         },
         image: {
+          toolbar: ["imageTextAlternative"],
           styles: {
             options: ["inline"],
           },
         },
       };
     case "communityPosts":
-      return contentEditingConfig;
+      return {
+        ...contentEditingConfig,
+        image: {
+          toolbar: [
+            "imageTextAlternative",
+            "|",
+            "imageStyle:inline",
+            "imageStyle:block",
+            "imageStyle:alignLeft",
+            "imageStyle:alignRight",
+            "imageStyle:alignBlockLeft",
+            "imageStyle:alignBlockRight",
+            "|",
+            "toggleImageCaption",
+          ],
+        },
+      };
     case "supportRequests":
       return {
         ...baseConfig,
@@ -202,6 +205,7 @@ export const getEditorConfig = ({
           urlFromResponse: (response) => response.url,
         },
         image: {
+          toolbar: ["imageTextAlternative"],
           styles: {
             options: ["inline"],
           },
