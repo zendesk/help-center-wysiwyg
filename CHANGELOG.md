@@ -1,5 +1,11 @@
 # @zendesk/help-center-wysiwyg
 
+## 1.1.3
+
+### Patch Changes
+
+- 0028f83: Enable existing editor accessibility behavior for comment and community-post editors.
+
 ## 1.1.2
 
 ### Patch Changes
