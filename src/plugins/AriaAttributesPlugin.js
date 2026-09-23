@@ -26,7 +26,7 @@ function getAttributesObject(sourceElement, attributeNames) {
 
   All of this information is lost when the textarea is replaced by the editor, and this
   plugin brings them back.
-  - The main editor view label is set to "Rich Text Editor {label}", adding a secondary 
+  - The main editor view label is set to "Rich Text Editor {label}", adding a secondary
     aria-labelledby with the source element's aria-labelledby, and keeping the default
     aria-labelledby provided by CKEditor
   - The toolbar label is set to "{label} text formatting"

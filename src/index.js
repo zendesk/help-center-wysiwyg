@@ -144,6 +144,7 @@ export const getEditorConfig = ({
       hasAtMentions && CommunityMentionsPlugin,
       AUSImageUploadPlugin,
       MarkExternalImagesPlugin,
+      AriaAttributesPlugin,
     ].filter(Boolean),
     mention: CommunityMentionsPlugin.config,
     image: {
