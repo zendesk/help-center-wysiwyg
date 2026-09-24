@@ -175,6 +175,41 @@ parts:
       value: "Enter image caption"
       screenshot: "https://drive.google.com/file/d/1oTdzxHGqcw_0AMMZHtZ5Nkdupac9HuQA/view?usp=share_link"
   - translation:
+      key: "help-center-wysiwyg.resize-image"
+      title: "Label for the image resize dropdown in the rich text editor image toolbar and heading in the custom image resize form."
+      value: "Resize image"
+      screenshot: "https://drive.google.com/file/d/1lC_qtb7Af2r-PeS-4mBB2385DwsKqvuZ/view?usp=sharing"
+  - translation:
+      key: "help-center-wysiwyg.resize-image-input"
+      title: "Label for the custom image resize input. Keep %0: CKEditor replaces it at runtime with the configured measurement unit, currently %."
+      value: "Resize image (in %0)"
+      screenshot: "https://drive.google.com/file/d/1Da_5cn-irqYt-kcdbuplNSvfQr04Q2E1/view?usp=sharing"
+  - translation:
+      key: "help-center-wysiwyg.resize-image-original"
+      title: "Menu item that restores an image to its original size."
+      value: "Original"
+      screenshot: "https://drive.google.com/file/d/1lC_qtb7Af2r-PeS-4mBB2385DwsKqvuZ/view?usp=sharing"
+  - translation:
+      key: "help-center-wysiwyg.resize-image-custom"
+      title: "Menu item that opens the custom image size form."
+      value: "Custom"
+      screenshot: "https://drive.google.com/file/d/1lC_qtb7Af2r-PeS-4mBB2385DwsKqvuZ/view?usp=sharing"
+  - translation:
+      key: "help-center-wysiwyg.resize-image-list"
+      title: "[A11Y] Label for the list of available image resize options."
+      value: "Image resize list"
+      screenshot: "https://drive.google.com/file/d/1lC_qtb7Af2r-PeS-4mBB2385DwsKqvuZ/view?usp=sharing"
+  - translation:
+      key: "help-center-wysiwyg.resize-image-value-required"
+      title: "Validation error shown when the custom image resize value is empty."
+      value: "The value must not be empty."
+      screenshot: "https://drive.google.com/file/d/1Da_5cn-irqYt-kcdbuplNSvfQr04Q2E1/view?usp=sharing"
+  - translation:
+      key: "help-center-wysiwyg.back"
+      title: "Button label that returns from the custom image resize form to the resize options."
+      value: "Back"
+      screenshot: "https://drive.google.com/file/d/1Da_5cn-irqYt-kcdbuplNSvfQr04Q2E1/view?usp=sharing"
+  - translation:
       key: "help-center-wysiwyg.show-more-items"
       title: "Tooltip shown when hovering over the three-dot menu shown whenever the toolbar items overflow the width of the toolbar. Shown in the rich text editor."
       value: "Show more items"
