@@ -1,5 +1,11 @@
 # @zendesk/help-center-wysiwyg
 
+## 1.1.4
+
+### Patch Changes
+
+- a686c83: Allow comment and authenticated support request images to have accessible text alternatives edited.
+
 ## 1.1.3
 
 ### Patch Changes
