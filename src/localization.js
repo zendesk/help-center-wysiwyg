@@ -39,6 +39,15 @@ export const ckeditorTranslationsKeyMap = {
   "Enter image caption": "help-center-wysiwyg.enter-image-caption",
   "Show more items": "help-center-wysiwyg.show-more-items",
   "Editor toolbar": "help-center-wysiwyg.editor-toolbar",
+  "Resize image": "help-center-wysiwyg.resize-image",
+  "Resize image (in %0)": "help-center-wysiwyg.resize-image-input",
+  Original: "help-center-wysiwyg.resize-image-original",
+  Custom: "help-center-wysiwyg.resize-image-custom",
+  "Image resize list": "help-center-wysiwyg.resize-image-list",
+  "Image Resize": "help-center-wysiwyg.resize-image",
+  "The value must not be empty.":
+    "help-center-wysiwyg.resize-image-value-required",
+  Back: "help-center-wysiwyg.back",
 };
 
 const getTranslations = (keyMap) =>
