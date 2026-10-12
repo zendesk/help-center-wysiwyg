@@ -1,5 +1,11 @@
 # @zendesk/help-center-wysiwyg
 
+## 1.1.5
+
+### Patch Changes
+
+- 0a5c1c5: Updated transitive development dependencies (fast-uri, brace-expansion, nanoid, browserslist, and postcss) to fix security vulnerabilities.
+
 ## 1.1.4
 
 ### Patch Changes
