@@ -1,5 +1,11 @@
 # @zendesk/help-center-wysiwyg
 
+## 1.1.6
+
+### Patch Changes
+
+- 7bfc310: Remove the unused HeiBot GitHub Actions workflow. No impact on this package's code or release automation.
+
 ## 1.1.5
 
 ### Patch Changes
