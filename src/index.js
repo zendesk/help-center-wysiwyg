@@ -163,7 +163,7 @@ export const getEditorConfig = ({
           ],
         },
         image: {
-          toolbar: ["imageTextAlternative"],
+          toolbar: ["imageTextAlternative", "resizeImage"],
           styles: {
             options: ["inline"],
           },
@@ -184,6 +184,8 @@ export const getEditorConfig = ({
             "imageStyle:alignBlockRight",
             "|",
             "toggleImageCaption",
+            "|",
+            "resizeImage",
           ],
         },
       };
@@ -205,7 +207,7 @@ export const getEditorConfig = ({
           urlFromResponse: (response) => response.url,
         },
         image: {
-          toolbar: ["imageTextAlternative"],
+          toolbar: ["imageTextAlternative", "resizeImage"],
           styles: {
             options: ["inline"],
           },
