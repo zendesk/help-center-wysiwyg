@@ -1,5 +1,11 @@
 # @zendesk/help-center-wysiwyg
 
+## 1.1.6
+
+### Patch Changes
+
+- 310b69d: Update CKEditor to 47.7.6 LTS to address the engine cross-site scripting vulnerability GHSA-rh54-vffm-5fvp.
+
 ## 1.1.5
 
 ### Patch Changes
