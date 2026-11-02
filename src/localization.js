@@ -1,4 +1,4 @@
-import { add } from "@ckeditor/ckeditor5-utils/src/translation-service";
+import { add } from "ckeditor5";
 
 export const ckeditorTranslationsKeyMap = {
   Bold: "help-center-wysiwyg.bold",
