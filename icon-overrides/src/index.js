@@ -1,27 +1,26 @@
-// Re-export all original CKEditor icons
+// Pin Flora icons to 9.0.0-next.0; retain upstream equivalents for unmapped UI.
 export * from "@ckeditor/ckeditor5-icons-original";
 
-import GardenBoldStroke from "@zendeskgarden/svg-icons/src/12/bold-stroke.svg";
-import GardenItalicStroke from "@zendeskgarden/svg-icons/src/12/italic-stroke.svg";
-import GardenMarkupStroke from "@zendeskgarden/svg-icons/src/12/terminal-cli-stroke.svg";
-import GardenTerminalWindowStroke from "@zendeskgarden/svg-icons/src/12/terminal-window-stroke.svg";
-import GardenLinkStroke from "@zendeskgarden/svg-icons/src/12/link-stroke.svg";
-import GardenListBulletStroke from "@zendeskgarden/svg-icons/src/12/list-bullet-stroke.svg";
-import GardenListNumberStroke from "@zendeskgarden/svg-icons/src/12/list-number-stroke.svg";
-import GardenImageStroke from "@zendeskgarden/svg-icons/src/12/image-stroke.svg";
-import GardenQuoteStroke from "@zendeskgarden/svg-icons/src/12/quote-stroke.svg";
-import GardenEditUndoStroke from "@zendeskgarden/svg-icons/src/12/edit-undo-stroke.svg";
-import GardenEditRedoStroke from "@zendeskgarden/svg-icons/src/12/edit-redo-stroke.svg";
+import GardenBold from "@zendeskgarden/svg-icons/src/bold.svg";
+import GardenItalic from "@zendeskgarden/svg-icons/src/italic.svg";
+import GardenCode from "@zendeskgarden/svg-icons/src/code-bracket.svg";
+import GardenCodeBlock from "@zendeskgarden/svg-icons/src/terminal-window-stroke.svg";
+import GardenLink from "@zendeskgarden/svg-icons/src/chain.svg";
+import GardenBulletedList from "@zendeskgarden/svg-icons/src/list-bullet.svg";
+import GardenNumberedList from "@zendeskgarden/svg-icons/src/list-number.svg";
+import GardenImageUpload from "@zendeskgarden/svg-icons/src/image-stroke.svg";
+import GardenQuote from "@zendeskgarden/svg-icons/src/quote-stroke.svg";
+import GardenUndo from "@zendeskgarden/svg-icons/src/arrow-curve-left.svg";
+import GardenRedo from "@zendeskgarden/svg-icons/src/arrow-curve-right.svg";
 
-// Export Zendesk Garden icons with CKEditor icon names
-export const IconBold = GardenBoldStroke;
-export const IconItalic = GardenItalicStroke;
-export const IconCode = GardenMarkupStroke;
-export const IconCodeBlock = GardenTerminalWindowStroke;
-export const IconLink = GardenLinkStroke;
-export const IconBulletedList = GardenListBulletStroke;
-export const IconNumberedList = GardenListNumberStroke;
-export const IconImageUpload = GardenImageStroke;
-export const IconQuote = GardenQuoteStroke;
-export const IconUndo = GardenEditUndoStroke;
-export const IconRedo = GardenEditRedoStroke;
+export const IconBold = GardenBold;
+export const IconItalic = GardenItalic;
+export const IconCode = GardenCode;
+export const IconCodeBlock = GardenCodeBlock;
+export const IconLink = GardenLink;
+export const IconBulletedList = GardenBulletedList;
+export const IconNumberedList = GardenNumberedList;
+export const IconImageUpload = GardenImageUpload;
+export const IconQuote = GardenQuote;
+export const IconUndo = GardenUndo;
+export const IconRedo = GardenRedo;

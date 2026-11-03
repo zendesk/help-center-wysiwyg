@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-hc-color-scheme="light">
+  <head>
+    <meta charset="utf-8" />
+    <title>Help Center editor — theme review</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 48px;
+        font:
+          15px/1.6 system-ui,
+          sans-serif;
+        background: #f7f7f7;
+        color: #2f3130;
+      }
+      html[data-hc-color-scheme="dark"] body {
+        background: #0c0c0d;
+        color: #dcdcda;
+      }
+      main {
+        max-width: 920px;
+        margin: auto;
+      }
+      h1 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 600;
+      }
+      .intro {
+        margin: 6px 0 28px;
+        opacity: 0.8;
+      }
+      .controls {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        margin-block: 24px;
+      }
+      .field-label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      small {
+        display: block;
+        margin-top: 12px;
+        opacity: 0.8;
+      }
+      select,
+      button {
+        padding: 6px 12px;
+        font: inherit;
+      }
+      #mount {
+        min-width: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Share your experience</h1>
+      <p class="intro">Help Center · Community discussion</p>
+      <div class="controls">
+        <label
+          >Appearance
+          <select id="scheme">
+            <option>light</option>
+            <option>dark</option>
+          </select></label
+        >
+        <button id="direction">Toggle RTL</button>
+      </div>
+      <div id="mount"></div>
+      <small
+        >Format your message, add links, and mention people in the
+        community.</small
+      >
+    </main>
+    <script type="module">
+      const params = new URLSearchParams(location.search);
+      const scheme = params.get("scheme") || "light";
+      document.documentElement.dataset.hcColorScheme = scheme;
+      document.querySelector("#scheme").value = scheme;
+      if (params.has("primary"))
+        document.documentElement.style.setProperty(
+          "--hc-primary-color",
+          params.get("primary"),
+        );
+      const script = document.createElement("script");
+      script.src = params.get("bundle") || "/dist/main.js";
+      await new Promise((resolve, reject) => {
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.append(script);
+      });
+      const host = document.querySelector("#mount");
+      const root = params.has("shadow")
+        ? host.attachShadow({ mode: "closed" })
+        : host;
+      window.reviewRoot = root; // Retain the closed root for manual automation; do not change its mode.
+      const form = document.createElement("form");
+      form.innerHTML =
+        '<label class="field-label" id="message-label">Message</label><textarea aria-labelledby="message-label"></textarea>';
+      root.append(form);
+      const api = window.HelpCenterWysiwyg;
+      const options = {
+        editorType: params.get("type") || "communityPosts",
+        hasAtMentions: true,
+        userRole: params.get("role") || "admin",
+        brandId: 123,
+        baseLocale: params.get("locale") || "en-us",
+      };
+      const target = form.querySelector("textarea");
+      window.editor = params.has("baseline")
+        ? await api.default.create(target, {
+            ...api.getEditorConfig(options),
+            licenseKey: "GPL",
+            label: "Message",
+          })
+        : await api.default.create({
+            ...api.getEditorConfig(options),
+            attachTo: target,
+            licenseKey: "GPL",
+          });
+      window.editor.setData(
+        '<h2>A better way to share knowledge</h2><p>We’re improving our Help Center experience. Use <strong>rich formatting</strong>, share a <a href="https://example.com">helpful resource</a>, or start a conversation with the community.</p><ul><li>Keep information clear and easy to find</li><li>Share tips with your team</li></ul><pre><code>const knowledge = "better together";</code></pre>',
+      );
+      document.querySelector("#scheme").onchange = (event) => {
+        document.documentElement.dataset.hcColorScheme = event.target.value;
+      };
+      document.querySelector("#direction").onclick = () => {
+        document.documentElement.dir =
+          document.documentElement.dir === "rtl" ? "ltr" : "rtl";
+      };
+      window.ready = true;
+    </script>
+  </body>
+</html>

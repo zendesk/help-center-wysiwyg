@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -9,36 +9,41 @@
     <form>
       <label id="editor-label">Field label</label><br />
       <small id="editor-hint">Field hint</small>
-      <textarea id="editor" name="editor" aria-labelledby="editor-label" aria-describedby="editor-hint"></textarea>
+      <textarea
+        id="editor"
+        name="editor"
+        aria-labelledby="editor-label"
+        aria-describedby="editor-hint"
+      ></textarea>
     </form>
     <script type="module">
-      const target = document.getElementById('editor');
-      const { createEditor } = HelpCenterWysiwyg;
+      const target = document.getElementById("editor");
+      const { default: Editor, getEditorConfig } = HelpCenterWysiwyg;
 
-      const editor = await createEditor(target, {
-        editorType: "supportRequests",
-        hasAtMentions: true,
-        userRole: "admin",
-        brandId: 123,
-        baseLocale: "en-us"
+      const editor = await Editor.create({
+        ...getEditorConfig({
+          editorType: "supportRequests",
+          hasAtMentions: true,
+          userRole: "admin",
+          brandId: 123,
+          baseLocale: "en-us",
+        }),
+        attachTo: target,
       });
 
       const notifications = editor.plugins.get("Notification");
 
-      notifications.on(
-        "show:warning:mention:limit", (event, data) => {
+      notifications.on("show:warning:mention:limit", (event, data) => {
         event.stop();
         console.log(event, data);
       });
 
-      notifications.on(
-        "show:success:mention:limit", (event, data) => {
+      notifications.on("show:success:mention:limit", (event, data) => {
         event.stop();
         console.log(event, data);
       });
 
-      notifications.on(
-        "show", (event, data) => {
+      notifications.on("show", (event, data) => {
         event.stop();
         console.log(event, data);
       });

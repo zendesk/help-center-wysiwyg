@@ -8,10 +8,11 @@
   height: 30px;
   background-size: contain;
   margin-inline-end: 8px;
-  background-color: #eee;
+  background-color: var(--ck-color-base-foreground);
 }
 
-.ck.ck-list__item > .ck-button:not(.ck-list-item-button).hc-mentions__item {
+/* v49 adds ck-list-item-button to custom itemRenderer elements as well. */
+.ck.ck-list__item > .ck-button.hc-mentions__item {
   padding: 8px;
   display: flex;
   align-items: center;

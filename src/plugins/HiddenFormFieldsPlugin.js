@@ -20,5 +20,6 @@ export default function HiddenFormFields(editor) {
     form.appendChild(hiddenField);
   });
 
-  return editor;
+  // Function plugins are constructed with `new`. Returning the editor would
+  // register the editor itself as a plugin and recurse during destruction.
 }

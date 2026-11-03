@@ -27,3 +27,9 @@ jobs:
 
       - name: Lint
         run: yarn lint
+
+      - name: Install test browser
+        run: yarn playwright install --with-deps chromium
+
+      - name: Test
+        run: yarn test

@@ -38,10 +38,57 @@ import XHRImageUploadPlugin from "./plugins/XHRImageUploadPlugin";
 
 import { localize } from "./localization";
 
-import "ckeditor5/ckeditor5.css";
-import "./styles.css"; // Should be imported last to take precedence over other editor styles imported above
+import { acquireStyles } from "./theme/styles";
 
-class Editor extends ClassicEditor {}
+function getSourceLabel(target) {
+  if (target?.tagName !== "TEXTAREA") return "";
+
+  const tree = target.getRootNode();
+  return (target.getAttribute("aria-labelledby") || "")
+    .split(/\s+/)
+    .map((id) => tree.getElementById?.(id)?.textContent || "")
+    .join(" ")
+    .replaceAll("*", "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+class Editor extends ClassicEditor {
+  static async create(config = {}) {
+    // Infer a default for the single-root shorthand; explicit root settings win.
+    const label = getSourceLabel(config.attachTo);
+    if (label && !config.roots && config.root?.label === undefined) {
+      config = { ...config, root: { ...config.root, label } };
+    }
+
+    await localize(
+      typeof config.language === "string"
+        ? config.language
+        : config.language?.ui || "en-us",
+    );
+    const target = config.attachTo;
+    // Detached config-only editors use the document until attached by the caller.
+    const release = acquireStyles(
+      target || document.body,
+      config.ui?.overlayContainer,
+    );
+    try {
+      const editor = await super.create(config);
+      const destroy = editor.destroy.bind(editor);
+      editor.destroy = async () => {
+        try {
+          return await destroy();
+        } finally {
+          release();
+        }
+      };
+      return editor;
+    } catch (error) {
+      release();
+      throw error;
+    }
+  }
+}
 
 Editor.builtinPlugins = [
   BlockQuote,
@@ -217,37 +264,6 @@ export const getEditorConfig = ({
       );
     }
   }
-};
-
-export const createEditor = async (target, options) => {
-  await localize(options.baseLocale);
-
-  // Extract field label from aria-labelledby if present
-  let fieldLabel = "";
-  if (
-    target instanceof HTMLTextAreaElement &&
-    target.hasAttribute("aria-labelledby")
-  ) {
-    const labelId = target.getAttribute("aria-labelledby");
-    fieldLabel = document.getElementById(labelId)?.textContent || "";
-  }
-
-  const config = getEditorConfig(options);
-
-  // Add fieldLabel to config if extracted, removing any asterisks used to denote required fields
-  if (fieldLabel) {
-    config.label = fieldLabel.replace("*", "");
-  }
-
-  const editor = await Editor.create(target, config);
-  // Uncomment to enable the CKEditor inspector:
-  // import("@ckeditor/ckeditor5-inspector").then(
-  //   ({ default: CKEditorInspector }) => {
-  //     CKEditorInspector.attach(editor);
-  //     return editor;
-  //   },
-  // );
-  return editor;
 };
 
 export default Editor;
