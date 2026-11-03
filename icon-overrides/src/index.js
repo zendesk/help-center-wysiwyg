@@ -1,6 +1,7 @@
 // Pin Flora icons to 9.0.0-next.0; retain upstream equivalents for unmapped UI.
 export * from "@ckeditor/ckeditor5-icons-original";
 
+import GardenCheck from "@zendeskgarden/svg-icons/src/check.svg";
 import GardenBold from "@zendeskgarden/svg-icons/src/bold.svg";
 import GardenItalic from "@zendeskgarden/svg-icons/src/italic.svg";
 import GardenCode from "@zendeskgarden/svg-icons/src/code-bracket.svg";
@@ -13,6 +14,7 @@ import GardenQuote from "@zendeskgarden/svg-icons/src/quote-stroke.svg";
 import GardenUndo from "@zendeskgarden/svg-icons/src/arrow-curve-left.svg";
 import GardenRedo from "@zendeskgarden/svg-icons/src/arrow-curve-right.svg";
 
+export const IconCheck = GardenCheck;
 export const IconBold = GardenBold;
 export const IconItalic = GardenItalic;
 export const IconCode = GardenCode;

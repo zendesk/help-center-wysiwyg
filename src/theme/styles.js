@@ -2,7 +2,7 @@ import editorCss from "ckeditor5/ckeditor5.css";
 import mentionsCss from "../plugins/CommunityMentionsPlugin/styles.css";
 import imagesCss from "../plugins/MarkExternalImagesPlugin/styles.css";
 import floraCss from "../styles.css";
-import { resolveBrandPalette, resolveScheme, themeTokens } from "./palette";
+import { createThemeTokens, resolveScheme } from "./palette";
 
 // CSS strings are processed by the production webpack/css-loader pipeline.
 // A style tag is deliberately used instead of constructed sheets: no CSS import
@@ -33,11 +33,11 @@ export function acquireStyles(target, overlayContainer) {
   if (!state) {
     state = {
       roots: new Map(),
-      palette: resolveBrandPalette(
-        document.defaultView
-          .getComputedStyle(document.documentElement)
-          .getPropertyValue("--hc-primary-color"),
-      ),
+      primaryColor: document.defaultView
+        .getComputedStyle(document.documentElement)
+        .getPropertyValue("--hc-primary-color"),
+      scheme: null,
+      themeCss: "",
     };
     documents.set(document, state);
   }
@@ -45,11 +45,19 @@ export function acquireStyles(target, overlayContainer) {
     const scheme = resolveScheme(
       document.documentElement.getAttribute("data-hc-color-scheme"),
     );
-    const declarations = Object.entries(themeTokens(state.palette, scheme))
-      .map(([key, value]) => `${key}:${value}`)
-      .join(";");
+    if (state.scheme !== scheme) {
+      const declarations = Object.entries(
+        createThemeTokens(state.primaryColor, scheme),
+      )
+        .map(([key, value]) => `${key}:${value}`)
+        .join(";");
+      state.themeCss = `:root,:host{${declarations}}`;
+      state.scheme = scheme;
+    }
     for (const rootState of state.roots.values()) {
-      rootState.theme.textContent = `:root,:host{${declarations}}`;
+      if (rootState.theme.textContent !== state.themeCss) {
+        rootState.theme.textContent = state.themeCss;
+      }
     }
   };
   const tree = (node) => {

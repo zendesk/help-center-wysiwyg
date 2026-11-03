@@ -1,109 +1,158 @@
-import { parseToRgba } from "color2k";
-import { generateColorScale } from "./generateColorScale";
+import {
+  DEFAULT_THEME,
+  getColor,
+  getFocusBoxShadow,
+} from "@zendeskgarden/react-components";
+import { parseToRgba, toHex } from "color2k";
 
-// Flora 10.0.0-next.4 primary (blue) scale, via Garden's public getColor API.
-const DEFAULT_PALETTE = {
-  100: "#f3f6fb",
-  200: "#e4eaf6",
-  300: "#d4ddf0",
-  400: "#a3b7df",
-  500: "#7f9bd3",
-  600: "#698cd3",
-  700: "#406cc4",
-  800: "#284173",
-  900: "#1f335a",
-  1000: "#14213b",
-  1100: "#0c1322",
-  1200: "#080c16",
-};
-
-export function resolveBrandPalette(input) {
+function resolvePrimaryColor(input) {
   try {
-    // color2k supports hex, named colors, legacy rgb(a) and hsl(a).
-    // Reject transparency rather than silently compositing against the wrong scheme.
-    if (!input?.trim() || parseToRgba(input.trim())[3] !== 1) {
-      return DEFAULT_PALETTE;
+    // Reject transparency rather than compositing against an arbitrary scheme.
+    const color = input?.trim();
+    if (color && parseToRgba(color)[3] === 1) {
+      // CSS "blue" must not mean Garden's built-in "blue" palette.
+      return toHex(color);
     }
-    return generateColorScale(input.trim());
   } catch {
-    return DEFAULT_PALETTE;
+    // Invalid/unsupported branding must never prevent editor initialization.
   }
+  return DEFAULT_THEME.colors.primaryHue;
 }
 
 export function resolveScheme(value) {
   return value === "dark" ? "dark" : "light";
 }
 
-// Unrounded WCAG contrast, separate from the copied palette algorithm.
-export function contrast(a, b) {
-  const luminance = (color) => {
-    const channels = parseToRgba(color)
-      .slice(0, 3)
-      .map((channel) => {
-        const s = channel / 255;
-        return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
-      });
-    return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+export function createThemeTokens(input, scheme = "light") {
+  const theme = {
+    ...DEFAULT_THEME,
+    colors: {
+      ...DEFAULT_THEME.colors,
+      base: resolveScheme(scheme),
+      primaryHue: resolvePrimaryColor(input),
+    },
   };
-  const values = [luminance(a), luminance(b)].sort((x, y) => y - x);
-  return (values[0] + 0.05) / (values[1] + 0.05);
-}
+  const color = (variable, options) =>
+    getColor({ theme, variable, ...options });
+  const neutral = (light, dark) =>
+    getColor({
+      theme,
+      hue: "neutralHue",
+      light: { shade: light },
+      dark: { shade: dark },
+    });
+  // Source: Garden 10.0.0-next.4 StyledButton / StyledIconButton.
+  const buttonTint = (transparency) =>
+    getColor({
+      theme,
+      hue: "neutralHue",
+      light: { shade: 700 },
+      dark: { hue: "white" },
+      transparency,
+    });
+  const hover = buttonTint(theme.opacity[100]);
+  const pressed = buttonTint(theme.opacity[200]);
+  const offset100 = { light: { offset: 100 }, dark: { offset: -100 } };
+  const offset200 = { light: { offset: 200 }, dark: { offset: -200 } };
+  const foreground = color("foreground.default");
+  const menuActive = color("background.primaryEmphasis", {
+    transparency: theme.opacity[100],
+  });
 
-export function themeTokens(palette, scheme) {
-  const dark = scheme === "dark";
-  const background = dark ? "#19191a" : "#ffffff";
-  const raised = dark ? "#202121" : "#ffffff";
-  const subtle = dark ? "#2f3130" : "#f7f7f7";
-  const foreground = dark ? "#dcdcda" : "#2f3130";
-  const shades = Object.values(palette);
-  const primary =
-    (dark ? [...shades].reverse() : shades).find(
-      (shade) =>
-        contrast(shade, background) >= 4.5 && contrast(shade, raised) >= 4.5,
-    ) || foreground;
-  // Prefer Flora's primary-600/700, strengthening only when contrast requires it.
-  const preferred = palette[dark ? 600 : 700];
-  const action =
-    contrast(preferred, background) >= 4.5 && contrast(preferred, raised) >= 4.5
-      ? preferred
-      : primary;
-  const onAction = contrast(action, "#ffffff") >= 4.5 ? "#ffffff" : "#19191a";
+  // Garden owns the palette and states; these are the CKEditor adaptation only.
+  // Geometry follows squared (isPill=false), small toggle buttons. Primary
+  // buttons are neutral-filled in Flora; branding remains on links/focus/menus.
   return {
-    "color-scheme": scheme,
-    "--ck-color-base-background": background,
-    "--ck-color-surface-container": raised,
-    "--ck-color-base-foreground": subtle,
+    "color-scheme": theme.colors.base,
+    "--ck-font-family": theme.fonts.system,
+    "--ck-font-size-base": theme.fontSizes.md,
+    "--ck-font-size-md": theme.fontSizes.md,
+    "--ck-font-weight-medium": theme.fontWeights.semibold,
+    "--ck-border-radius-control": theme.borderRadii.md,
+    "--ck-border-radius-control-small": theme.borderRadii.md,
+    "--ck-border-radius-surface": theme.borderRadii.lg,
+    "--ck-border-radius-uniform": theme.borderRadii.lg,
+    "--ck-editor-outer-radius": theme.borderRadii.lg,
+    "--ck-list-item-button-border-radius": theme.borderRadii.sm,
+    "--ck-list-dropdown-button-border-radius": theme.borderRadii.sm,
+    "--ck-list-padding": theme.space.xxs,
+    "--ck-list-item-outer-padding": `${theme.space.base / 4}px`,
+    "--ck-list-item-button-padding": `${theme.space.xs} ${theme.space.sm}`,
+    "--ck-size-control-min-height": `${theme.space.base * 8}px`,
+    "--ck-icon-size": theme.space.md,
+    "--ck-color-base-background": color("background.default"),
+    "--ck-color-surface-container": color("background.raised"),
+    "--ck-color-base-foreground": color("background.subtle"),
     "--ck-color-base-text": foreground,
-    "--ck-color-base-text-light": dark ? "#b7b7b3" : "#646864",
-    // Essential form boundaries are stronger than Flora's decorative dividers.
-    "--ck-color-base-border": dark ? "#8b8e89" : "#8b8e89",
-    "--ck-color-base-border-light": dark ? "#404241" : "#dcdcda",
-    "--ck-color-divider": dark ? "#404241" : "#dcdcda",
-    "--ck-color-base-hover": subtle,
-    "--ck-color-base-hover-strong": dark ? "#404241" : "#eae9e8",
-    "--ck-color-base-selected": dark ? palette[1000] : palette[100],
-    "--ck-color-base-selected-hover": dark ? palette[900] : palette[200],
-    "--ck-color-base-active": action,
-    "--ck-color-base-action": action,
-    "--ck-color-base-action-hover": dark ? palette[400] : palette[800],
-    "--ck-color-base-action-muted": dark ? palette[1000] : palette[100],
-    "--ck-color-base-action-disabled": dark ? "#404241" : "#dcdcda",
-    "--ck-color-interactive-primary-text": onAction,
-    "--ck-color-base-focus": action,
-    "--ck-focus-border-color": action,
-    "--ck-color-base-focus-shadow": `color-mix(in srgb, ${action} 35%, transparent)`,
-    "--ck-color-base-error": dark ? "#ff99a2" : "#b32031",
-    "--ck-color-base-success": action,
-    "--ck-color-link-default": action,
-    "--ck-content-color-mention-background": dark
-      ? palette[1000]
-      : palette[100],
-    "--ck-content-color-mention-text": action,
-    "--ck-button-save-color": action,
+    "--ck-color-base-text-light": color("foreground.subtle"),
+    // Match Lisbon's deliberate strengthening of essential control boundaries.
+    "--ck-color-base-border": color("border.emphasis"),
+    "--ck-color-base-border-light": color("border.default"),
+    "--ck-color-divider": color("border.default"),
+    "--ck-color-base-hover": hover,
+    "--ck-color-base-hover-strong": pressed,
+    "--ck-button-default-active-background-color": pressed,
+    "--ck-color-base-selected": pressed,
+    "--ck-color-base-selected-hover": pressed,
+    "--ck-color-base-active": neutral(700, 100),
+    "--ck-color-base-action": neutral(900, 300),
+    "--ck-color-base-action-hover": neutral(800, 200),
+    "--ck-button-action-active-background-color": neutral(700, 100),
+    "--ck-color-base-action-muted": color("background.subtle"),
+    "--ck-color-base-action-disabled": color("background.disabled"),
+    "--ck-color-interactive-primary-text": color("foreground.onEmphasis"),
+    "--ck-color-interactive-selected-text": color(
+      "foreground.subtle",
+      offset200,
+    ),
+    "--ck-color-base-focus": color("border.primaryEmphasis"),
+    "--ck-focus-border-color": color("border.primaryEmphasis"),
+    "--ck-focus-shadow": getFocusBoxShadow({ theme }),
+    "--ck-focus-error-shadow": getFocusBoxShadow({
+      theme,
+      color: { variable: "border.dangerEmphasis" },
+    }),
+    "--ck-color-base-error": color("border.dangerEmphasis"),
+    "--ck-color-base-success": color("foreground.success"),
+    "--ck-color-link-default": color("foreground.primary"),
+    "--ck-content-color-mention-background": menuActive,
+    "--ck-content-color-mention-text": color("foreground.primary"),
+    "--ck-button-save-color": color("foreground.subtle"),
     "--ck-button-cancel-color": foreground,
-    "--ck-button-on-disabled-background-color": subtle,
-    "--ck-button-action-disabled-background-color": subtle,
-    "--ck-input-disabled-background-color": subtle,
-    "--ck-input-disabled-text-color": dark ? "#999b97" : "#646864",
+    "--ck-button-default-disabled-background-color": color(
+      "background.disabled",
+    ),
+    "--ck-button-on-disabled-background-color": color("background.disabled"),
+    "--ck-button-action-disabled-background-color": color(
+      "background.disabled",
+    ),
+    "--ck-input-disabled-background-color": color("background.disabled"),
+    "--ck-input-disabled-text-color": color("foreground.disabled"),
+    "--ck-button-opacity-disabled": 1,
+    "--ck-list-button-hover-background-color": menuActive,
+    "--ck-list-button-on-background-color": menuActive,
+    "--ck-list-button-on-text-color": foreground,
+    // Additional local UI tokens: CKEditor has no equivalent for icon foreground
+    // states or Garden's menu stripe. They are not a public branding API.
+    "--ck-button-default-border-color": "transparent",
+    "--ck-button-default-hover-border-color": neutral(600, 500),
+    "--ck-button-default-active-border-color": neutral(700, 400),
+    "--ck-button-default-text-color": color("foreground.subtle"),
+    "--ck-button-default-hover-text-color": color(
+      "foreground.subtle",
+      offset100,
+    ),
+    "--ck-button-default-active-text-color": color(
+      "foreground.subtle",
+      offset200,
+    ),
+    "--ck-list-item-active-indicator-color": color("border.primaryEmphasis"),
+    "--ck-list-item-active-indicator-width": `${theme.space.base}px`,
+    "--ck-list-item-check-size": theme.space.md,
+    "--ck-list-item-check-inset": theme.space.sm,
+    "--ck-list-item-check-padding": `${theme.space.base * 9}px`,
+    "--ck-list-item-active-indicator-separator": theme.borders.sm,
+    "--ck-focus-outline-width": theme.shadowWidths.sm,
+    "--ck-focus-outline-offset": theme.shadowWidths.xs,
   };
 }

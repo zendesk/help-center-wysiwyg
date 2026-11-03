@@ -2,7 +2,7 @@
 "@zendesk/help-center-wysiwyg": major
 ---
 
-Upgrade CKEditor to 49.0.1 with its refreshed theme, a small Flora token set and Flora 9.0.0-next.0 icons. Follow the host's live `data-hc-color-scheme` and static `--hc-primary-color` branding, while preserving editable-content formatting and mention server HTML.
+Upgrade CKEditor to 49.0.1 with its refreshed theme, a small token mapping backed by Garden's public Flora theme/color helpers and Flora 9.0.0-next.0 icons. Follow the host's live `data-hc-color-scheme` and static `--hc-primary-color` branding, while preserving editable-content formatting and mention server HTML.
 
 Install complete editor/plugin styles automatically per document or shadow root through a shared configuration-only `Editor.create(config)` path, including React initialization and styled caller-owned overlay containers. Migrate localization imports, root labels and mention clipboard UIDs.
 

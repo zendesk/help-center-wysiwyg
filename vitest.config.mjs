@@ -11,6 +11,7 @@ export default defineConfig({
         },
       },
       {
+        optimizeDeps: { include: ["@zendeskgarden/react-components"] },
         test: {
           name: "browser",
           include: ["tests/*.browser.js"],

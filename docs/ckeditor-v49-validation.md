@@ -18,11 +18,15 @@ unchanged. Do not treat this fixture as validation of authenticated consumer API
 
 ## Permanent coverage
 
-33 tests: 22 pure tests and 11 Chromium Browser Mode tests.
+The suite last passed with 43 tests (29 pure and 14 Chromium Browser Mode), before
+switching toolbar buttons from borderless basic to bordered toggles and refining
+the menu check icon. Further automated-test work is paused at the user's request;
+the latest visual refinements have been checked in the rendered fixture instead.
 
-- Shade-by-shade parity with Garden 10.0.0-next.4, including saturated, black/white,
-  HSL and translucent algorithm inputs; separate invalid/translucent public-input
-  fallback tests. The public contract rejects alpha below 1.
+- Direct Garden 10.0.0-next.4 semantic-token and branded-state mappings, including
+  saturated, black/white, named, RGB and HSL inputs. CSS named colors are normalized
+  to avoid interpreting them as Garden palette names. Invalid/unsupported and
+  translucent public inputs fall back to Garden's default primary palette.
 - Light/dark/default scheme resolution and contrast checks for UI text, primary
   actions, action text, essential boundaries and focus against the base surface.
 - Real React adapter 12 initialization **before** any standalone initialization,
@@ -35,6 +39,10 @@ unchanged. Do not treat this fixture as validation of authenticated consumer API
   light/dark switching in a closed root.
 - Independent caller-owned closed overlay styling and preservation of unrelated
   `ui` defaults.
+- A fresh document with named-color branding, shared Garden tokens across regular
+  DOM, a closed editor root and a separate closed overlay root; initial dark mode,
+  live light/dark/unknown-scheme changes, static branding, stylesheet reuse,
+  unchanged host attributes and preservation of the host's palette variables.
 - Adjacent duplicate mentions, server save/reload HTML, and clipboard UID omission.
 - Real rendered mention suggestions retain flex layout/padding after v49 adds
   `.ck-list-item-button`; link action text/background contrast in both schemes.
@@ -45,7 +53,55 @@ unchanged. Do not treat this fixture as validation of authenticated consumer API
 Expected browser-test output includes `ui-overlay-container-not-configured` for
 closed-root default overlays. It is not suppressed or treated as a failure.
 
-## Additional local browser checks performed
+## Garden color implementation and bundle check
+
+The copied palette generator and hardcoded semantic color table have been removed.
+`src/theme/palette.js` uses Garden's public `DEFAULT_THEME` and `getColor` exports,
+with a small input-validation wrapper and CKEditor state mapping. Runtime shade
+search and foreground fallback have been removed; only Lisbon's explicit stronger
+control-border mapping remains. The current scheme's declarations are computed
+once per resolved scheme change, per document. A single observer updates each
+active document/shadow root; no scheme attributes are mirrored onto hosts and no
+global internal color bridge variables are introduced. Geometry is mapped from
+Garden tokens, with targeted structural rules in CSS.
+
+UI sources: Garden 10.0.0-next.4 `StyledButton`, `StyledIconButton`,
+`StyledOption`, dropdown `utils.itemStyles`, and public `getFocusBoxShadow`.
+The supplied Flora showcase was also inspected in the browser. Toolbar controls
+use squared toggles with transparent idle/unpressed borders, visible hover borders
+and persistent pressed borders, following the deliberate treatment from PR #44
+(commits `c218595` and `9be1323`). Neutral 8% hover/16% pressed backgrounds and
+Garden-derived border states are retained. Primary action buttons use Flora's
+neutral fills. Focus uses a
+surface-colored 1px spacer and solid 3px primary ring. Menu rows use the primary
+8% tint, logical leading stripe/separator and Garden's fixed-size check SVG.
+CKEditor heading previews and its checkmark/selection semantics are retained.
+Earlier manual visual checks covered light regular DOM and dark Arabic RTL in a
+closed root, before restoring transparent idle borders; this is not full
+interaction/accessibility or consumer validation. Automated tests remain paused.
+
+Before the subsequent UI refinements, an isolated production webpack comparison
+against WIP commit `8d35be1` measured:
+
+| Bundle                | Minified bytes | Gzip bytes |
+| --------------------- | -------------: | ---------: |
+| WIP, copied generator |      1,407,853 |    308,536 |
+| Garden public helpers |      1,439,064 |    318,400 |
+| Increase              |         31,211 |      9,864 |
+
+The emitted chunk module graph retained Garden's theme, palette and `getColor`
+modules and their utility dependencies, but no React, React DOM, styled-components
+or Garden component modules. This relies on the pinned package's ESM exports,
+`sideEffects: false`, and production webpack tree-shaking; recheck on upgrades.
+The WIP comparison reconstructed the old theme files in a temporary directory;
+it did not switch branches or alter the reference commit. Build output retains
+webpack's editor-bundle size warnings.
+
+The build, lint and full Chromium/pure suite were rerun for this implementation.
+The broader manual checks below were performed earlier in the migration, not
+repeated for this color-source change.
+
+## Earlier migration browser checks
 
 Using the same production artifact and fixture in headless **Chromium and Firefox**,
 with both regular DOM and a directly mounted **closed** shadow root:

@@ -107,16 +107,22 @@ copy style tags or import CKEditor CSS again.
   Empty, invalid, translucent and unsupported syntax (including `oklch()`,
   `currentColor` and unresolved `var()`) falls back to Flora blue; it never blocks
   initialization. CSS may resolve a `var()` before the computed value is read.
-- The small internal Flora token subset references Garden
-  `@zendeskgarden/react-components@10.0.0-next.4`. The palette generator is copied
-  from Lisbon at `02d04e3bbd0362890225c4c278831a2356600ad0`,
-  `src/color-scheme/generateColorScale.ts`, with validation kept separate. Parity
-  tests use Garden only as a development dependency; React/Garden/styled-components
-  are not shipped in the editor bundle.
-- Essential control borders are strengthened to Flora neutral-600; primary shades
-  are strengthened when needed for text contrast. Solid scheme-aware focus rings
-  supplement the refreshed theme. These are accessibility adjustments, not a
-  promise that arbitrary raw `--ck-*` overrides are supported branding APIs.
+- Colors come from Garden `@zendeskgarden/react-components@10.0.0-next.4` via its
+  public `DEFAULT_THEME` and `getColor` APIs: Garden generates the primary palette
+  and resolves light/dark semantic colors. A small internal mapping adapts them to
+  CKEditor states; there is no copied palette algorithm or semantic color table.
+  CSS named colors are normalized so, for example, `blue` means CSS blue rather
+  than Garden's built-in blue palette. The production bundle includes Garden's
+  color/theme utilities, not its React components, React or styled-components.
+- Essential control borders retain Lisbon's explicit contrast adjustment through
+  Garden's `border.emphasis`. Colors otherwise follow Garden directly; there is
+  no runtime shade search or foreground-color fallback. Toolbar buttons use the
+  squared toggle style with transparent idle/unpressed borders and visible hover
+  and persistent pressed borders, preserving the earlier accessibility treatment.
+  Primary action buttons use Flora's neutral fills; branding applies to links, focus and active
+  menus. Focus shadows come from Garden's `getFocusBoxShadow`; active menu rows
+  use a primary tint and leading stripe, with a fixed-size Garden check icon.
+  Raw `--ck-*` overrides are not supported public branding APIs.
 - Toolbar, inputs, balloons and mention suggestions use Flora. Editable typography
   remains 15px/24px with existing paragraph/list/code conventions; content colors
   follow the scheme. Presentation is not added to saved HTML.
@@ -152,6 +158,11 @@ is not supported. Styles are installed once per Document/ShadowRoot, in determin
 order before editor measurement. They remain installed after destruction for reuse;
 the last editor releases the scheme observer. Unrelated styles/adopted sheets are
 untouched. Caller-supplied overlay trees automatically receive the same CSS/palette.
+Only the current scheme's color declarations are computed. On a resolved scheme
+change, they are recomputed once per document and applied to each active tree's
+small token stylesheet; the main CSS is not reinstalled. No scheme attributes are mirrored onto shadow hosts,
+no internal `--hc-*` bridge variables are installed on the document, and consumers
+do not need to set the CSS `color-scheme` property or support `light-dark()`.
 
 Closed-root mounting is smoke-tested, **not an upstream support guarantee** (v49
 only publicly supports open roots). The package never opens/replaces the caller's
