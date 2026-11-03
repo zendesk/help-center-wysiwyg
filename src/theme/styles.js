@@ -96,6 +96,10 @@ export function acquireStyles(target, overlayContainer) {
     if (!state.roots.size) {
       state.observer.disconnect();
       state.observer = null;
+      // Branding is static while any editor lives, but once the last editor
+      // releases, the next acquisition re-reads --hc-primary-color. This keeps
+      // destroy/recreate honest (and testable) without live branding updates.
+      documents.delete(document);
     }
   };
 }
