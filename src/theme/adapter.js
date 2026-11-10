@@ -59,7 +59,6 @@ export function getEditorVariables(theme) {
   // Geometry follows squared (isPill=false), small toggle buttons. Primary
   // buttons are neutral-filled in Flora; branding remains on links/focus/menus.
   return {
-    "color-scheme": theme.colors.base,
     "--ck-font-family": theme.fonts.system,
     "--ck-font-size-base": theme.fontSizes.md,
     "--ck-font-size-md": theme.fontSizes.md,

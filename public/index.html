@@ -1,49 +1,410 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html data-hc-color-scheme="light">
   <head>
     <meta charset="utf-8" />
-    <title>Help Center Wysiwyg</title>
+    <title>Help Center Wysiwyg — demo</title>
     <script src="main.js"></script>
+    <style>
+      :root {
+        color-scheme: light;
+        --page-bg: #ffffff;
+        --page-fg: #2f3941;
+        --page-border: #d8dcde;
+        --page-surface: #f8f9f9;
+      }
+      :root[data-hc-color-scheme="dark"] {
+        color-scheme: dark;
+        --page-bg: #1d2327;
+        --page-fg: #e8ebed;
+        --page-border: #49545c;
+        --page-surface: #272e33;
+      }
+      body {
+        margin: 0;
+        padding: 24px;
+        background: var(--page-bg);
+        color: var(--page-fg);
+        font-family: system-ui, sans-serif;
+        font-size: 14px;
+      }
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 24px;
+        align-items: end;
+        padding: 12px 16px;
+        margin-bottom: 24px;
+        background: var(--page-surface);
+        border: 1px solid var(--page-border);
+        border-radius: 8px;
+      }
+      .controls label {
+        display: block;
+        margin-top: 6px;
+      }
+      .controls .group > span {
+        font-weight: 600;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+      .hint {
+        font-size: 12px;
+        opacity: 0.75;
+      }
+      #stage {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+      .editor-host {
+        max-width: 800px;
+      }
+      #log {
+        margin-top: 24px;
+        padding: 12px;
+        background: var(--page-surface);
+        border: 1px solid var(--page-border);
+        border-radius: 8px;
+        font-size: 12px;
+        white-space: pre-wrap;
+        max-height: 240px;
+        overflow: auto;
+      }
+    </style>
   </head>
   <body>
-    <form>
-      <label id="editor-label">Field label</label><br />
-      <small id="editor-hint">Field hint</small>
-      <textarea id="editor" name="editor" aria-labelledby="editor-label" aria-describedby="editor-hint"></textarea>
-    </form>
+    <div class="controls">
+      <div class="group">
+        <span>Color scheme</span>
+        <label>
+          <input type="radio" name="scheme" value="light" checked /> Light
+        </label>
+        <label>
+          <input type="radio" name="scheme" value="dark" /> Dark
+        </label>
+        <div class="hint">Applies live (data-hc-color-scheme)</div>
+      </div>
+
+      <div class="group">
+        <span>Primary color</span>
+        <label>
+          <input type="color" id="brand-picker" value="#17494d" />
+          <input
+            type="text"
+            id="brand-input"
+            placeholder="CSS color, empty = default"
+            size="22"
+          />
+        </label>
+        <div class="hint">Read as --hc-primary-color on recreate</div>
+      </div>
+
+      <div class="group">
+        <span>Editor</span>
+        <label>
+          Type
+          <select id="editor-type">
+            <option value="communityPosts" selected>communityPosts</option>
+            <option value="comments">comments</option>
+            <option value="supportRequests">supportRequests</option>
+          </select>
+        </label>
+        <label>
+          Role
+          <select id="user-role">
+            <option value="admin" selected>admin</option>
+            <option value="agent">agent</option>
+            <option value="end-user">end-user</option>
+            <option value="anonymous">anonymous</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="group">
+        <span>At-mentions (mocked API)</span>
+        <label>
+          <input type="checkbox" id="at-mentions" checked /> Enabled
+        </label>
+        <label>
+          <input type="checkbox" id="mentions-fail" /> Simulate API failure
+        </label>
+        <div class="hint">comments/communityPosts only; type @ to test</div>
+      </div>
+
+      <div class="group">
+        <span>Mounting</span>
+        <label>
+          Mount in
+          <select id="mount">
+            <option value="document" selected>document</option>
+            <option value="shadow-open">shadow root (open)</option>
+            <option value="shadow-closed">shadow root (closed)</option>
+          </select>
+        </label>
+        <label>
+          <input type="checkbox" id="external-overlay" /> External overlay
+          container
+        </label>
+        <div class="hint">Closed root + default overlay logs an upstream warning (expected)</div>
+      </div>
+
+      <div class="group">
+        <span>Validation</span>
+        <label>
+          <input type="checkbox" id="error-state" /> Error state
+        </label>
+        <div class="hint">Applies live; focus the content or Shift+Tab to the toolbar</div>
+      </div>
+
+      <div class="group">
+        <span>Instances</span>
+        <label>
+          <input type="checkbox" id="second-editor" /> Second editor (shared
+          styles)
+        </label>
+      </div>
+
+      <div class="group">
+        <button id="recreate">Recreate editor(s)</button>
+        <button id="log-data">Log data</button>
+      </div>
+    </div>
+
+    <main id="stage"></main>
+
+    <!-- Used by the "external overlay container" option. -->
+    <div id="overlay-container"></div>
+
+    <pre id="log"></pre>
+
     <script type="module">
-      const target = document.getElementById('editor');
-      const { createEditor } = HelpCenterWysiwyg;
+      const {
+        default: Editor,
+        createEditor,
+        getEditorConfig,
+      } = HelpCenterWysiwyg;
 
-      const editor = await createEditor(target, {
-        editorType: "supportRequests",
-        hasAtMentions: true,
-        userRole: "admin",
-        brandId: 123,
-        baseLocale: "en-us"
+      // ---------------------------------------------------------------------
+      // Mocked mentions API. CommunityMentionsPlugin fetches
+      // /hc/api/internal/communities/mentions.json — intercepted here so the
+      // demo works without a Help Center backend. Image uploads are NOT mocked.
+      // ---------------------------------------------------------------------
+      const avatarFor = (name, bg) =>
+        "data:image/svg+xml," +
+        encodeURIComponent(
+          `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">` +
+            `<rect width="32" height="32" rx="16" fill="${bg}"/>` +
+            `<text x="16" y="21" font-family="sans-serif" font-size="13" fill="#fff" text-anchor="middle">` +
+            name
+              .split(" ")
+              .map((word) => word[0])
+              .join("") +
+            `</text></svg>`,
+        );
+
+      const MENTION_USERS = [
+        { id: 1, name: "Alice Anderson", avatar_url: avatarFor("Alice Anderson", "#03363d") },
+        { id: 2, name: "Bob Brown", avatar_url: avatarFor("Bob Brown", "#17494d") },
+        { id: 3, name: "Carol Clark", avatar_url: avatarFor("Carol Clark", "#0e8a67") },
+        { id: 4, name: "Dave Davis", avatar_url: avatarFor("Dave Davis", "#c72e1c") },
+        { id: 5, name: "Erin Evans", avatar_url: avatarFor("Erin Evans", "#7038a4") },
+        { id: 6, name: "Frank Foster", avatar_url: avatarFor("Frank Foster", "#ad5918") },
+      ];
+
+      const realFetch = window.fetch.bind(window);
+      window.fetch = (input, init) => {
+        const url = new URL(
+          typeof input === "string" ? input : input.url,
+          location.href,
+        );
+        if (url.pathname === "/hc/api/internal/communities/mentions.json") {
+          if (document.getElementById("mentions-fail").checked) {
+            return Promise.resolve(new Response("boom", { status: 500 }));
+          }
+          const query = (url.searchParams.get("query") || "").toLowerCase();
+          const users = MENTION_USERS.filter((user) =>
+            user.name.toLowerCase().includes(query),
+          );
+          return Promise.resolve(
+            new Response(JSON.stringify(users), {
+              status: 200,
+              headers: { "Content-Type": "application/json" },
+            }),
+          );
+        }
+        return realFetch(input, init);
+      };
+
+      // ---------------------------------------------------------------------
+      // Demo harness
+      // ---------------------------------------------------------------------
+      const stage = document.getElementById("stage");
+      const logElement = document.getElementById("log");
+      const log = (...args) => {
+        console.log(...args);
+        logElement.textContent +=
+          args
+            .map((arg) =>
+              typeof arg === "string" ? arg : JSON.stringify(arg),
+            )
+            .join(" ") + "\n";
+        logElement.scrollTop = logElement.scrollHeight;
+      };
+
+      const control = (id) => document.getElementById(id);
+      let editors = [];
+      let labelCounter = 0;
+
+      const SEED_CONTENT = `<p>Hey <span class="mention" data-mention="@Alice Anderson" data-user-id="1">@Alice Anderson</span>, can you review this?</p>` +
+        `<p>Some <strong>formatted</strong> text, <code>inline code</code>, and a <a href="https://example.com">link</a>.</p>` +
+        `<pre><code>const codeBlock = "dark-mode check";</code></pre>`;
+
+      function applyBranding() {
+        const value = control("brand-input").value.trim();
+        if (value) {
+          document.documentElement.style.setProperty(
+            "--hc-primary-color",
+            value,
+          );
+        } else {
+          document.documentElement.style.removeProperty("--hc-primary-color");
+        }
+      }
+
+      function buildTarget(root) {
+        labelCounter += 1;
+        const labelId = `editor-label-${labelCounter}`;
+        const hintId = `editor-hint-${labelCounter}`;
+        const form = document.createElement("form");
+        const label = document.createElement("label");
+        label.id = labelId;
+        label.textContent = "Field label";
+        const hint = document.createElement("small");
+        hint.id = hintId;
+        hint.textContent = "Field hint";
+        const textarea = document.createElement("textarea");
+        textarea.name = "editor";
+        textarea.setAttribute("aria-labelledby", labelId);
+        textarea.setAttribute("aria-describedby", hintId);
+        textarea.value = SEED_CONTENT;
+        form.append(label, document.createElement("br"), hint, textarea);
+        root.append(form);
+        return textarea;
+      }
+
+      // Keep the source validation contract and CKEditor's rendered ARIA state
+      // in sync. Use the view writer so focus/blur rendering retains the state.
+      function applyErrorState(editor) {
+        const invalid = control("error-state").checked;
+        if (invalid) {
+          editor.sourceElement.setAttribute("aria-invalid", "true");
+        } else {
+          editor.sourceElement.removeAttribute("aria-invalid");
+        }
+        editor.editing.view.change((writer) => {
+          const root = editor.editing.view.document.getRoot();
+          if (invalid) {
+            writer.setAttribute("aria-invalid", "true", root);
+          } else {
+            writer.removeAttribute("aria-invalid", root);
+          }
+        });
+      }
+
+      async function createEditorIn(host) {
+        const mount = control("mount").value;
+        let target;
+        if (mount === "document") {
+          target = buildTarget(host);
+        } else {
+          const shadow = host.attachShadow({
+            mode: mount === "shadow-closed" ? "closed" : "open",
+          });
+          target = buildTarget(shadow);
+        }
+
+        const options = {
+          editorType: control("editor-type").value,
+          hasAtMentions: control("at-mentions").checked,
+          userRole: control("user-role").value,
+          brandId: 123,
+          baseLocale: "en-us",
+          locale: "en-us",
+        };
+
+        const editor = control("external-overlay").checked
+          ? await Editor.create({
+              ...getEditorConfig(options),
+              attachTo: target,
+              ui: {
+                overlayContainer: document.getElementById("overlay-container"),
+              },
+            })
+          : await createEditor(target, options);
+
+        applyErrorState(editor);
+
+        const notifications = editor.plugins.get("Notification");
+        for (const event of [
+          "show:warning:mention:limit",
+          "show:success:mention:limit",
+          "show",
+        ]) {
+          notifications.on(event, (evt, data) => {
+            evt.stop();
+            log(`[notification:${event}]`, data.message || "");
+          });
+        }
+
+        return editor;
+      }
+
+      async function recreate() {
+        applyBranding();
+        await Promise.all(editors.map((editor) => editor.destroy()));
+        editors = [];
+        stage.innerHTML = "";
+        const count = control("second-editor").checked ? 2 : 1;
+        for (let i = 0; i < count; i++) {
+          const host = document.createElement("div");
+          host.className = "editor-host";
+          stage.append(host);
+          editors.push(await createEditorIn(host));
+        }
+        editors[0].focus();
+      }
+
+      // Color scheme applies live — no recreation needed.
+      document.querySelectorAll('input[name="scheme"]').forEach((radio) =>
+        radio.addEventListener("change", () => {
+          document.documentElement.dataset.hcColorScheme = radio.value;
+        }),
+      );
+
+      control("brand-picker").addEventListener("input", (evt) => {
+        control("brand-input").value = evt.target.value;
       });
 
-      const notifications = editor.plugins.get("Notification");
-
-      notifications.on(
-        "show:warning:mention:limit", (event, data) => {
-        event.stop();
-        console.log(event, data);
+      control("error-state").addEventListener("change", () => {
+        editors.forEach(applyErrorState);
       });
 
-      notifications.on(
-        "show:success:mention:limit", (event, data) => {
-        event.stop();
-        console.log(event, data);
+      control("recreate").addEventListener("click", recreate);
+      control("log-data").addEventListener("click", () => {
+        editors.forEach((editor, i) => log(`--- editor ${i} ---\n${editor.getData()}`));
       });
+      for (const id of [
+        "editor-type",
+        "user-role",
+        "at-mentions",
+        "mount",
+        "external-overlay",
+        "second-editor",
+      ]) {
+        control(id).addEventListener("change", recreate);
+      }
 
-      notifications.on(
-        "show", (event, data) => {
-        event.stop();
-        console.log(event, data);
-      });
-
-      editor.focus();
+      await recreate();
     </script>
   </body>
 </html>

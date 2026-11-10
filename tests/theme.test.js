@@ -35,6 +35,13 @@ it.each(["light", "dark"])(
     Object.freeze(theme.colors);
     Object.freeze(theme);
     const variables = getEditorVariables(theme);
+    // These declarations are installed on :root/:host; leave native properties
+    // such as color-scheme to the page or component.
+    expect(
+      Object.keys(variables).every(
+        (key) => key.startsWith("--ck-") || key.startsWith("--hc-wysiwyg-"),
+      ),
+    ).toBe(true);
     expect(variables["--ck-color-link-default"]).toBe(
       getColor({ theme, variable: "foreground.primary" }),
     );
