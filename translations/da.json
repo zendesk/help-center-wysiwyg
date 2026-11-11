@@ -2,6 +2,7 @@
   "locale": "da",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "Tilbage",
     "help-center-wysiwyg.block-quote": "Anførselstegn",
     "help-center-wysiwyg.bold": "Fed skrift",
     "help-center-wysiwyg.bulleted-list": "Punktopstilling",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "Afsnit",
     "help-center-wysiwyg.plain-text": "Almindelig tekst",
     "help-center-wysiwyg.redo": "Gendan",
+    "help-center-wysiwyg.resize-image": "Tilpas billedets størrelse",
+    "help-center-wysiwyg.resize-image-custom": "Brugerdefineret",
+    "help-center-wysiwyg.resize-image-input": "Ændr størrelse på billede (i %0)",
+    "help-center-wysiwyg.resize-image-list": "Liste med tilpasning af billede",
+    "help-center-wysiwyg.resize-image-original": "Oprindelig",
+    "help-center-wysiwyg.resize-image-value-required": "Værdien skal udfyldes.",
     "help-center-wysiwyg.right-aligned-image": "Højrejusteret billede",
     "help-center-wysiwyg.save": "Gem",
     "help-center-wysiwyg.show-more-items": "Vis flere elementer",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "Fjern link",
     "help-center-wysiwyg.upload-failed": "Upload mislykkedes"
   },
-  "updated_at": "2026-03-24T17:00:18Z"
+  "updated_at": "2026-11-05T14:01:37Z"
 }

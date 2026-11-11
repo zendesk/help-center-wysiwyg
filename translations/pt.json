@@ -2,6 +2,7 @@
   "locale": "pt",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "Voltar",
     "help-center-wysiwyg.block-quote": "Orçamento",
     "help-center-wysiwyg.bold": "Negrito",
     "help-center-wysiwyg.bulleted-list": "Lista com marcadores",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "Parágrafo",
     "help-center-wysiwyg.plain-text": "Texto simples",
     "help-center-wysiwyg.redo": "Refazer",
+    "help-center-wysiwyg.resize-image": "Redimensionar imagem",
+    "help-center-wysiwyg.resize-image-custom": "Personalizar",
+    "help-center-wysiwyg.resize-image-input": "Redimensionar imagem (%0)",
+    "help-center-wysiwyg.resize-image-list": "Lista de redimensionamento de imagem",
+    "help-center-wysiwyg.resize-image-original": "Original",
+    "help-center-wysiwyg.resize-image-value-required": "O valor não pode ficar vazio.",
     "help-center-wysiwyg.right-aligned-image": "Imagem alinhada à direita",
     "help-center-wysiwyg.save": "Guardar",
     "help-center-wysiwyg.show-more-items": "Mostrar mais itens",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "Desassociar",
     "help-center-wysiwyg.upload-failed": "Erro ao carregar"
   },
-  "updated_at": "2026-03-23T04:48:33Z"
+  "updated_at": "2026-11-05T13:33:22Z"
 }

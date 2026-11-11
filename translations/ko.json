@@ -2,6 +2,7 @@
   "locale": "ko",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "뒤로",
     "help-center-wysiwyg.block-quote": "인용",
     "help-center-wysiwyg.bold": "굵게",
     "help-center-wysiwyg.bulleted-list": "글머리 기호 목록",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "단락",
     "help-center-wysiwyg.plain-text": "일반 텍스트",
     "help-center-wysiwyg.redo": "다시 실행",
+    "help-center-wysiwyg.resize-image": "이미지 크기 조정",
+    "help-center-wysiwyg.resize-image-custom": "사용자 지정",
+    "help-center-wysiwyg.resize-image-input": "이미지 크기 조정(%0 단위)",
+    "help-center-wysiwyg.resize-image-list": "이미지 크기 조정 목록",
+    "help-center-wysiwyg.resize-image-original": "원본 크기",
+    "help-center-wysiwyg.resize-image-value-required": "값은 반드시 입력해야 합니다.",
     "help-center-wysiwyg.right-aligned-image": "오른쪽 정렬 이미지",
     "help-center-wysiwyg.save": "저장",
     "help-center-wysiwyg.show-more-items": "항목 더 보기",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "연결 해제",
     "help-center-wysiwyg.upload-failed": "업로드 실패"
   },
-  "updated_at": "2026-03-25T14:44:25Z"
+  "updated_at": "2026-11-05T14:02:04Z"
 }

@@ -2,6 +2,7 @@
   "locale": "de",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "Zurück",
     "help-center-wysiwyg.block-quote": "Angebot",
     "help-center-wysiwyg.bold": "Fett",
     "help-center-wysiwyg.bulleted-list": "Aufzählungsliste",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "Absatz",
     "help-center-wysiwyg.plain-text": "Nur-Text",
     "help-center-wysiwyg.redo": "Wiederholen",
+    "help-center-wysiwyg.resize-image": "Bildgröße ändern",
+    "help-center-wysiwyg.resize-image-custom": "Angepasst",
+    "help-center-wysiwyg.resize-image-input": "Bildgröße ändern (in %0)",
+    "help-center-wysiwyg.resize-image-list": "Liste für Bildgrößenänderungen",
+    "help-center-wysiwyg.resize-image-original": "Original",
+    "help-center-wysiwyg.resize-image-value-required": "Der Wert darf nicht leer sein.",
     "help-center-wysiwyg.right-aligned-image": "Rechtsbündig ausgerichtetes Bild",
     "help-center-wysiwyg.save": "Speichern",
     "help-center-wysiwyg.show-more-items": "Weitere Elemente anzeigen",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "Trennen",
     "help-center-wysiwyg.upload-failed": "Fehler beim Hochladen"
   },
-  "updated_at": "2026-03-24T17:00:15Z"
+  "updated_at": "2026-11-05T15:45:14Z"
 }

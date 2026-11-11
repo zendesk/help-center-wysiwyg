@@ -2,6 +2,7 @@
   "locale": "sv",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "Tillbaka",
     "help-center-wysiwyg.block-quote": "Citat",
     "help-center-wysiwyg.bold": "Fetstil",
     "help-center-wysiwyg.bulleted-list": "Punktlista",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "Stycke",
     "help-center-wysiwyg.plain-text": "Oformaterad text",
     "help-center-wysiwyg.redo": "Gör om",
+    "help-center-wysiwyg.resize-image": "Ändra storlek på bild",
+    "help-center-wysiwyg.resize-image-custom": "Anpassad",
+    "help-center-wysiwyg.resize-image-input": "Ändra storlek på bild ( (i %0)",
+    "help-center-wysiwyg.resize-image-list": "Lista med ändring av storlek",
+    "help-center-wysiwyg.resize-image-original": "Ursprunglig",
+    "help-center-wysiwyg.resize-image-value-required": "Värdet får inte vara tomt.",
     "help-center-wysiwyg.right-aligned-image": "Högerjusterad bild",
     "help-center-wysiwyg.save": "Spara",
     "help-center-wysiwyg.show-more-items": "Visa fler objekt",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "Ta bort länk",
     "help-center-wysiwyg.upload-failed": "Det gick inte att ladda upp"
   },
-  "updated_at": "2026-03-24T17:00:17Z"
+  "updated_at": "2026-11-05T14:02:32Z"
 }

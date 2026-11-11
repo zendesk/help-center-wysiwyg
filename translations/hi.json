@@ -2,6 +2,7 @@
   "locale": "hi",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "पीछे",
     "help-center-wysiwyg.block-quote": "कोट",
     "help-center-wysiwyg.bold": "बोल्ड",
     "help-center-wysiwyg.bulleted-list": "बुलेट वाली सूची",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "परिच्छेद",
     "help-center-wysiwyg.plain-text": "सादा पाठ",
     "help-center-wysiwyg.redo": "फिर से करें",
+    "help-center-wysiwyg.resize-image": "छवि का आकार बदलें",
+    "help-center-wysiwyg.resize-image-custom": "कस्टम",
+    "help-center-wysiwyg.resize-image-input": "छवि का आकार बदलें (%0 में)",
+    "help-center-wysiwyg.resize-image-list": "छवि का आकार बदलने की सूची",
+    "help-center-wysiwyg.resize-image-original": "मूल",
+    "help-center-wysiwyg.resize-image-value-required": "मान खाली नहीं होना चाहिए।",
     "help-center-wysiwyg.right-aligned-image": "दाईं ओर संरेखित छवि",
     "help-center-wysiwyg.save": "सहेजें",
     "help-center-wysiwyg.show-more-items": "और वस्तुएं दिखाएं",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "लिंक निकालें",
     "help-center-wysiwyg.upload-failed": "अपलोड की प्रक्रिया पूरी नहीं हो सकी"
   },
-  "updated_at": "2026-03-24T17:00:16Z"
+  "updated_at": "2026-11-05T14:01:26Z"
 }

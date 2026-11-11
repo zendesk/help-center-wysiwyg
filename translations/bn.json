@@ -2,6 +2,7 @@
   "locale": "bn",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "Back",
     "help-center-wysiwyg.block-quote": "উদ্ধৃতি",
     "help-center-wysiwyg.bold": "বোল্ড",
     "help-center-wysiwyg.bulleted-list": "বুলেটযুক্ত তালিকা",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "অনুচ্ছেদ",
     "help-center-wysiwyg.plain-text": "সরল টেক্সট",
     "help-center-wysiwyg.redo": "আবার করুন",
+    "help-center-wysiwyg.resize-image": "Resize image",
+    "help-center-wysiwyg.resize-image-custom": "Custom",
+    "help-center-wysiwyg.resize-image-input": "Resize image (in %0)",
+    "help-center-wysiwyg.resize-image-list": "Image resize list",
+    "help-center-wysiwyg.resize-image-original": "Original",
+    "help-center-wysiwyg.resize-image-value-required": "The value must not be empty.",
     "help-center-wysiwyg.right-aligned-image": "ডানদিকে সারিবদ্ধ ছবি",
     "help-center-wysiwyg.save": "সেভ করুন",
     "help-center-wysiwyg.show-more-items": "আরও আইটেম দেখান",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "আনলিঙ্ক করুন",
     "help-center-wysiwyg.upload-failed": "আপলোড করা যায়নি"
   },
-  "updated_at": "2026-03-25T15:09:44Z"
+  "updated_at": "2026-10-06T17:00:30Z"
 }
