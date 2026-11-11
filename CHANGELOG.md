@@ -1,5 +1,11 @@
 # @zendesk/help-center-wysiwyg
 
+## 1.1.7
+
+### Patch Changes
+
+- 6a37f86: Update translations to the latest available versions.
+
 ## 1.1.6
 
 ### Patch Changes
