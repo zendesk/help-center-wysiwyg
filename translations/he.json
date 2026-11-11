@@ -2,6 +2,7 @@
   "locale": "he",
   "rtl": true,
   "translations": {
+    "help-center-wysiwyg.back": "הקודם",
     "help-center-wysiwyg.block-quote": "הצעת מחיר",
     "help-center-wysiwyg.bold": "מודגש",
     "help-center-wysiwyg.bulleted-list": "רשימה עם תבליטים",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "פסקה",
     "help-center-wysiwyg.plain-text": "טקסט פשוט",
     "help-center-wysiwyg.redo": "בצע שוב",
+    "help-center-wysiwyg.resize-image": "שינוי גודל התמונה",
+    "help-center-wysiwyg.resize-image-custom": "התאמה אישית",
+    "help-center-wysiwyg.resize-image-input": "שינוי גודל התמונה (ב-%0)",
+    "help-center-wysiwyg.resize-image-list": "רשימת שינוי גודל התמונה",
+    "help-center-wysiwyg.resize-image-original": "מקורי",
+    "help-center-wysiwyg.resize-image-value-required": "הערך לא יכול להיות ריק.",
     "help-center-wysiwyg.right-aligned-image": "תמונה מיושרת לימין",
     "help-center-wysiwyg.save": "שמור",
     "help-center-wysiwyg.show-more-items": "הצג פריטים נוספים",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "בטל קישור",
     "help-center-wysiwyg.upload-failed": "ההעלאה נכשלה"
   },
-  "updated_at": "2026-03-24T17:00:15Z"
+  "updated_at": "2026-11-05T14:01:47Z"
 }

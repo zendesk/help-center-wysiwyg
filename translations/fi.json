@@ -2,6 +2,7 @@
   "locale": "fi",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "Takaisin",
     "help-center-wysiwyg.block-quote": "Lainaus",
     "help-center-wysiwyg.bold": "Lihavointi",
     "help-center-wysiwyg.bulleted-list": "Luettelomerkeillä varustettu luettelo",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "Kappale",
     "help-center-wysiwyg.plain-text": "Vain teksti",
     "help-center-wysiwyg.redo": "Toista",
+    "help-center-wysiwyg.resize-image": "Muuta kuvan kokoa",
+    "help-center-wysiwyg.resize-image-custom": "Mukautettu",
+    "help-center-wysiwyg.resize-image-input": "Muuta kuvan kokoa (%0:ssa)",
+    "help-center-wysiwyg.resize-image-list": "Kuvan koon muutosluettelo",
+    "help-center-wysiwyg.resize-image-original": "Alkuperäinen",
+    "help-center-wysiwyg.resize-image-value-required": "Arvo ei voi olla tyhjä.",
     "help-center-wysiwyg.right-aligned-image": "Oikealle tasattu kuva",
     "help-center-wysiwyg.save": "Tallenna",
     "help-center-wysiwyg.show-more-items": "Näytä lisää kohteita",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "Poista yhteys",
     "help-center-wysiwyg.upload-failed": "Lataus epäonnistui"
   },
-  "updated_at": "2026-03-24T17:00:16Z"
+  "updated_at": "2026-11-05T16:58:26Z"
 }

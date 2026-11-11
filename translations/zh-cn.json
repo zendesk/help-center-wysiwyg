@@ -2,6 +2,7 @@
   "locale": "zh-cn",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "返回",
     "help-center-wysiwyg.block-quote": "引用",
     "help-center-wysiwyg.bold": "加粗",
     "help-center-wysiwyg.bulleted-list": "项目符号列表",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "段落",
     "help-center-wysiwyg.plain-text": "纯文本",
     "help-center-wysiwyg.redo": "重做",
+    "help-center-wysiwyg.resize-image": "调整图像大小",
+    "help-center-wysiwyg.resize-image-custom": "自定义",
+    "help-center-wysiwyg.resize-image-input": "调整图像大小（以 %0 为单位）",
+    "help-center-wysiwyg.resize-image-list": "图像调整大小列表",
+    "help-center-wysiwyg.resize-image-original": "原始",
+    "help-center-wysiwyg.resize-image-value-required": "值不得为空。",
     "help-center-wysiwyg.right-aligned-image": "图像右对齐",
     "help-center-wysiwyg.save": "保存",
     "help-center-wysiwyg.show-more-items": "显示更多项目",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "取消链接",
     "help-center-wysiwyg.upload-failed": "上传失败"
   },
-  "updated_at": "2026-03-25T15:27:34Z"
+  "updated_at": "2026-11-05T14:02:10Z"
 }

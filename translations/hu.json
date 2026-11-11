@@ -2,6 +2,7 @@
   "locale": "hu",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "Vissza",
     "help-center-wysiwyg.block-quote": "Idézet",
     "help-center-wysiwyg.bold": "Félkövér",
     "help-center-wysiwyg.bulleted-list": "Listajeles lista",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "Bekezdés",
     "help-center-wysiwyg.plain-text": "Sima szöveg",
     "help-center-wysiwyg.redo": "Mégis",
+    "help-center-wysiwyg.resize-image": "Kép átméretezése",
+    "help-center-wysiwyg.resize-image-custom": "Egyéni",
+    "help-center-wysiwyg.resize-image-input": "Kép átméretezése (%0)",
+    "help-center-wysiwyg.resize-image-list": "Képátméretezési lista",
+    "help-center-wysiwyg.resize-image-original": "Eredeti",
+    "help-center-wysiwyg.resize-image-value-required": "Az érték nem lehet üres.",
     "help-center-wysiwyg.right-aligned-image": "Jobbra igazított kép",
     "help-center-wysiwyg.save": "Mentés",
     "help-center-wysiwyg.show-more-items": "További elemek megjelenítése",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "Hivatkozás eltávolítása",
     "help-center-wysiwyg.upload-failed": "A feltöltés nem sikerült"
   },
-  "updated_at": "2026-03-24T17:00:16Z"
+  "updated_at": "2026-11-05T14:27:42Z"
 }

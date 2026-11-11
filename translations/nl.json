@@ -2,6 +2,7 @@
   "locale": "nl",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "Terug",
     "help-center-wysiwyg.block-quote": "Offerte",
     "help-center-wysiwyg.bold": "Vet",
     "help-center-wysiwyg.bulleted-list": "Lijst met opsommingstekens",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "Alinea",
     "help-center-wysiwyg.plain-text": "Niet-opgemaakte tekst",
     "help-center-wysiwyg.redo": "Opnieuw uitvoeren",
+    "help-center-wysiwyg.resize-image": "Grootte van afbeelding wijzigen",
+    "help-center-wysiwyg.resize-image-custom": "Aangepast",
+    "help-center-wysiwyg.resize-image-input": "Formaat van afbeelding wijzigen (in %0)",
+    "help-center-wysiwyg.resize-image-list": "Lijst voor formaat wijzigen van afbeeldingen",
+    "help-center-wysiwyg.resize-image-original": "Origineel",
+    "help-center-wysiwyg.resize-image-value-required": "De waarde mag niet leeg zijn.",
     "help-center-wysiwyg.right-aligned-image": "Rechts uitgelijnde afbeelding",
     "help-center-wysiwyg.save": "Opslaan",
     "help-center-wysiwyg.show-more-items": "Meer items weergeven",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "Loskoppelen",
     "help-center-wysiwyg.upload-failed": "Uploaden mislukt"
   },
-  "updated_at": "2026-03-24T17:00:19Z"
+  "updated_at": "2026-11-05T14:59:39Z"
 }

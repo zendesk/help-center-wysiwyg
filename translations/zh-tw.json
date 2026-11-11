@@ -2,6 +2,7 @@
   "locale": "zh-tw",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "上一頁",
     "help-center-wysiwyg.block-quote": "報價",
     "help-center-wysiwyg.bold": "粗體",
     "help-center-wysiwyg.bulleted-list": "項目符號清單",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "段落",
     "help-center-wysiwyg.plain-text": "純文字",
     "help-center-wysiwyg.redo": "重做",
+    "help-center-wysiwyg.resize-image": "調整影像大小",
+    "help-center-wysiwyg.resize-image-custom": "自訂",
+    "help-center-wysiwyg.resize-image-input": "調整影像大小 (%0)",
+    "help-center-wysiwyg.resize-image-list": "影像大小調整清單",
+    "help-center-wysiwyg.resize-image-original": "原始",
+    "help-center-wysiwyg.resize-image-value-required": "此值不得為空。",
     "help-center-wysiwyg.right-aligned-image": "影像靠右對齊",
     "help-center-wysiwyg.save": "儲存",
     "help-center-wysiwyg.show-more-items": "顯示更多項目",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "取消連結",
     "help-center-wysiwyg.upload-failed": "上傳失敗"
   },
-  "updated_at": "2026-03-24T17:00:17Z"
+  "updated_at": "2026-11-05T14:02:21Z"
 }

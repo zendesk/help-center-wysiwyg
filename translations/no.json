@@ -2,6 +2,7 @@
   "locale": "no",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "Tilbake",
     "help-center-wysiwyg.block-quote": "Anførselstegn",
     "help-center-wysiwyg.bold": "Fet",
     "help-center-wysiwyg.bulleted-list": "Punktliste",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "Avsnitt",
     "help-center-wysiwyg.plain-text": "Ren tekst",
     "help-center-wysiwyg.redo": "Gjør om",
+    "help-center-wysiwyg.resize-image": "Endre størrelsen på bildet",
+    "help-center-wysiwyg.resize-image-custom": "Egendefinert",
+    "help-center-wysiwyg.resize-image-input": "Endre størrelsen på bildet (i %0)",
+    "help-center-wysiwyg.resize-image-list": "Liste med endring av størrelse",
+    "help-center-wysiwyg.resize-image-original": "Opprinnelig",
+    "help-center-wysiwyg.resize-image-value-required": "Verdien kan ikke være tom.",
     "help-center-wysiwyg.right-aligned-image": "Høyrejustert bilde",
     "help-center-wysiwyg.save": "Lagre",
     "help-center-wysiwyg.show-more-items": "Vis flere elementer",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "Fjern lenke",
     "help-center-wysiwyg.upload-failed": "Kunne ikke laste opp"
   },
-  "updated_at": "2026-03-25T01:55:43Z"
+  "updated_at": "2026-11-05T14:01:37Z"
 }

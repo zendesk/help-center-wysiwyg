@@ -2,6 +2,7 @@
   "locale": "cs",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "Zpět",
     "help-center-wysiwyg.block-quote": "Nabídka",
     "help-center-wysiwyg.bold": "Tučně",
     "help-center-wysiwyg.bulleted-list": "Seznam s odrážkami",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "Odstavec",
     "help-center-wysiwyg.plain-text": "Prostý text",
     "help-center-wysiwyg.redo": "Znovu",
+    "help-center-wysiwyg.resize-image": "Změnit velikost obrázku",
+    "help-center-wysiwyg.resize-image-custom": "Vlastní",
+    "help-center-wysiwyg.resize-image-input": "Změnit velikost obrázku (na %0)",
+    "help-center-wysiwyg.resize-image-list": "Seznam pro změnu velikosti obrázku",
+    "help-center-wysiwyg.resize-image-original": "Originál",
+    "help-center-wysiwyg.resize-image-value-required": "Hodnota nesmí být prázdná.",
     "help-center-wysiwyg.right-aligned-image": "Obrázek zarovnaný doprava",
     "help-center-wysiwyg.save": "Uložit",
     "help-center-wysiwyg.show-more-items": "Zobrazit více položek",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "Odpojit",
     "help-center-wysiwyg.upload-failed": "Chyba uploadu"
   },
-  "updated_at": "2026-03-24T17:00:17Z"
+  "updated_at": "2026-11-05T14:03:15Z"
 }

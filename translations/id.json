@@ -2,6 +2,7 @@
   "locale": "id",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "Kembali",
     "help-center-wysiwyg.block-quote": "Penawaran harga",
     "help-center-wysiwyg.bold": "Tebal",
     "help-center-wysiwyg.bulleted-list": "Daftar berpoin",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "Paragraf",
     "help-center-wysiwyg.plain-text": "Teks polos",
     "help-center-wysiwyg.redo": "Ulangi",
+    "help-center-wysiwyg.resize-image": "Ubah ukuran gambar",
+    "help-center-wysiwyg.resize-image-custom": "Kustom",
+    "help-center-wysiwyg.resize-image-input": "Ubah ukuran gambar (dalam %0)",
+    "help-center-wysiwyg.resize-image-list": "Daftar pengubahan ukuran gambar",
+    "help-center-wysiwyg.resize-image-original": "Asli",
+    "help-center-wysiwyg.resize-image-value-required": "Nilai tidak boleh kosong.",
     "help-center-wysiwyg.right-aligned-image": "Gambar rata kanan",
     "help-center-wysiwyg.save": "Simpan",
     "help-center-wysiwyg.show-more-items": "Tampilkan lebih banyak item",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "Hapus tautan",
     "help-center-wysiwyg.upload-failed": "Gagal unggah"
   },
-  "updated_at": "2026-03-25T02:12:52Z"
+  "updated_at": "2026-11-05T14:28:25Z"
 }

@@ -2,6 +2,7 @@
   "locale": "tr",
   "rtl": false,
   "translations": {
+    "help-center-wysiwyg.back": "Geri",
     "help-center-wysiwyg.block-quote": "Alıntı",
     "help-center-wysiwyg.bold": "Kalın",
     "help-center-wysiwyg.bulleted-list": "Madde işaretli liste",
@@ -30,6 +31,12 @@
     "help-center-wysiwyg.paragraph": "Paragraf",
     "help-center-wysiwyg.plain-text": "Düz metin",
     "help-center-wysiwyg.redo": "Yinele",
+    "help-center-wysiwyg.resize-image": "Görseli yeniden boyutlandır",
+    "help-center-wysiwyg.resize-image-custom": "Özel",
+    "help-center-wysiwyg.resize-image-input": "Görseli yeniden boyutlandır (%0 olarak)",
+    "help-center-wysiwyg.resize-image-list": "Görsel yeniden boyutlandırma listesi",
+    "help-center-wysiwyg.resize-image-original": "Orijinal",
+    "help-center-wysiwyg.resize-image-value-required": "Değer boş bırakılamaz.",
     "help-center-wysiwyg.right-aligned-image": "Sağa hizalanmış görsel",
     "help-center-wysiwyg.save": "Kaydet",
     "help-center-wysiwyg.show-more-items": "Daha fazla öğe göster",
@@ -42,5 +49,5 @@
     "help-center-wysiwyg.unlink": "Bağlantıyı kaldır",
     "help-center-wysiwyg.upload-failed": "Karşıya yükleme başarısız oldu"
   },
-  "updated_at": "2026-03-24T17:00:19Z"
+  "updated_at": "2026-11-05T14:01:25Z"
 }
