@@ -9,6 +9,14 @@
   --ck-focus-disabled-outer-shadow: none;
   --ck-button-focus-border-color: transparent;
   --ck-z-modal: 2147483649;
+
+  /* Keep content colors linked to the scheme-aware Flora palette. */
+  --ck-content-code-block-text-color: var(--ck-color-text-primary);
+  --ck-content-code-block-background: var(--ck-color-base-foreground);
+  --ck-content-code-block-border-color: var(--ck-color-border-container);
+  --ck-content-code-block-border-radius: 3px;
+  --ck-content-inline-code-background-color: var(--ck-color-base-foreground);
+  --ck-split-button-arrow-border-block-width: var(--ck-border-width-control);
 }
 
 .ck.ck-content.ck-editor__editable {
@@ -39,23 +47,13 @@
 }
 
 .ck .ck-content pre {
-  color: var(--ck-color-text-primary);
-  background: var(--ck-color-base-foreground);
-  border: 1px solid var(--ck-color-border-container);
-  border-radius: 3px;
   padding: 10px 15px;
   overflow: auto;
   white-space: pre;
 }
 
-/* v49's language label otherwise keeps fixed white text in dark mode. */
-.ck.ck-editor__editable pre[data-language]:after {
-  color: var(--ck-color-text-inverse);
-}
-
 .ck .ck-content :not(pre) > code {
   color: var(--ck-color-text-primary);
-  background: var(--ck-color-base-foreground);
 }
 
 /* Preserve the deliberate #44 accessibility treatment with Flora tokens:
@@ -101,8 +99,8 @@
   color: var(--ck-input-disabled-text-color);
 }
 
-/* Join bordered split-button segments; CKEditor otherwise removes the arrow's
- * top/bottom borders and only flattens the action's corners on hover. */
+/* Join bordered split-button segments; CKEditor only flattens the action's
+ * corners on hover. */
 .ck.ck-splitbutton > .ck.ck-button.ck-splitbutton__action {
   border-start-end-radius: 0;
   border-end-end-radius: 0;
@@ -112,10 +110,6 @@
   border-start-start-radius: 0;
   border-end-start-radius: 0;
   margin-inline-start: calc(-1 * var(--ck-border-width-control));
-}
-
-.ck.ck-splitbutton > .ck.ck-button.ck-splitbutton__arrow:not(:focus) {
-  border-block-width: var(--ck-border-width-control);
 }
 
 .ck.ck-splitbutton > .ck.ck-button.ck-splitbutton__arrow::after {
@@ -146,6 +140,13 @@
   box-shadow: var(--ck-focus-shadow);
   outline: var(--hc-wysiwyg-focus-outline-width) solid transparent;
   outline-offset: var(--hc-wysiwyg-focus-outline-offset);
+}
+
+/* v49.1 positions the non-sticky toolbar wrapper. Position the focused
+ * editable too so its top focus ring paints above that earlier sibling.
+ * Keep z-index auto so the sticky toolbar can still float above the content. */
+.ck.ck-content.ck-editor__editable.ck-focused {
+  position: relative;
 }
 
 /* Garden active menu rows use a primary tint and a leading stripe, not a button

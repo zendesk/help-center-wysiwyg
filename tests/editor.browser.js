@@ -204,6 +204,10 @@ it(
     expect(getComputedStyle(editable).outlineStyle).toBe("solid");
     expect(getComputedStyle(editable).outlineWidth).toBe("2px");
     expect(getComputedStyle(editable).outlineOffset).toBe("1px");
+    // v49.1 positions the toolbar wrapper. A shadow alone is not enough:
+    // the editable must paint as a positioned sibling or its top ring is hidden.
+    expect(getComputedStyle(editable).position).toBe("relative");
+    expect(getComputedStyle(editable).zIndex).toBe("auto");
 
     // The toolbar itself is a separate Tab stop; its ring must not be
     // confused with the content ring or a focused individual toolbar button.

@@ -2,7 +2,7 @@
 "@zendesk/help-center-wysiwyg": major
 ---
 
-Upgrade CKEditor from 47.7.6 to 49.0.1, including its updated appearance and Shadow DOM support.
+Upgrade CKEditor from 47.7.6 to 49.1.0, including its updated appearance and Shadow DOM support.
 
 ### Breaking changes
 
