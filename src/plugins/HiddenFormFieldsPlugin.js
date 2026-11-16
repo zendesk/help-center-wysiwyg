@@ -19,6 +19,4 @@ export default function HiddenFormFields(editor) {
 
     form.appendChild(hiddenField);
   });
-
-  return editor;
 }

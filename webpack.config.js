@@ -18,16 +18,8 @@ module.exports = (env, argv) => ({
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader",
-            options: {
-              injectType: "singletonStyleTag",
-              attributes: {
-                "data-cke": true,
-              },
-            },
-          },
-          {
             loader: "css-loader",
+            options: { exportType: "string" },
           },
         ],
       },
@@ -40,11 +32,13 @@ module.exports = (env, argv) => ({
   },
   resolve: {
     alias: {
-      "@ckeditor/ckeditor5-icons/dist/index.js": path.resolve(
+      "@ckeditor/ckeditor5-icons$": path.resolve(
         __dirname,
         "./icon-overrides/src/index.js",
       ),
-      "@ckeditor/ckeditor5-icons-original": "@ckeditor/ckeditor5-icons",
+      "@ckeditor/ckeditor5-icons-original": require.resolve(
+        "@ckeditor/ckeditor5-icons",
+      ),
     },
   },
   plugins: [

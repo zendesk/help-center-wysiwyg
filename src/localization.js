@@ -1,4 +1,6 @@
-import { add } from "@ckeditor/ckeditor5-utils/src/translation-service";
+import englishBundle from "../translations/en-us.json";
+
+const { translations: english } = englishBundle;
 
 export const ckeditorTranslationsKeyMap = {
   Bold: "help-center-wysiwyg.bold",
@@ -50,19 +52,27 @@ export const ckeditorTranslationsKeyMap = {
   Back: "help-center-wysiwyg.back",
 };
 
-const getTranslations = (keyMap) =>
-  Object.fromEntries(
-    Object.entries(keyMap).map(([text, key]) => [text, translate(key)]),
-  );
-
 let translationStore = {};
 
-export const localize = async (baseLocale) => {
-  const { translations } = await import(`../translations/${baseLocale}.json`);
+export const localize = async (locale, baseLocale) => {
+  const candidates = new Set([locale, baseLocale]);
+  let translations = english;
+  for (const candidate of candidates) {
+    try {
+      ({ translations } = await import(`../translations/${candidate}.json`));
+      break;
+    } catch {
+      // Missing bundles and failed downloads must not prevent editor creation.
+    }
+  }
 
-  translationStore = translations;
-
-  add(baseLocale, getTranslations(ckeditorTranslationsKeyMap));
+  translationStore = { ...english, ...translations };
+  return Object.fromEntries(
+    Object.entries(ckeditorTranslationsKeyMap).map(([text, key]) => [
+      text,
+      translate(key),
+    ]),
+  );
 };
 
 export function translate(key, args) {

@@ -38,10 +38,56 @@ import XHRImageUploadPlugin from "./plugins/XHRImageUploadPlugin";
 
 import { localize } from "./localization";
 
-import "ckeditor5/ckeditor5.css";
-import "./styles.css"; // Should be imported last to take precedence over other editor styles imported above
+import { installStyles } from "./theme/styles";
 
-class Editor extends ClassicEditor {}
+function getSourceLabel(target) {
+  if (target?.tagName !== "TEXTAREA") return "";
+
+  const tree = target.getRootNode();
+  return (target.getAttribute("aria-labelledby") || "")
+    .split(/\s+/)
+    .map((id) => tree.getElementById?.(id)?.textContent || "")
+    .join(" ")
+    .replaceAll("*", "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+class Editor extends ClassicEditor {
+  static async create(config) {
+    const label = getSourceLabel(config.attachTo);
+    if (label && !config.roots && config.root?.label === undefined) {
+      config = { ...config, root: { ...config.root, label } };
+    }
+
+    const { locale, baseLocale } = config;
+    const dictionary = await localize(locale, baseLocale);
+    const target = config.attachTo;
+    // Without an attachment target, install styles in the document.
+    const stopObservingTheme = installStyles(
+      target || document.body,
+      config.ui?.overlayContainer,
+    );
+    try {
+      const editor = await super.create({
+        ...config,
+        translations: { [baseLocale]: { dictionary } },
+      });
+      const destroy = editor.destroy.bind(editor);
+      editor.destroy = async () => {
+        try {
+          return await destroy();
+        } finally {
+          stopObservingTheme();
+        }
+      };
+      return editor;
+    } catch (error) {
+      stopObservingTheme();
+      throw error;
+    }
+  }
+}
 
 Editor.builtinPlugins = [
   BlockQuote,
@@ -114,9 +160,10 @@ Editor.defaultConfig = {
  * @param {boolean} baseConfig.hasAtMentions - At-mentions enabled or not
  * @param {string} baseConfig.userRole - The user role
  * @param {number} baseConfig.brandId - The brand id
- * @param {string} baseConfig.baseLocale - The base locale
+ * @param {string} baseConfig.baseLocale - The base locale (also the editor language)
+ * @param {string} baseConfig.locale - Preferred translation locale
  * @returns {EditorConfig} The configuration for the editor. See https://ckeditor.com/docs/ckeditor5/latest/api/module_core_editor_editorconfig-EditorConfig.html
- * @throws {Error} If no configuration exists for the specified editor type.
+ * @throws {Error} If either locale is missing/empty or the editor type is unsupported.
  */
 export const getEditorConfig = ({
   editorType,
@@ -124,7 +171,15 @@ export const getEditorConfig = ({
   userRole,
   brandId,
   baseLocale,
+  locale,
 }) => {
+  for (const [name, value] of Object.entries({ locale, baseLocale })) {
+    if (typeof value !== "string" || !value.trim()) {
+      throw new Error(`getEditorConfig: ${name} must be a non-empty string`);
+    }
+  }
+  baseLocale = baseLocale.toLowerCase();
+  locale = locale.toLowerCase();
   const isUserUnauthenticated = userRole === "anonymous";
 
   const baseConfig = {
@@ -134,6 +189,8 @@ export const getEditorConfig = ({
         ? process.env.CKEDITOR_LICENSE_KEY_PRODUCTION
         : process.env.CKEDITOR_LICENSE_KEY_DEVELOPMENT || "GPL",
     /* eslint-enable no-undef */
+    locale,
+    baseLocale,
     language: baseLocale,
   };
 
@@ -219,35 +276,7 @@ export const getEditorConfig = ({
   }
 };
 
-export const createEditor = async (target, options) => {
-  await localize(options.baseLocale);
-
-  // Extract field label from aria-labelledby if present
-  let fieldLabel = "";
-  if (
-    target instanceof HTMLTextAreaElement &&
-    target.hasAttribute("aria-labelledby")
-  ) {
-    const labelId = target.getAttribute("aria-labelledby");
-    fieldLabel = document.getElementById(labelId)?.textContent || "";
-  }
-
-  const config = getEditorConfig(options);
-
-  // Add fieldLabel to config if extracted, removing any asterisks used to denote required fields
-  if (fieldLabel) {
-    config.label = fieldLabel.replace("*", "");
-  }
-
-  const editor = await Editor.create(target, config);
-  // Uncomment to enable the CKEditor inspector:
-  // import("@ckeditor/ckeditor5-inspector").then(
-  //   ({ default: CKEditorInspector }) => {
-  //     CKEditorInspector.attach(editor);
-  //     return editor;
-  //   },
-  // );
-  return editor;
-};
+export const createEditor = (target, options) =>
+  Editor.create({ ...getEditorConfig(options), attachTo: target });
 
 export default Editor;

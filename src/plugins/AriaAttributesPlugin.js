@@ -39,7 +39,7 @@ export default function AriaAttributesPlugin(editor) {
   const mainView = editor.ui.view;
   const toolbarView = mainView.toolbar;
   const editableView = mainView.editable;
-  const fieldLabel = editor.config.get("label");
+  const fieldLabel = editor.config.get("roots.main.label");
 
   if (fieldLabel) {
     const toolbarLabel = t("help-center-wysiwyg.toolbar_label", {

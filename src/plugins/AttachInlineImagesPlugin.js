@@ -5,50 +5,67 @@
   If we did not do this, the attachments would eventually expire and disappear
   from the support ticket.
 */
+const formSubmissions = new WeakMap();
+
 export default function AttachInlineImagesPlugin(editor) {
   const form = editor.sourceElement?.form;
 
   if (!form)
     throw new Error("AttachInlineImagesPlugin: No form found for editor");
 
-  editor.plugins
-    .get("ImageUploadEditing")
-    .on("uploadComplete", (_, { data }) => {
-      const {
-        token,
-        urls: { default: src },
-      } = data;
+  const uploadEditing = editor.plugins.get("ImageUploadEditing");
+  const onUpload = (_, { data }) => {
+    const {
+      token,
+      urls: { default: src },
+    } = data;
 
-      const input = document.createElement("input");
-      input.hidden = true;
-      input.name = "request[attachments][]";
-      input.value = JSON.stringify({ id: token, inline: true, _src: src });
+    const input = document.createElement("input");
+    input.hidden = true;
+    input.name = "request[attachments][]";
+    input.value = JSON.stringify({ id: token, inline: true, _src: src });
 
-      form.appendChild(input);
-    });
+    form.appendChild(input);
+  };
+  uploadEditing.on("uploadComplete", onUpload);
 
-  // We intercept form submissions in order to clear out any inline attachments
-  // that may have been removed from the editor by the user.
-  // Otherwise, they would needlessly get included in the request.
-  form.addEventListener(
-    "submit",
-    (evt) => {
+  // Cleanup and submission belong to the form: a request can have multiple
+  // editors, and an attachment used by any of them must remain attached.
+  let submission = formSubmissions.get(form);
+  if (!submission) {
+    submission = { editors: new Set(), pendingSubmit: undefined };
+    submission.onSubmit = (evt) => {
       evt.preventDefault();
       evt.stopPropagation();
 
-      const data = editor.getData();
-      const doc = new DOMParser().parseFromString(data, "text/html");
-
-      document
+      const documents = Array.from(submission.editors, (instance) =>
+        new DOMParser().parseFromString(instance.getData(), "text/html"),
+      );
+      // Query the owning form so this also works inside a shadow root.
+      form
         .querySelectorAll("input[name='request[attachments][]']")
         .forEach((input) => {
           const { inline, _src } = JSON.parse(input.value);
           if (!inline) return;
-          if (!doc.querySelector(`img[src="${_src}"]`)) input.remove();
+          if (!documents.some((doc) => doc.querySelector(`img[src="${_src}"]`)))
+            input.remove();
         });
 
-      setTimeout(form.submit.bind(form), 0);
-    },
-    true, // (useCapture) important, as we want to run this before the default submit handler
-  );
+      clearTimeout(submission.pendingSubmit);
+      submission.pendingSubmit = setTimeout(form.submit.bind(form), 0);
+    };
+    formSubmissions.set(form, submission);
+    // Run cleanup before the default submit handler and its native submission.
+    form.addEventListener("submit", submission.onSubmit, true);
+  }
+  submission.editors.add(editor);
+
+  editor.once("destroy", () => {
+    uploadEditing.off("uploadComplete", onUpload);
+    submission.editors.delete(editor);
+    if (submission.editors.size) return;
+    form.removeEventListener("submit", submission.onSubmit, true);
+    clearTimeout(submission.pendingSubmit);
+    formSubmissions.delete(form);
+  });
 }

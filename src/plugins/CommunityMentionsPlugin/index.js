@@ -4,8 +4,6 @@ import MentionsDataProcessor from "./MentionsDataProcessor";
 import { Mention } from "ckeditor5";
 import { Notification } from "ckeditor5";
 
-import "./styles.css";
-
 const MAX_MENTIONS_COUNT = 15;
 
 const sendQuery = async (query) => {
@@ -51,7 +49,7 @@ function CommunityMentionsPlugin(editor) {
   // and converts them to <span data-mention> elements.
   editor.conversion.for("downcast").attributeToElement({
     model: "mention",
-    view: (modelAttributeValue, { writer }) => {
+    view: (modelAttributeValue, { writer, options }) => {
       if (!modelAttributeValue) return;
 
       return writer.createAttributeElement(
@@ -60,7 +58,10 @@ function CommunityMentionsPlugin(editor) {
           class: "mention",
           "data-user-name": modelAttributeValue.userName,
           "data-user-id": modelAttributeValue.userId,
-          "data-mention": modelAttributeValue.uid,
+          "data-mention": modelAttributeValue.userName,
+          ...(!options.isClipboardPipeline && {
+            "data-mention-uid": modelAttributeValue.uid,
+          }),
         },
         {
           priority: 20, // Make mention attribute to be wrapped by other attribute elements.
