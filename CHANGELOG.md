@@ -1,5 +1,12 @@
 # @zendesk/help-center-wysiwyg
 
+## 2.0.1
+
+### Patch Changes
+
+- a6de4e6: Align tooltip styling, editable content padding, and toolbar spacing with Garden. Correct UI font smoothing and update the code block icon to match the design.
+- fc53472: Update styled-components to 6.6.0 to remove vulnerable PostCSS and resolve Dependabot alerts #109 and #111. No regressions are expected; Garden theme output is unchanged and all tests pass.
+
 ## 2.0.0
 
 ### Major Changes
