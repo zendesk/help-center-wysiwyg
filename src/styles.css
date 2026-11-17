@@ -25,6 +25,80 @@
   background: var(--ck-color-surface-canvas);
 }
 
+/* Apply Flora spacing, colors, and icon sizes to the main editor toolbar. */
+.ck.ck-editor__top .ck.ck-toolbar {
+  --ck-toolbar-padding: var(--hc-wysiwyg-toolbar-padding);
+  --ck-toolbar-background-color: var(--ck-color-surface-canvas);
+  --ck-toolbar-item-gap-inline: var(--hc-wysiwyg-toolbar-gap);
+  --ck-icon-size: var(--hc-wysiwyg-toolbar-icon-size);
+  --ck-heading-dropdown-label-width: auto;
+}
+
+/* Apply consistent margins to toolbar items and the overflow control. */
+.ck.ck-editor__top .ck.ck-toolbar > .ck-toolbar__items > .ck,
+.ck.ck-editor__top .ck.ck-toolbar > .ck-toolbar__grouped-dropdown {
+  margin: var(--hc-wysiwyg-toolbar-item-margin) 0;
+}
+
+.ck.ck-editor__top .ck.ck-toolbar > .ck-toolbar__items {
+  column-gap: var(--hc-wysiwyg-toolbar-gap);
+}
+
+.ck.ck-editor__top
+  .ck.ck-toolbar
+  > .ck-toolbar__items
+  > .ck-toolbar__separator {
+  height: var(--hc-wysiwyg-toolbar-control-height);
+  margin-inline: var(--hc-wysiwyg-toolbar-separator-margin);
+  background: var(--hc-wysiwyg-toolbar-separator-color);
+}
+
+.ck.ck-editor__top .ck-heading-dropdown > .ck.ck-dropdown__button {
+  --ck-button-with-text-padding: calc(
+      var(--hc-wysiwyg-toolbar-item-margin) - var(--ck-border-width-control)
+    )
+    calc(var(--ck-spacing-base) - var(--ck-border-width-control));
+  --ck-button-icon-gap: var(--ck-spacing-base);
+  font-weight: var(--ck-font-weight-normal);
+}
+
+.ck.ck-editor__top
+  .ck-heading-dropdown
+  > .ck.ck-button.ck-button_with-text:not(.ck-disabled):not(:hover):not(
+    .ck-on
+  ) {
+  color: var(--hc-wysiwyg-button-default-text-color);
+}
+
+.ck.ck-editor__top
+  .ck-heading-dropdown
+  > .ck-dropdown__button
+  .ck-button__label {
+  line-height: var(--hc-wysiwyg-tooltip-line-height);
+}
+
+/* Apply Garden font smoothing to the editor UI. */
+.ck.ck-reset_all {
+  -webkit-font-smoothing: auto;
+}
+
+.ck.ck-button {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Apply Flora tooltip typography and shadow. */
+.ck.ck-balloon-panel.ck-tooltip {
+  font-size: var(--ck-tooltip-text-font-size);
+  line-height: var(--hc-wysiwyg-tooltip-line-height);
+  box-shadow: var(--hc-wysiwyg-tooltip-shadow);
+}
+
+.ck.ck-balloon-panel.ck-tooltip .ck-tooltip__text {
+  display: block;
+  font-weight: var(--ck-font-weight-normal);
+  line-height: var(--hc-wysiwyg-tooltip-line-height);
+}
+
 /* Keep edited-content typography; Flora is for the surrounding UI. */
 .ck .ck-content {
   font-size: 15px;
@@ -34,6 +108,15 @@
 .ck .ck-content p {
   font-size: 15px;
   margin: 15px 0;
+}
+
+/* Use the editable area's padding for spacing around the first and last blocks. */
+.ck.ck-content.ck-editor__editable_inline > :first-child {
+  margin-top: 0;
+}
+
+.ck.ck-content.ck-editor__editable_inline > :last-child {
+  margin-bottom: 0;
 }
 
 .ck .ck-content ul {
