@@ -5,7 +5,7 @@ import GardenCheck from "@zendeskgarden/svg-icons/src/check.svg";
 import GardenBold from "@zendeskgarden/svg-icons/src/bold.svg";
 import GardenItalic from "@zendeskgarden/svg-icons/src/italic.svg";
 import GardenCode from "@zendeskgarden/svg-icons/src/code-bracket.svg";
-import GardenCodeBlock from "@zendeskgarden/svg-icons/src/terminal-window-stroke.svg";
+import GardenCodeBlock from "@zendeskgarden/svg-icons/src/terminal-stroke.svg";
 import GardenLink from "@zendeskgarden/svg-icons/src/chain.svg";
 import GardenBulletedList from "@zendeskgarden/svg-icons/src/list-bullet.svg";
 import GardenNumberedList from "@zendeskgarden/svg-icons/src/list-number.svg";

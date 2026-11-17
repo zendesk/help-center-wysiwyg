@@ -51,6 +51,7 @@ export function getEditorVariables(theme) {
   const offset100 = { light: { offset: 100 }, dark: { offset: -100 } };
   const offset200 = { light: { offset: 200 }, dark: { offset: -200 } };
   const foreground = color("foreground.default");
+  const tooltipBackground = neutral(900, 700);
   const menuActive = color("background.primaryEmphasis", {
     transparency: theme.opacity[100],
   });
@@ -60,8 +61,28 @@ export function getEditorVariables(theme) {
   // buttons are neutral-filled in Flora; branding remains on links/focus/menus.
   return {
     "--ck-font-family": theme.fonts.system,
-    "--ck-font-size-base": theme.fontSizes.md,
+    "--ck-font-size-xs": theme.fontSizes.xs,
+    "--ck-font-size-sm": theme.fontSizes.sm,
     "--ck-font-size-md": theme.fontSizes.md,
+    "--ck-font-size-lg": theme.fontSizes.lg,
+    "--ck-font-size-xl": theme.fontSizes.xl,
+    // Apply Garden styles for tooltips.
+    "--ck-tooltip-text-font-size": theme.fontSizes.sm,
+    "--ck-tooltip-padding": `0 ${theme.space.sm}`,
+    "--ck-tooltip-multiline-padding": "0",
+    "--ck-tooltip-border-radius": theme.borderRadii.sm,
+    "--ck-tooltip-border": `${theme.borders.sm} ${tooltipBackground}`,
+    "--ck-tooltip-background-color": tooltipBackground,
+    "--ck-tooltip-text-color": getColor({ theme, hue: "white" }),
+    "--ck-editor-editable-padding": `${theme.space.base * 2.5}px ${theme.space.sm}`,
+    // Apply Flora toolbar spacing and control sizes.
+    "--hc-wysiwyg-toolbar-padding": `${theme.space.base / 2}px ${theme.space.xs}`,
+    "--hc-wysiwyg-toolbar-item-margin": `${theme.space.base * 1.5}px`,
+    "--hc-wysiwyg-toolbar-gap": `${theme.space.base / 2}px`,
+    "--hc-wysiwyg-toolbar-separator-margin": `${theme.space.base * 1.5}px`,
+    "--hc-wysiwyg-toolbar-icon-size": theme.space.md,
+    "--hc-wysiwyg-toolbar-control-height": `${theme.space.base * 8}px`,
+    "--hc-wysiwyg-toolbar-separator-color": color("border.subtle"),
     "--ck-font-weight-medium": theme.fontWeights.semibold,
     "--ck-border-radius-control": theme.borderRadii.md,
     "--ck-border-radius-control-small": theme.borderRadii.md,
@@ -80,7 +101,7 @@ export function getEditorVariables(theme) {
     "--ck-color-base-foreground": color("background.subtle"),
     "--ck-color-base-text": foreground,
     "--ck-color-base-text-light": color("foreground.subtle"),
-    // Lisbon createFloraTheme's default form-control border adjustment.
+    // Match Copenhagen and Lisbon form-control border contrast in both schemes.
     "--ck-color-base-border": color("border.default", {
       light: { offset: 300 },
       dark: { offset: -100 },
@@ -131,6 +152,12 @@ export function getEditorVariables(theme) {
     "--ck-list-button-on-background-color": menuActive,
     "--ck-list-button-on-text-color": foreground,
     // Local tokens consumed by src/styles.css, not CKEditor variables.
+    "--hc-wysiwyg-tooltip-line-height": `${theme.space.base * 5}px`,
+    "--hc-wysiwyg-tooltip-shadow": theme.shadows.lg(
+      `${theme.space.base}px`,
+      `${theme.space.base * 2}px`,
+      color("shadow.small"),
+    ),
     "--hc-wysiwyg-button-default-border-color": "transparent",
     "--hc-wysiwyg-button-default-hover-border-color": neutral(600, 500),
     "--hc-wysiwyg-button-default-active-border-color": neutral(700, 400),
