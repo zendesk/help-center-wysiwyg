@@ -1,5 +1,11 @@
 # @zendesk/help-center-wysiwyg
 
+## 2.1.0
+
+### Minor Changes
+
+- 76550ac: Enable keyboard-accessible image resizing in comments, community-post, and support-request editors.
+
 ## 2.0.1
 
 ### Patch Changes
